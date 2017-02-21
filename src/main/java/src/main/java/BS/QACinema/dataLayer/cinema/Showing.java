@@ -36,7 +36,7 @@ public class Showing{
 	private String experience;
 	
 	@NotNull
-	@Column(name = "Accessability", length = 45)
+	@Column(name = "Accessability", length = 45) 
 	private String accessability;
 	
 	//no-args constructor
