@@ -43,7 +43,8 @@ public class Showing{
 	public Showing() { }
 	
 	//Overloading
-	public Showing(int filmID, int screenID, String dateTime,  String experience, String accessability){
+	public Showing(int showingID, int filmID, int screenID, String dateTime,  String experience, String accessability){
+		this.showingID = showingID;
 		this.filmID = filmID;
 		this.screen_ScreenID = screenID;
 		this.dateTime = dateTime;
