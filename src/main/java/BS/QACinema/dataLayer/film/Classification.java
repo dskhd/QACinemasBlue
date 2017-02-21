@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity @Table(name = "Classification")
+@Entity 
 public enum Classification {
 	
 	
