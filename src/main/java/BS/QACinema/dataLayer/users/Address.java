@@ -14,26 +14,26 @@ import javax.validation.constraints.NotNull;
 public class Address {
 
 	@Id
-	int addressID;
+	private int addressID;
 	
 	@NotNull
 	@Column(name = "line1")
-	String line1;
+	private String line1;
 	
 	@Column(name = "line2")
-	String line2;
+	private String line2;
 	
 	@NotNull
 	@Column(name = "town")
-	String town;
+	private String town;
 	
 	@NotNull
 	@Column(name = "county")
-	String county;
+	private String county;
 	
 	@NotNull
 	@Column(name = "postcode")
-	String postcode;	
+	private String postcode;	
 		
 	
 	public Address() {

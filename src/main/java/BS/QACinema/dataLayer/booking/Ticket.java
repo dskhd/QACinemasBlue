@@ -14,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import BS.QACinema.dataLayer.BooksSeats.Seat;
+
 
 /**
  * 
@@ -49,7 +51,7 @@ public class Ticket {
 	private Showing showing;
 
 	
-	public Ticket(int ticketID, TicketType ticketType, Seat seat, Showing showing) {
+	public Ticket(String ticketID, TicketType ticketType, Seat seat, Showing showing) {
 		this.ticketID = ticketID;
 		this.ticketType = ticketType;
 		this.seat = seat;

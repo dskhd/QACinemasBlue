@@ -1,4 +1,4 @@
-package dataLayer;
+package BS.QACinema.dataLayer;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import BS.QACinema.dataLayer.users.User;
 
 public class UserTest {
 
