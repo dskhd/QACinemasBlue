@@ -1,4 +1,4 @@
-package test.java.BS.QACinema.dataLayer;
+package BS.QACinema.dataLayer;
 
 import static org.junit.Assert.*;
 
