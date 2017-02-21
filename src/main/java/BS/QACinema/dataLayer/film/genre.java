@@ -1,4 +1,4 @@
-package main.java.BS.QACinema.dataLayer.film;
+package BS.QACinema.dataLayer.film;
 
 
 

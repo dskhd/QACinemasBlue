@@ -1,4 +1,4 @@
-package com.QAC.BlueTeam;
+package BS.QACinema.dataLayer.film;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

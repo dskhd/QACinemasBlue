@@ -1,4 +1,4 @@
-package com.QAC.BlueTeam;
+package BS.QACinema.dataLayer.film;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,14 +31,14 @@ public class Film {
 	
 	@NotNull
 	@Column(name = "Release_Date",  nullable = false)
-	private String date;
+	private int date;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "ClassificationID", nullable = false)
 	private String classification;
 
-	public Film(String title, int lengthMins, String description, String date) {
+	public Film(String title, int lengthMins, String description, int date) {
 		super();
 		this.title = title;
 		this.lengthMins = lengthMins;
@@ -70,11 +70,11 @@ public class Film {
 		this.description = descirption;
 	}
 
-	public String getDate() {
+	public int getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(int date) {
 		this.date = date;
 	}
 	

@@ -1,4 +1,6 @@
-package main.java.BS.QACinema.dataLayer.booking;
+package BS.QACinema.dataLayer.booking;
+
+import javax.validation.constraints.NotNull;
 
 public class Booking {
 
