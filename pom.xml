@@ -21,9 +21,7 @@
     <artifactId>QACinemasBlue</artifactId>
     <version>10.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>WildFly Quickstart: helloworld-rs</name>
-    <description>WildFly Quickstarts: Helloworld using JAX-RS</description>
-    <url>http://wildfly.org</url>
+    <name>QACinemasBlue</name>
 
     <licenses>
         <license>
