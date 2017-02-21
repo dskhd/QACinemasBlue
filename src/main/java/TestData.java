@@ -7,16 +7,16 @@ public class TestData {
 	
 	public static TestData data = new TestData();
 	
-	private List<Ticket> ticketList;
-	private List<Showing> showingList;
-	private List<Film> filmList;
-	private List<Actor> actorList;
-	private List<Users> userList;
+	public List<Ticket> ticketList;
+	public List<Showing> showingList;
+	public List<Film> filmList;
+	public List<Actor> actorList;
+	public List<Users> userList;
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	private TestData() {
-		ticketList = new ArrayList<Ticket>();
+	public TestData() { // made default so can be accessed by TestDataTest
+		 ticketList = new ArrayList<Ticket>();
 		
 			ticketList.add(); //add TICKET depending on constructor
 		
