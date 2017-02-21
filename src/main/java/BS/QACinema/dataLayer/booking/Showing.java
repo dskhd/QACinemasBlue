@@ -1,4 +1,4 @@
-package src.main.java.BS.QACinema.dataLayer.cinema;
+package BS.QACinema.dataLayer.booking;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
