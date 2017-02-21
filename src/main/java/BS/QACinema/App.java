@@ -1,4 +1,4 @@
-package BS.QACinema;
+package main.java.BS.QACinema;
 
 /**
  * Hello world!
