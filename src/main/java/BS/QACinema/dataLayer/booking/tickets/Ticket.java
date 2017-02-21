@@ -1,4 +1,4 @@
-package BS.QACinema.dataLayer.booking;
+package BS.QACinema.dataLayer.booking.tickets;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,66 +14,66 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
 /**
  * 
  * @author AlexN
  *
  */
 @Entity
-@Table(name="tickets")
+@Table(name = "tickets")
 public class Ticket {
 
 	@NotNull
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String ticketID;
 
 	@NotNull
 	@ManyToOne
-	@Column(name="ticket_type_type", nullable = false)
-	@Enumerated(EnumType.STRING)
-	private TicketType ticketType;
+	@Column(name = "ticket_type_type", nullable = false)
+	private String ticketType;
 
 	@NotNull
 	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name="seats_seat", nullable = false),
-		@JoinColumn(name="seats_screen_screenID", nullable = false)
-	})
+	@JoinColumns({ @JoinColumn(name = "seats_seat", nullable = false),
+			@JoinColumn(name = "seats_screen_screenID", nullable = false) })
 	private Seat seat;
 
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name="showing_showingID", nullable=false)
+	@JoinColumn(name = "showing_showingID", nullable = false)
 	private Showing showing;
 
-	
-	public Ticket(int ticketID, TicketType ticketType, Seat seat, Showing showing) {
-		this.ticketID = ticketID;
-		this.ticketType = ticketType;
+	@NotNull
+	@Column(name="price")
+	private float price;
+
+	public Ticket(TicketType ticketType, Seat seat, Showing showing) {
+
+		this.ticketType = ticketType.getType();
+		this.price = ticketType.getPrice();
 		this.seat = seat;
 		this.showing = showing;
 	}
-
 
 	public String getTicketID() {
 		return ticketID;
 	}
 
-
-	public TicketType getTicketType() {
-		return ticketType;
-	}
-
-
 	public Seat getSeat() {
 		return seat;
 	}
 
-
 	public Showing getShowing() {
 		return showing;
 	}
-		
+
+	public TicketType getTicketType() {
+		return ticketType;
+	}
+	
+	public float getPrice(){
+		return price;
+	}
+
 }
