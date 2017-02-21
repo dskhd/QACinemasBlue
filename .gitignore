@@ -3,6 +3,7 @@
 .project
 .classpath
 pom.xml
+.classpath
 /bin/
 .settings
 /project
