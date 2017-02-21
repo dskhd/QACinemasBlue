@@ -1,8 +1,9 @@
-package BS.QACinema;
+package main.java.BS.QACinema.dataLayer.film;
+
+
 
 public class genre {
 
-	@NotNull
 	private String genre;
 	
 	public String getGenre() {

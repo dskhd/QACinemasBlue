@@ -1,4 +1,4 @@
-package BS.QACinema;
+package test.java.BS.QACinema.dataLayer;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class genreTest {
 
+	
+	
 	@Before
 	public void setUp() throws Exception {
 	}
