@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import BS.QACinema.dataLayer.film.Genre;
 
-public class genreTest {
+public class GenreTest {
 
 	Genre gen;
 	
