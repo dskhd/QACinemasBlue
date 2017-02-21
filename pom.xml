@@ -65,12 +65,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
-			<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-api</artifactId>
-				<version>7.0</version>
-			</dependency>
+
 
 		</dependencies>
 	</dependencyManagement>
@@ -83,6 +78,21 @@
 			<groupId>javax.enterprise</groupId>
 			<artifactId>cdi-api</artifactId>
 			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
 		</dependency>
 
 		<!-- Import the Common Annotations API (JSR-250), we use provided scope 
