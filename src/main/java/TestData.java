@@ -1,45 +1,76 @@
 import java.util.ArrayList;
 import java.util.List;
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public class TestData {
-	
+
 	public static TestData data = new TestData();
-	
-	public List<Ticket> ticketList;
-	public List<Showing> showingList;
-	public List<Film> filmList;
-	public List<Actor> actorList;
-	public List<Users> userList;
-	
+
+	private List<Ticket> ticketList;
+	private List<Showing> showingList;
+	private List<Film> filmList;
+	private List<Actor> actorList;
+	private List<Users> userList;
+
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	public TestData() { // made default so can be accessed by TestDataTest
-		 ticketList = new ArrayList<Ticket>();
-		
-			ticketList.add(); //add TICKET depending on constructor
-		
+
+	private TestData() { 
+		ticketList = new ArrayList<Ticket>();
+
 		showingList = new ArrayList<Showing>();
-		
-			showingList.add(); //add SHOWING depending on constructor
 
 		filmList = new ArrayList<Film>();
-		
-			filmList.add(); //add FILM depending on constructor
-		
+
 		actorList = new ArrayList<Actor>();
-		
-			actorList.add(); //add ACTOR depending on constructor
-		
+
 		userList = new ArrayList<Users>();
-		
-			userList.add(); //add USER depending on constructor
-		
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	Ticket t1 = new Ticket("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
+
+	Showing s1 = new Showing("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
+
+	Film f1 = new Film("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
+
+	Actor a1 = new Actor("CONSTRUCTOR STUFF WITHOUT DATA TYPES");}
+
+	Users u1 = new User("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	ticketList.addTicket(t1);
+	showingList.addShowing(s1);
+	filmList.addFilm(f1);
+	actorList.addActor(a1);
+	userList.addUser(u1);
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public void addTicket(Ticket t) {
+		ticketList.add(t);
+	}
+	
+	public void addShowing(Showing s) {
+		showingList.add(s);
+	}
+
+	public void addFilm(Film f) {
+		filmList.add(f);
+	}
+
+	public void addActor(Actor a) {
+		actorList.add(a);
+	}
+
+	public void addUser(User u) {
+		userList.add(u);
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public List<Ticket> getTicketList() {
 		return ticketList;
 	}
@@ -83,7 +114,5 @@ public class TestData {
 	public static TestDate getData() {
 		return data;
 	}
-	
-	
 
 }
