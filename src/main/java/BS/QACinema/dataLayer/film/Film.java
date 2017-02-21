@@ -1,27 +1,49 @@
 package com.QAC.BlueTeam;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+@Entity
+@Table(name = "films")
 public class Film {
 
 	@NotNull
+	@Id
+	@Column(name = "FilmID", nullable = false, unique = true)
+	private int filmId;
+	
+	@NotNull
+	@Column(name = "Title", length = 255, nullable = false)
 	private String title;
+	
 	@NotNull
+	@Column(name = "Length", nullable = false)
 	private int lengthMins;
+	
 	@NotNull
-	private String descirption;
+	@Column(name = "Description",  nullable = false)
+	private String description;
+	
 	@NotNull
+	@Column(name = "Release_Date",  nullable = false)
 	private String date;
+	
 	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "ClassificationID", nullable = false)
 	private String classification;
 
-	public Film(String title, int lengthMins, String descirption, String date, String classification) {
+	public Film(String title, int lengthMins, String description, String date) {
 		super();
 		this.title = title;
 		this.lengthMins = lengthMins;
-		this.descirption = descirption;
+		this.description = description;
 		this.date = date;
-		this.classification = classification;
 	}
 
 	public String getTitle() {
@@ -41,11 +63,11 @@ public class Film {
 	}
 
 	public String getDescirption() {
-		return descirption;
+		return description;
 	}
 
 	public void setDescirption(String descirption) {
-		this.descirption = descirption;
+		this.description = descirption;
 	}
 
 	public String getDate() {
@@ -55,13 +77,9 @@ public class Film {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
-	public String getClassification() {
+	
+	public String getClassification(){
 		return classification;
-	}
-
-	public void setClassification(String classification) {
-		this.classification = classification;
 	}
 
 }

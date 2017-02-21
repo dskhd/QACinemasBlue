@@ -1,10 +1,16 @@
 package com.QAC.BlueTeam;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+@Entity
+@Table(name = "roles")
 public class Role {
 
 	@NotNull
+	@Column(name = "role", length = 225, nullable = false)
 	private String role;
 
 	public Role(String role) {
