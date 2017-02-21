@@ -1,9 +1,14 @@
 package BS.QACinema.dataLayer.users;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotNull;
 
 
@@ -32,6 +37,14 @@ public class User {
 	@Column(name = "mailing_list")
 	@NotNull
 	private boolean mailingList;
+	
+	@ManyToMany
+	@JoinTable(
+	      name="user_has_addresses",
+	      joinColumns = @JoinColumn(name="users_email", referencedColumnName="ID"),
+	      inverseJoinColumns = @JoinColumn(name="address_addressId", referencedColumnName="ID"))
+	  private List<Address> projects;
+	
 	
 	
 	public User(){
