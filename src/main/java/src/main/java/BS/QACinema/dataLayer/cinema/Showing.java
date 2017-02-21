@@ -3,6 +3,10 @@ package src.main.java.BS.QACinema.dataLayer.cinema;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/*
+ * Created by James Lamkin
+ */
+
 @Entity
 @Table(name="Showing")
 public class Showing{
