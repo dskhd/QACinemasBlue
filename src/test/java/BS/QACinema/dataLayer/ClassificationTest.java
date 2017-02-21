@@ -1,11 +1,11 @@
-package test.java.BS.QACinema.dataLayer;
+package BS.QACinema.dataLayer;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import main.java.BS.QACinema.dataLayer.film.Classification;
+import BS.QACinema.dataLayer.film.Classification;
 
 
 public class ClassificationTest {
