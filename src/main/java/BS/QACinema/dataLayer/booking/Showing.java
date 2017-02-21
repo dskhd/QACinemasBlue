@@ -1,7 +1,12 @@
 package BS.QACinema.dataLayer.booking;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import BS.QACinema.dataLayer.BooksSeats.Screen;
+import BS.QACinema.dataLayer.film.Film;
 
 /*
  * Created by James Lamkin
@@ -19,12 +24,12 @@ public class Showing{
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "Film_FilmID", nullable=false, unique=true)
-	private int filmID;
+	private List<Film> filmID;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "screen_ScreenID", nullable=false)
-	private int screen_ScreenID;
+	private List<Screen> screen_ScreenID;
 	
 	@NotNull
 	@Column(name="Time")
@@ -43,7 +48,7 @@ public class Showing{
 	public Showing() { }
 	
 	//Overloading
-	public Showing(int showingID, int filmID, int screenID, String dateTime,  String experience, String accessability){
+	public Showing(int showingID, List<Film> filmID, List<Screen> screenID, String dateTime,  String experience, String accessability){
 		this.showingID = showingID;
 		this.filmID = filmID;
 		this.screen_ScreenID = screenID;
@@ -60,11 +65,11 @@ public class Showing{
 		this.showingID = showingID;
 	}
 	
-	public int getFilm() {
+	public List<Film> getFilm() {
 		return filmID;
 	}
 
-	public void setFilm(int film) {
+	public void setFilm(List<Film> film) {
 		this.filmID = film;
 	}
 
@@ -76,11 +81,11 @@ public class Showing{
 		this.dateTime = dateTime;
 	}
 
-	public int getScreen() {
+	public List<Screen> getScreen() {
 		return screen_ScreenID;
 	}
 
-	public void setScreen(int screen) {
+	public void setScreen(List<Screen> screen) {
 		screen_ScreenID = screen;
 	}
 
