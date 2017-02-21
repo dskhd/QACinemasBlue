@@ -10,37 +10,32 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "payments")
-public class Payments {
+public class Payment {
 
-	@NotNull
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "paymentsid", nullable = false)
 	private int paymentsid;
 
-	@NotNull
-	@Column(name = "method")
+	
+	@Column(name = "method", nullable = true)
 	private String method;
 
-	@NotNull
-	@Column(name = "ispaid")
-	private boolean isPaid;
-
-	@NotNull
-	@Column(name = "cardnumber")
+	
+	@Column(name = "cardnumber", nullable = true)
 	private String cardnumber;
 
-	@NotNull
-	@Column(name = "email_address")
+	
+	@Column(name = "email_address", nullable = true)
 	private String email_address;
 
-	public Payments() {}
+	public Payment() {}
 
-	public Payments(int paymentsid, String method, boolean isPaid, String cardnumber, String email_address) {
+	public Payment(int paymentsid, String method, boolean isPaid, String cardnumber, String email_address) {
 		super();
 		this.paymentsid = paymentsid;
 		this.method = method;
-		this.isPaid = isPaid;
 		this.cardnumber = cardnumber;
 		this.email_address = email_address;
 	}
@@ -59,14 +54,6 @@ public class Payments {
 
 	public void setMethod(String method) {
 		this.method = method;
-	}
-
-	public boolean isPaid() {
-		return isPaid;
-	}
-
-	public void setPaid(boolean isPaid) {
-		this.isPaid = isPaid;
 	}
 
 	public String getCardnumber() {
