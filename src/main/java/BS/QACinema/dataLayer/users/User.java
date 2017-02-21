@@ -1,7 +1,38 @@
-package dataLayer;
+package BS.QACinema.dataLayer.users;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+
+
+@Table(name = "users")
+@Entity
 public class User {
 
+	@Id
+	private String email;
+	@Column(name = "password")
+	@NotNull
+	private String password;
+	@Column(name = "account")
+	@NotNull
+	private String accountType;
+	@Column(name = "firstname")
+	@NotNull
+	private String firstName;
+	@Column(name = "lastname")
+	@NotNull
+	private String lastName;
+	@Column(name = "telephone")
+	@NotNull
+	private String telephone;
+	@Column(name = "mailing_list")
+	@NotNull
+	private boolean mailingList;
+	
 	
 	public User(){
 		super();
@@ -20,13 +51,6 @@ public class User {
 	}
 	
 	
-	private String email;
-	private String password;
-	private String accountType;
-	private String firstName;
-	private String lastName;
-	private String telephone;
-	private boolean mailingList;
 	
 	
 	public String getEmail() {
