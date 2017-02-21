@@ -35,7 +35,7 @@ public class TestData {
 
 	Film f1 = new Film("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
 
-	Actor a1 = new Actor("CONSTRUCTOR STUFF WITHOUT DATA TYPES");}
+	Actor a1 = new Actor("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
 
 	Users u1 = new User("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
 	
