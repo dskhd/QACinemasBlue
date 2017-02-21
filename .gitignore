@@ -1,4 +1,10 @@
 /target/
-/.gitignore
-/.project
-/.classpath
+.gitignore
+.project
+.classpath
+pom.xml
+/bin/
+.settings
+/project
+.git
+
