@@ -1,4 +1,4 @@
-package dataLayer;
+package main.java.BS.QACinema.dataLayer.booking;
 
 public class Booking {
 

@@ -1,8 +1,1 @@
 /target/
-
-.project
-.git
-.settings
-/bin/
-pom.xml
-.classpath
