@@ -16,6 +16,8 @@ public class Actor {
 	@Column(name = "LastName", length = 225, nullable = true)
 	private String lastName;
 
+	public Actor(){}
+	
 	public Actor(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;

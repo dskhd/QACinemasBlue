@@ -37,6 +37,8 @@ public class Film {
 	@Column(name = "Classification", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Classification classification;
+	
+	public Film(){}
 
 	public Film(String title, int lengthMins, String description, int date) {
 		super();
@@ -87,3 +89,11 @@ public class Film {
 	}
 
 }
+
+
+//@NotNull
+//@Column(name = "Classification", nullable = false)
+//@Enumerated(EnumType.STRING)
+//private enum classification{
+//	Classi1, Classi2, Classi3, Classi4, Classi5
+//}
