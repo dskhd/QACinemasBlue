@@ -1,13 +1,37 @@
 package BS.QACinema.dataLayer.booking.tickets;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name="ticket_types")
 public class TicketType{
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="typeID")
+	private String typeID;
+	
+	@NotNull
+	@Column(name="type")
 	private String type;
+	
+	@NotNull
+	@Column(name="price")
+	@Size(min = 0, max=100)
 	private float price;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="availableTo")
 	private CustomerType availableTo;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="availableDays")
 	private DaysOfWeek availableDays;
 	
+	@Enumerated(EnumType.STRING)
+	@Column(name="availableTimes")
 	private TimesOfDay availableTimes;
 	
 	

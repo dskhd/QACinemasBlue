@@ -2,17 +2,18 @@ package BS.QACinema.dataLayer.booking.tickets;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import BS.QACinema.dataLayer.BooksSeats.Seat;
+import BS.QACinema.dataLayer.booking.Showing;
+
 
 /**
  * 
@@ -52,6 +53,11 @@ public class Ticket {
 
 		this.ticketType = ticketType.getType();
 		this.price = ticketType.getPrice();
+	}
+	
+	public Ticket(String ticketID, TicketType ticketType, Seat seat, Showing showing) {
+		this.ticketID = ticketID;
+		this.ticketType = ticketType.getType();
 		this.seat = seat;
 		this.showing = showing;
 	}
@@ -68,7 +74,7 @@ public class Ticket {
 		return showing;
 	}
 
-	public TicketType getTicketType() {
+	public String getTicketType() {
 		return ticketType;
 	}
 	
