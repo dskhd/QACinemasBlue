@@ -1,12 +1,13 @@
 package BS.QACinema.dataLayer.booking;
-<<<<<<< HEAD
-=======
+
 
 import javax.validation.constraints.NotNull;
->>>>>>> e6dbf9aff0dc37e93ee2f1df944ab080a00b7dcb
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,6 +22,7 @@ public class Booking {
 	
 	@NotNull
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable = false, unique = true)
 	private int bookingid;
 	
@@ -33,7 +35,7 @@ public class Booking {
 	private String users_email;
 	
 	@NotNull
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "payments_idpayments", nullable = false)
 	private int paymentsid;
 		
