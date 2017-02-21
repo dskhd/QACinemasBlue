@@ -1,0 +1,5 @@
+projectKey=QACinemasBlue-Martyn
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/QACinemasBlue-Martyn
+ceTaskId=AVphLtWFyZcljaEXleVm
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVphLtWFyZcljaEXleVm
