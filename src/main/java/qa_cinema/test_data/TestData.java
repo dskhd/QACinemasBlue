@@ -22,6 +22,7 @@ import qa_cinema.data.cinema.Seat;
 import qa_cinema.data.cinema.Showing;
 import qa_cinema.data.film.Actor;
 import qa_cinema.data.film.Film;
+import qa_cinema.data.users.Address;
 import qa_cinema.data.users.User;
 
 @Default
@@ -41,6 +42,7 @@ public class TestData {
 	private Map<Integer,Payment> paymentMap;
 	private Map<Integer,Seat> seatMap;
 	private Map<Integer,Screen> screenMap;
+	private Map<Integer,Address> addressMap;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@PostConstruct
@@ -52,22 +54,22 @@ public class TestData {
 		userMap = new HashMap<>();
 		bookingMap = new HashMap<>();
 		ticketTypeMap = new HashMap<>();
-		userMap = new HashMap<>();
 		paymentMap = new HashMap<>();
 		seatMap = new HashMap<>();
 		screenMap = new HashMap<>();
+		addressMap = new HashMap<>();
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
 	public Payment payment = new Payment(1, "Credit Card", true, "12345678910", "johndoe@gmail.com");
 	public Seat seat = new Seat("A1","Fluffy");
-	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
+	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", 2014);
 	public Screen screen = new Screen(1,100,"2D");
-	public Showing showing = new Showing(1, film, screen, "22/02/2017",  "2D", "Audio Described");
+	public Showing showing = new Showing(1, film, screen, "22022017160000", "2D", "Audio Described");
 	public Ticket ticket = new Ticket("1", ticketType, seat, showing);
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
-	public Booking booking = new Booking(1,"12.00",user,payment,ticket);
+	public Booking booking = new Booking(1,"12:00",user,payment);
 										
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
@@ -78,53 +80,53 @@ public class TestData {
 	 * 
 	 */
 	
-	public void addTicket(Ticket ticket) { // using for map rather than list
+	public void addTicket(Ticket ticket) { 
 		ticket.setID(""+ticket.hashCode());
 		this.ticketMap.put(ticket.hashCode(),ticket);
 	}
 	
 	public void addUser(User user) { 
-		user.setID(""+user.hashCode());
+		user.set(""+user.hashCode());
 		this.userMap.put(user.hashCode(),user);
 	}
 	
-	public void addTickets(Booking booking) { // using for map rather than list
-		booking.setID(""+booking.hashCode());
+	public void addTickets(Booking booking) { 
+		booking.setBookingid(""+booking.hashCode());
 		this.bookingMap.put(booking.hashCode(),booking);
 	}
 	
-	public void addTicketType(TicketType ticketType) { // using for map rather than list
-		ticketType.setID(""+ticketType.hashCode());
+	public void addTicketType(TicketType ticketType) { 
+		ticketType.setType(""+ticketType.hashCode());
 		this.ticketTypeMap.put(ticketType.hashCode(),ticketType);
 	}
 	
-	public void addPayment(Payment payment) { // using for map rather than list
-		payment.setID(""+payment.hashCode());
+	public void addPayment(Payment payment) { 
+		payment.setPaymentsid(""+payment.hashCode());
 		this.paymentMap.put(payment.hashCode(),payment);
 	}
 	
-	public void addSeat(Seat seat) { // using for map rather than list
-		seat.setID(""+seat.hashCode());
+	public void addSeat(Seat seat) {
+		seat.set(""+seat.hashCode());
 		this.seatMap.put(seat.hashCode(),seat);
 	}
 	
-	public void addScreen(Screen screen) { // using for map rather than list
-		screen.setID(""+screen.hashCode());
+	public void addScreen(Screen screen) { 
+		screen.setScreenID(""+screen.hashCode());
 		this.screenMap.put(screen.hashCode(),screen);
 	}
 
-	public void addShowing(Showing showing) { // using for map rather than list
-		showing.setID(""+showing.hashCode());
+	public void addShowing(Showing showing) { 
+		showing.setShowingID(""+showing.hashCode());
 		this.showingMap.put(showing.hashCode(),showing);
 	}
 	
-	public void addFilm(Film film) { // using for map rather than list
-		film.setID(""+film.hashCode());
+	public void addFilm(Film film) { 
+		film.set(""+film.hashCode());
 		this.filmMap.put(film.hashCode(),film);
 	}
 	
-	public void addActor(Actor actor) { // using for map rather than list
-		actor.setID(""+actor.hashCode());
+	public void addActor(Actor actor) { 
+		actor.set(""+actor.hashCode());
 		this.actorMap.put(actor.hashCode(),actor);
 	}
 	
@@ -290,54 +292,5 @@ public class TestData {
 		this.booking = booking;
 	}
 
-
-	
-	
-	
-	/*
-	 * old list adds
-	public void addTicket(Ticket ticket) {
-		ticketList.add(ticket);
-	}
-	
-	public void addUser(User user) {
-		userList.add(user);
-	}
-	
-	public void addBooking(Booking booking) {
-		bookingList.add(booking);
-	}
-	
-	public void addTicketType(TicketType ticketType) {
-		ticketTypeList.add(ticketType);
-	}
-	
-	public void addPayment(Payment payment) {
-		paymentList.add(payment);
-	}
-	
-	public void addSeat(Seat seat) {
-		seatList.add(seat);
-	}
-	
-	public void addScreen(Screen screen) {
-		screenList.add(screen);
-	}
-	
-	public void addShowing(Showing showing) {
-		showingList.add(showing);
-	}
-
-	public void addFilm(Film film) {
-		filmList.add(film);
-	}
-
-	public void addActor(Actor actor) {
-		actorList.add(actor);
-	}
-	*/
-	
-
-	
 
 }
