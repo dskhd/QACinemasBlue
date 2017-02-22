@@ -21,33 +21,33 @@ public class TestDataTest {
 
 	@Test
 	public void testAddToTicketList() {
-		newData.ticketList.add(); // add to ticketList by inputting constructor relevant info
-		assertEquals(1,newData.getTicketList().length());
+		newData.getTicketList().add(t1); // add to ticketList by inputting constructor relevant info
+		assertEquals(1,newData.getTicketList().size());
 	}
 	
 	@Test
 	public void testAddToShowingList() {
-		newData.showingList.add();
-		assertEquals(1,newData.getShowingList().length());
+		newData.getShowingList().add(s1)
+		assertEquals(1,newData.getShowingList().size());
 	}
 	
 	@Test
 	public void testAddToFilmList() {
-		newData.filmList.add();
-		assertEquals(1,newData.getFilmList().length());
+		newData.getFilmList().add(f1)
+		assertEquals(1,newData.getFilmList().size());
 	}
 
 	
 	@Test
 	public void testAddToActorList() {
-		newData.actorList.add();
-		assertEquals(1,newData.getActorList().length());
+		newData.getActorList().add(a1);
+		assertEquals(1,newData.getActorList().size());
 	}
 
 	@Test
 	public void testAddToUserList() {
-		newData.userList.add();
-		assertEquals(1,newData.getUserList().length());
+		newData.getUserList().add(u1);
+		assertEquals(1,newData.getUserList().size());
 	}
 
 

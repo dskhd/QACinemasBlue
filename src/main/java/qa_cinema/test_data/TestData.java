@@ -3,13 +3,17 @@ package qa_cinema.test_data;
 import java.util.ArrayList;
 import java.util.List;
 
+import qa_cinema.data.booking.tickets.CustomerType;
+import qa_cinema.data.booking.tickets.DaysOfWeek;
 import qa_cinema.data.booking.tickets.Ticket;
+import qa_cinema.data.booking.tickets.TicketType;
+import qa_cinema.data.booking.tickets.TimesOfDay;
+import qa_cinema.data.cinema.Seat;
 import qa_cinema.data.cinema.Showing;
 import qa_cinema.data.film.Actor;
 import qa_cinema.data.film.Film;
 import qa_cinema.data.users.User;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public class TestData {
 
@@ -21,7 +25,6 @@ public class TestData {
 	private List<Actor> actorList;
 	private List<User> userList;
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	private TestData() { 
 		ticketList = new ArrayList<Ticket>();
@@ -35,27 +38,18 @@ public class TestData {
 		userList = new ArrayList<User>();
 	}
 
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public TicketType ticket = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
+	public Seat seat = new Seat("A1",1,"Fluffy");
 
-	Ticket t1 = new Ticket("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
+	public Showing s1 = new Showing(1, 1, 1, "22/02/2017",  "2D", "Audio Described");
+	public Ticket t1 = new Ticket("1", ticket, seat, s1);
+	public Film f1 = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", 2014);
+	public Actor a1 = new Actor("Tom", "Hanks");
 
-	Showing s1 = new Showing("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
+	// Users u1 = new User("CONSTRUCTOR STUFF WITHOUT DATA TYPES"); no user stuff in the user class
 
-	Film f1 = new Film("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
-
-	Actor a1 = new Actor("CONSTRUCTOR STUFF WITHOUT DATA TYPES");}
-
-	Users u1 = new User("CONSTRUCTOR STUFF WITHOUT DATA TYPES");
 	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	ticketList.addTicket(t1);
-	showingList.addShowing(s1);
-	filmList.addFilm(f1);
-	actorList.addActor(a1);
-	userList.addUser(u1);
-	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 	public void addTicket(Ticket t) {
 		ticketList.add(t);
@@ -76,9 +70,9 @@ public class TestData {
 	public void addUser(User u) {
 		userList.add(u);
 	}
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+	
+	
+	
 	public List<Ticket> getTicketList() {
 		return ticketList;
 	}

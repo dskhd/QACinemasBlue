@@ -27,17 +27,13 @@ public class Media {
 	@Column (nullable = false)
 	private MediaType mediaType;
 	
-	@NotNull
-	@Column (nullable = false)
-	private int filmID;
 	
 	
 	
-	public Media(String url, MediaType mediaType, int filmID) {
+	public Media(String url, MediaType mediaType) {
 		super();
 		this.url = url;
 		this.mediaType = mediaType;
-		this.filmID = filmID;
 	}
 	
 	public int getMediaID() {
@@ -55,13 +51,5 @@ public class Media {
 	public void setMediaType(MediaType mediaType) {
 		this.mediaType = mediaType;
 	}
-	public int getFilmID() {
-		return filmID;
-	}
-
-	
-	
-	
-	
 
 }
