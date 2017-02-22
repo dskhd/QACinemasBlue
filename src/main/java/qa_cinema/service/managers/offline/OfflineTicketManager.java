@@ -25,7 +25,7 @@ public class OfflineTicketManager implements TicketManager{
 
 	@Override
 	public Ticket persistTicket(Ticket ticket) {
-		int id = testData.getTicketList().size();
+		int id = testData.getTicketMap().size();
 		ticket.setID("" + id);
 		testData.addTicket(ticket);
 		return ticket;
@@ -33,7 +33,7 @@ public class OfflineTicketManager implements TicketManager{
 
 	@Override
 	public Ticket findTicketByID(String id) throws NoResultException{
-		for(Ticket ticket : testData.getTicketList()){
+		for(Ticket ticket : testData.getTicketMap().values()){
 			if(ticket.getTicketID().equals(id)){
 				return ticket;
 			}
@@ -46,7 +46,7 @@ public class OfflineTicketManager implements TicketManager{
 	public List<Ticket> getTicketsFromUser(User user) {
 		List<Ticket> tickets = new ArrayList<>();
 		
-		for(Booking booking : testData.getBookingList() ){
+		for(Booking booking : testData.getBookingMap().values() ){
 			if(booking.getUser() == user){
 				tickets.addAll(booking.getTickets());
 			}
