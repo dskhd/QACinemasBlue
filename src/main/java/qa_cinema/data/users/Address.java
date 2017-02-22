@@ -1,5 +1,7 @@
+/**
+ * Created by Mark Lester
+ */
 package qa_cinema.data.users;
-
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,27 +15,26 @@ public class Address {
 
 	@Id
 	private int addressID;
-	
+
 	@NotNull
 	@Column(name = "line1")
 	private String line1;
-	
+
 	@Column(name = "line2")
 	private String line2;
-	
+
 	@NotNull
 	@Column(name = "town")
 	private String town;
-	
+
 	@NotNull
 	@Column(name = "county")
 	private String county;
-	
+
 	@NotNull
 	@Column(name = "postcode")
-	private String postcode;	
-		
-	
+	private String postcode;
+
 	public Address() {
 		super();
 	}
@@ -48,62 +49,52 @@ public class Address {
 		this.postcode = postcode;
 	}
 
-	
-	
 	public int getAddressID() {
 		return addressID;
 	}
+
 	public void setAddressID(int addressID) {
 		this.addressID = addressID;
 	}
 
-	
-	
 	public String getLine1() {
 		return line1;
 	}
+
 	public void setLine1(String line1) {
 		this.line1 = line1;
 	}
 
-	
-	
 	public String getLine2() {
 		return line2;
 	}
+
 	public void setLine2(String line2) {
 		this.line2 = line2;
 	}
 
-	
-	
 	public String getTown() {
 		return town;
 	}
+
 	public void setTown(String town) {
 		this.town = town;
 	}
 
-	
-	
 	public String getCounty() {
 		return county;
 	}
+
 	public void setCounty(String county) {
 		this.county = county;
 	}
 
-	
-	
 	public String getPostcode() {
 		return postcode;
 	}
+
 	public void setPostcode(String postcode) {
 		this.postcode = postcode;
 	}
-	
-	
-	
-	
-	
+
 }

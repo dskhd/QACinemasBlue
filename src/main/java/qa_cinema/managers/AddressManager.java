@@ -1,3 +1,6 @@
+/**
+ * Created by Matt Gordon
+ */
 package qa_cinema.managers;
 
 import java.util.List;
@@ -14,7 +17,7 @@ public interface AddressManager {
 
 	public List<Address> getAddressList();
 
-	public void createAddress();
+	public void createAddress(Address address);
 
 	public void updateAddress(Address address);
 
