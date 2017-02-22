@@ -17,7 +17,6 @@ import qa_cinema.data.cinema.Showing;
 
 
 
-
 /**
  * @author AlexN
  */
@@ -50,18 +49,25 @@ public class Ticket {
 	@Column(name="price")
 	private float price;
 	
-
-	public Ticket(TicketType ticketType, Seat seat, Showing showing) {
-		this.ticketType = ticketType.getType();
-		this.price = ticketType.getPrice();
-	}
+	@NotNull
+	@JoinColumn(name="bookings_bookingid", nullable=false)
+	private Booking booking;
 	
+
 	public Ticket(String ticketID, TicketType ticketType, Seat seat, Showing showing) {
 		this.ticketID = ticketID;
 		this.ticketType = ticketType.getType();
 		this.seat = seat;
 		this.showing = showing;
 	}
+	
+	public Ticket() {
+	}
+
+	public void setID(String id){
+		this.ticketID = id;
+	}
+	
 
 	public String getTicketID() {
 		return ticketID;
