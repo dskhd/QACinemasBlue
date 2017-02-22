@@ -5,6 +5,8 @@
 package qa_cinema.data.cinema;
 
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 @Entity
@@ -21,6 +23,10 @@ public class Screen {
 	@Column (name = "ScreenType")
 	private String screenType;
 
+	
+	private List<Seat> Seat;
+	
+	
 	public Screen() {
 	}
 
