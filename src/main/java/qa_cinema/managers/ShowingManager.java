@@ -1,4 +1,4 @@
-package qa_cinema.manager;
+package qa_cinema.managers;
 
 import java.util.List;
 import qa_cinema.data.cinema.Showing;
