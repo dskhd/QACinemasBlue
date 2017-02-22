@@ -1,18 +1,33 @@
 package qa_cinema.data.users;
+/**
+ * Created by Mark Lester
+ */
+
 
 import java.util.List;
 
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 import qa_cinema.data.film.Film;
 
+import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
 public class UserRating {
 
-	private String userRating;
-	private String rating;
+	@Id
+	@Column(name = "user_ratingid")
+	private int ratingId;
+	
+	@NotNull
+	@Column(name = "rating")
+	private int rating;
+	
+	@NotNull
+	@Column(name = "comment")
 	private String comment;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
@@ -26,9 +41,8 @@ public class UserRating {
 	}
 	
 	
-	public UserRating(String userRating, String rating, String comment, User reviewer, List<Film> films) {
+	public UserRating(int rating, String comment, User reviewer, List<Film> films) {
 		super();
-		this.userRating = userRating;
 		this.rating = rating;
 		this.comment = comment;
 		this.reviewer = reviewer;
@@ -36,18 +50,13 @@ public class UserRating {
 	}
 
 
-	public String getUserRating() {
-		return userRating;
-	}
-	public void setUserRating(String userRating) {
-		this.userRating = userRating;
-	}
+	
 
 
-	public String getRating() {
+	public int getRating() {
 		return rating;
 	}
-	public void setRating(String rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 

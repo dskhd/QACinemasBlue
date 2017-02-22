@@ -4,10 +4,6 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
