@@ -12,4 +12,10 @@ public interface UserManager {
 	public String getTelephone();
 	
 	
+	public void updateLastName(String name);
+	public void updateMailingList(boolean onList);
+	public void updatePassword(String password);
+	public void updateTelephone(String number);
+	
+	
 }
