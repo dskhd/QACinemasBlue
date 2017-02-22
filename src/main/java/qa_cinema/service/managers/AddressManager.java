@@ -9,13 +9,19 @@ import qa_cinema.data.users.Address;
 
 public interface AddressManager {
 
-	public Address persistAdrress();
+	public Address persistAdrress(Address address);
 
-	public Address findById(String id);
+	public Address findAddressById(int id);
 
-	public List<Address> findByPostcode(String postcode);
+	public Address findByLine1(String line1);
 
-	public List<Address> getAddressList();
+	public Address findByLine2(String line2);
+
+	public Address findByTown(String town);
+
+	public Address findByCounty(String county);
+
+	public Address findByPostcode(String postcode);
 
 	public void createAddress(Address address);
 
