@@ -1,4 +1,4 @@
-package qa_cinema.managers;
+package qa_cinema.service.managers;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
