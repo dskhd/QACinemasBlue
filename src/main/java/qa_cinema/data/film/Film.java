@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
 
@@ -44,8 +44,8 @@ public class Film {
 	@Enumerated(EnumType.STRING)
 	private Classification classification;
 	
-	@OneToMany(mappedBy = "film")
-	private List<UserRating> ratings;
+//	@OneToMany(mappedBy = "film")
+//	private List<UserRating> ratings;
 
 	@ManyToMany
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
@@ -108,9 +108,3 @@ public class Film {
 
 }
 
-// @NotNull
-// @Column(name = "Classification", nullable = false)
-// @Enumerated(EnumType.STRING)
-// private enum classification{
-// Classi1, Classi2, Classi3, Classi4, Classi5
-// }
