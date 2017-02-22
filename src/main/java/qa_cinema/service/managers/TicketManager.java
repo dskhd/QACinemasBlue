@@ -1,4 +1,4 @@
-package qa_cinema.managers;
+package qa_cinema.service.managers;
 
 import qa_cinema.data.booking.tickets.Ticket;
 
