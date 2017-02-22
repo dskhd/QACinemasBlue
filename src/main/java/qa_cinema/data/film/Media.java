@@ -21,7 +21,7 @@ public class Media {
 	@Column (nullable = false)
 	private String url;
 	
-	public enum MediaType{IMAGE,VIDEO,SOUNDCLIP};
+	public enum MediaType{IMAGE,VIDEO,SOUNDCLIP,POSTER};
 	
 	@NotNull
 	@Column (nullable = false)
