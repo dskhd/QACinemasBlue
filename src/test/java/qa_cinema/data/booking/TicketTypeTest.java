@@ -1,14 +1,14 @@
-package qa_cinema.data.booking;
+package qacinema.data.booking;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import qa_cinema.data.booking.tickets.CustomerType;
-import qa_cinema.data.booking.tickets.DaysOfWeek;
-import qa_cinema.data.booking.tickets.TicketType;
-import qa_cinema.data.booking.tickets.TimesOfDay;
+import qacinema.data.booking.tickets.CustomerType;
+import qacinema.data.booking.tickets.DaysOfWeek;
+import qacinema.data.booking.tickets.TicketType;
+import qacinema.data.booking.tickets.TimesOfDay;
 
 
 

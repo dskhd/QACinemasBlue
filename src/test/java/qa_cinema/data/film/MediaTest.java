@@ -1,11 +1,11 @@
-package qa_cinema.data.film;
+package qacinema.data.film;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import qa_cinema.data.film.Media.MediaType;
+import qacinema.data.film.Media.MediaType;
 
 
 

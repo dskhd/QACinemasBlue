@@ -1,7 +1,7 @@
 /**
  * Created by Mark Lester
  */
-package qa_cinema.data.user;
+package qacinema.data.user;
 
 import static org.junit.Assert.*;
 
@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import qa_cinema.data.users.User;
+import qacinema.data.users.User;
 
 
 public class UserTest {
