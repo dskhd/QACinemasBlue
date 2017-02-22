@@ -1,4 +1,4 @@
-package qa_cinema.data.cinema;
+package qacinema.data.cinema;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
