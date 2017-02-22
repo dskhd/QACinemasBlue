@@ -15,7 +15,7 @@ public class MediaTest {
 
 	@Before
 	public void setUp() throws Exception {
-		med = new Media("http://ourwebsite.com/mediafolder/img001.png", MediaType.IMAGE, 3);
+		med = new Media("http://ourwebsite.com/mediafolder/img001.png", MediaType.IMAGE);
 	}
 
 	@Test
@@ -38,10 +38,6 @@ public class MediaTest {
 		assertEquals(0,i);
 	}
 	
-	@Test
-	public void testGetFilmID() {
-		assertEquals(3,med.getFilmID());
-	}
 	
 	@Test
 	public void testSetUrl() {
