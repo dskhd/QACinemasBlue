@@ -10,7 +10,6 @@ public interface ShowingManager {
 	public List<Showing> findByHour(String hour);
 	public List<Showing> findByDay(String date);
 	public List<Showing> findByFilm(Film film);
-	public List<Showing> findByfilm(String film);
 	public List<Showing> byExperience(String experience);
 	public List<Showing> byAccessabillity(String accessability);
 	

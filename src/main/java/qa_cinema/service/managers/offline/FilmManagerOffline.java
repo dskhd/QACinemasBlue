@@ -19,18 +19,18 @@ public class FilmManagerOffline implements FilmManager {
 	@Override
 	public Film persistFilm(Film film) {
 		testData.addFilm(film);
-		return testData.getFilmList().get(film.hashCode());
+		return testData.getFilmMap().get(film.hashCode());
 	}
 
 	@Override
 	public Film findById(int filmId) {
-		return testData.getFilmList().get(filmId);
+		return testData.getFilmMap().get(filmId);
 	}
 
 	@Override
 	public List<Film> findByTitle(String title) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmList())
+		for(Film film : testData.getFilmMap().values())
 			if(film.getTitle().contains(title))
 				results.add(film);
 		return results;
@@ -39,7 +39,7 @@ public class FilmManagerOffline implements FilmManager {
 	@Override
 	public List<Film> findByGenre(String genre) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmList())
+		for(Film film : testData.getFilmMap().values())
 			if(film.getGenres().contains(genre))
 				results.add(film);
 		return results;
@@ -48,7 +48,7 @@ public class FilmManagerOffline implements FilmManager {
 	@Override
 	public List<Film> findByActor(String actor) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmList())
+		for(Film film : testData.getFilmMap().values())
 			if(film.getActors().contains(actor))
 				results.add(film);
 		return results;
@@ -57,7 +57,7 @@ public class FilmManagerOffline implements FilmManager {
 	@Override
 	public List<Film> findByDate(String date) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmList())
+		for(Film film : testData.getFilmMap().values())
 			if(film.getDate().contains(date))
 				results.add(film);
 		return results;
@@ -65,7 +65,7 @@ public class FilmManagerOffline implements FilmManager {
 
 	@Override
 	public List<Film> findAll() {
-		return new ArrayList<>(testData.getFilmList());
+		return new ArrayList<>(testData.getFilmMap().values());
 	}
 	
 }

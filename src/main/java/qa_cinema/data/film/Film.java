@@ -23,7 +23,7 @@ public class Film {
 	@NotNull
 	@Id
 	@Column(name = "FilmID", nullable = false, unique = true)
-	private int filmId;
+	private String filmId;
 
 	@NotNull
 	@Column(name = "Title", length = 255, nullable = false)
@@ -53,9 +53,8 @@ public class Film {
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
 	private List<Genre> genres;
 	
-	@ManyToMany
-	@JoinTable(name = "film_has_actor_roles", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "file_roles_FilmRolesID"))
-	private List<Actor> actors;
+	//TODO Need to check with James, this is a one to Many relationship.
+	private List<Role> roles;
 
 	public Film() {
 	}
@@ -112,9 +111,10 @@ public class Film {
 		return genres;
 	}
 
-	public List<Actor> getActors() {
-		return actors;
+	public List<Role> getRoles() {
+		return roles;
 	}
+	
 	
 	
 
