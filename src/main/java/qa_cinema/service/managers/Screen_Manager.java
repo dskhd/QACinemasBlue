@@ -11,6 +11,7 @@ import qa_cinema.data.film.Film;
 
 
 public interface Screen_Manager {
+	
 	public List<Screen> FindScreenByFilm(Film film);
 	public List<Screen> FindScreenByFilm(String film);
 	public List<Screen> FindScreenByShowing(Showing showing);
