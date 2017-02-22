@@ -8,6 +8,9 @@ import javax.validation.constraints.Past;
 import qa_cinema.data.booking.tickets.Ticket;
 import qa_cinema.data.users.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +41,7 @@ public class Booking {
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "users_email", nullable = false)
-	private User users_email;
+	private User user;
 	
 	@NotNull
 	@ManyToOne
@@ -48,17 +51,16 @@ public class Booking {
 	@NotNull
 	@OneToMany
 	@JoinColumn(name = "TicketID", nullable = false)
-	private Ticket ticket;
+	private List<Ticket> tickets = new ArrayList<>();
 		
 	public Booking () {}
-	public Booking(int bookingid, String time_booked, User users_email, Payment paymentsid, Ticket ticket) {
+	public Booking(int bookingid, String time_booked, User user, Payment paymentsid) {
 		super();
 		this.bookingid = bookingid;
 		this.time_booked = time_booked;
-		this.users_email = users_email;
+		this.user = user;
 		this.paymentsid = paymentsid;
-		this.ticket = ticket;
-	}
+		}
 	public int getBookingid() {
 		return bookingid;
 	}
@@ -71,11 +73,11 @@ public class Booking {
 	public void setTime_booked(String time_booked) {
 		this.time_booked = time_booked;
 	}
-	public User getUsers_email() {
-		return users_email;
+	public User getUser() {
+		return user;
 	}
-	public void setUsers_email(User users_email) {
-		this.users_email = users_email;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public Payment getPaymentsid() {
 		return paymentsid;
@@ -83,14 +85,16 @@ public class Booking {
 	public void setPaymentsid(Payment paymentsid) {
 		this.paymentsid = paymentsid;
 	}
-	public Ticket getTicket() {
-		return ticket;
+	public List<Ticket> getTickets() {
+		return tickets;
 	}
-	public void setTicket(Ticket ticket) {
-		this.ticket = ticket;
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}
 	
-	
+	public void addTicket(Ticket ticket){
+		tickets.add(ticket);	
+	}
 	
 	
 	
