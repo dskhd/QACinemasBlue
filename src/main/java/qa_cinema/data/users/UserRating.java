@@ -34,6 +34,9 @@ public class UserRating {
 	@JoinColumn(name="user_email")	
 	private User reviewer;
 	
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="filmId")	
 	private List<Film> films;
 	
 	public UserRating() {
@@ -51,6 +54,14 @@ public class UserRating {
 
 
 	
+
+
+	public int getRatingId() {
+		return ratingId;
+	}
+	public void setRatingId(int ratingId) {
+		this.ratingId = ratingId;
+	}
 
 
 	public int getRating() {
