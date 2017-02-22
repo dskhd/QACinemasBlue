@@ -75,9 +75,9 @@ public class OfflineMediaManager implements MediaManager {
 	@Override
 	public Media findFilmPosterByName(String name) {
 		Media poster;
-		List<Media> medList = test.getMediaByFilmName(name));
+		List<Media> medList = test.getMediaByFilmName(name);
 		for (Media m : medList){
-			if (m. == MediaType.POSTER){
+			if (m.getMediaType() == MediaType.POSTER){
 				poster = m;
 			}
 		}
