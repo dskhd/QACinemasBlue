@@ -7,4 +7,4 @@ pom.xml
 .settings
 /project
 .git
-
+sonar*
