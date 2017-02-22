@@ -10,8 +10,6 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import qa_cinema.data.booking.Booking;
 import qa_cinema.data.cinema.Seat;
 import qa_cinema.data.cinema.Showing;
 
@@ -51,11 +49,6 @@ public class Ticket {
 	private float price;
 	
 
-	public Ticket(TicketType ticketType, Seat seat, Showing showing) {
-		this.ticketType = ticketType.getType();
-		this.price = ticketType.getPrice();
-	}
-	
 	public Ticket(String ticketID, TicketType ticketType, Seat seat, Showing showing) {
 		this.ticketID = ticketID;
 		this.ticketType = ticketType.getType();
