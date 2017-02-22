@@ -11,19 +11,24 @@ import javax.inject.Inject;
 import qa_cinema.data.cinema.Showing;
 import qa_cinema.data.film.Film;
 import qa_cinema.service.managers.ShowingManager;
+import qa_cinema.logger.*;
 
-@Stateless
+/*
+ * Created by James Lamkin
+ */
+
+@Stateless 
 public class OfflineShowingManager implements ShowingManager {
 	@Inject
 	TestData testdata;
-
+	
 	@Override
 	public List<Showing> allShowings() {
 		List<Showing> showings = testdata.getShowingList();
 		return showings;
 	}
 
-	@Override
+	@Override @Loggable
 	public List<Showing> findByHour(String hour) {
 
 		hour = hour.substring(0, 7);
@@ -37,7 +42,7 @@ public class OfflineShowingManager implements ShowingManager {
 		return byHour;
 	}
 
-	@Override
+	@Override @Loggable
 	public List<Showing> findByDay(String date) {
 
 		date = date.substring(0, 6);
