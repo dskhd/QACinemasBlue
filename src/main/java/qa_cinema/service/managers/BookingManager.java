@@ -1,5 +1,5 @@
 /*Author: Alex Dawkes*/
-package qa_cinema.managers;
+package qa_cinema.service.managers;
 
 import java.util.List;
 
