@@ -19,9 +19,7 @@ import qa_cinema.data.cinema.Showing;
 
 
 /**
- * 
  * @author AlexN
- *
  */
 @Entity
 @Table(name = "tickets")
@@ -52,10 +50,8 @@ public class Ticket {
 	@Column(name="price")
 	private float price;
 	
-	private Booking booking;
 
-	public Ticket(Booking booking, TicketType ticketType, Seat seat, Showing showing) {
-		this.booking = booking;
+	public Ticket(TicketType ticketType, Seat seat, Showing showing) {
 		this.ticketType = ticketType.getType();
 		this.price = ticketType.getPrice();
 	}
@@ -85,10 +81,6 @@ public class Ticket {
 	
 	public float getPrice(){
 		return price;
-	}
-
-	public Booking getBooking() {
-		return booking;
 	}
 	
 }
