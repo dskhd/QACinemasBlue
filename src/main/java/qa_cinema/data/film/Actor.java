@@ -1,7 +1,12 @@
 package qa_cinema.data.film;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -15,6 +20,11 @@ public class Actor {
 	
 	@Column(name = "LastName", length = 225, nullable = true)
 	private String lastName;
+	
+	//file_roles_FilmRolesID should be ActorID (generically, filmRoles referring to Directors, producers, Actors etc).
+	@ManyToMany
+	@JoinTable(name = "film_has_actor_roles", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "roles_role"))
+	private List<Role> roles;
 
 	public Actor(){}
 	
