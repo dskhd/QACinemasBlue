@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 
 import qa_cinema.annotations.Loggable;
 import qa_cinema.data.booking.Booking;
@@ -31,14 +32,14 @@ public class OfflineTicketManager implements TicketManager{
 	}
 
 	@Override
-	public Ticket findTicketByID(String id) {
+	public Ticket findTicketByID(String id) throws NoResultException{
 		for(Ticket ticket : testData.getTicketList()){
 			if(ticket.getTicketID().equals(id)){
 				return ticket;
 			}
 		}
 		
-		return new Ticket();
+		throw new NoResultException("No Matching Id");
 	}
 
 	@Override
@@ -47,7 +48,7 @@ public class OfflineTicketManager implements TicketManager{
 		
 		for(Booking booking : testData.getBookingList() ){
 			if(booking.getUser() == user){
-				tickets.add(booking.getTickets())
+				tickets.addAll(booking.getTickets());
 			}
 		}
 		return tickets;
@@ -55,12 +56,14 @@ public class OfflineTicketManager implements TicketManager{
 
 	@Override
 	public List<Ticket> getTicketsFromFilm(User user, Film film) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Ticket> tickets = getTicketsFromUser(user);
+		for(Ticket ticket : tickets){
+			if(ticket.getShowing().getFilm() != film){
+				tickets.remove(ticket);
+			}
+		}
+		
+		return tickets;
 	}
 	
-	
-	
-	
-
 }
