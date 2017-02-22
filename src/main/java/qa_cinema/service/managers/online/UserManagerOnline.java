@@ -4,17 +4,23 @@
 package qa_cinema.service.managers.online;
 
 
-import javax.inject.Inject;
+
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import qa_cinema.data.users.User;
 import qa_cinema.service.managers.UserManager;
 
+
+@Stateless
 public class UserManagerOnline implements UserManager{
 	
 	
-	@Inject
+	@PersistenceContext
     protected EntityManager em;
+	
+	
 	private User user;
 	
 	
@@ -26,11 +32,9 @@ public class UserManagerOnline implements UserManager{
 	@Override
 	public void setUser(User user) {
 		this.user = user;
-		
 	}
 	
 	
-
 	@Override
 	public String getId(){
 		return user.getEmail();
