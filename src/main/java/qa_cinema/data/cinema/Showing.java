@@ -1,7 +1,12 @@
 package qa_cinema.data.cinema;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import qa_cinema.data.cinema.Screen;
+import qa_cinema.data.film.Film;;
 
 /*
  * Created by James Lamkin
@@ -13,18 +18,19 @@ public class Showing{
 	
 	@NotNull
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "showingID",  nullable = false, unique = true )
 	private int showingID;
 
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "Film_FilmID", nullable=false, unique=true)
-	private int filmID;
+	private Film filmID;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "screen_ScreenID", nullable=false)
-	private int screen_ScreenID;
+	private Screen screen_ScreenID;
 	
 	@NotNull
 	@Column(name="Time")
@@ -43,7 +49,7 @@ public class Showing{
 	public Showing() { }
 	
 	//Overloading
-	public Showing(int showingID, int filmID, int screenID, String dateTime,  String experience, String accessability){
+	public Showing(int showingID, Film filmID, Screen screenID, String dateTime,  String experience, String accessability){
 		this.showingID = showingID;
 		this.filmID = filmID;
 		this.screen_ScreenID = screenID;
@@ -60,11 +66,11 @@ public class Showing{
 		this.showingID = showingID;
 	}
 	
-	public int getFilm() {
+	public Film getFilm() {
 		return filmID;
 	}
 
-	public void setFilm(int film) {
+	public void setFilm(Film film) {
 		this.filmID = film;
 	}
 
@@ -76,11 +82,11 @@ public class Showing{
 		this.dateTime = dateTime;
 	}
 
-	public int getScreen() {
+	public Screen getScreen() {
 		return screen_ScreenID;
 	}
 
-	public void setScreen(int screen) {
+	public void setScreen(Screen screen) {
 		screen_ScreenID = screen;
 	}
 
