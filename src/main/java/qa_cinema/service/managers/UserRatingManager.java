@@ -1,3 +1,6 @@
+/**
+ * Created by Mark Lester
+ */
 package qa_cinema.service.managers;
 
 import java.util.List;

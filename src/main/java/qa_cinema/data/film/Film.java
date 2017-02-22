@@ -10,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-//import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+import qa_cinema.data.users.UserRating;
+
 @Entity
-@Table(name = "films")
+@Table(name = "film")
 public class Film {
 
 	@NotNull
@@ -37,15 +39,15 @@ public class Film {
 
 	@NotNull
 	@Column(name = "Release_Date", nullable = false)
-	private int date;
+	private String date;
 
 	@NotNull
 	@Column(name = "Classification", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Classification classification;
 	
-//	@OneToMany(mappedBy = "film")
-//	private List<UserRating> ratings;
+	@OneToMany(mappedBy = "film")
+	private List<UserRating> ratings;
 
 	@ManyToMany
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
@@ -58,7 +60,7 @@ public class Film {
 	public Film() {
 	}
 
-	public Film(String title, int lengthMins, String description, int date) {
+	public Film(String title, int lengthMins, String description, String date) {
 		super();
 		this.title = title;
 		this.lengthMins = lengthMins;
@@ -90,11 +92,11 @@ public class Film {
 		this.description = descirption;
 	}
 
-	public int getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -105,6 +107,16 @@ public class Film {
 	public void setClassification(Classification classi) {
 		this.classification = classi;
 	}
+	
+	public List<Genre> getGenres() {
+		return genres;
+	}
+
+	public List<Actor> getActors() {
+		return actors;
+	}
+	
+	
 
 }
 

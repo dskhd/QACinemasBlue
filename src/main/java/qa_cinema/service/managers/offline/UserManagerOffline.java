@@ -1,8 +1,18 @@
+/**
+ * Created by Mark Lester
+ */
 package qa_cinema.service.managers.offline;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
+
+import qa_cinema.annotations.Loggable;
 import qa_cinema.data.users.User;
 import qa_cinema.service.managers.UserManager;
 
+
+
+@Stateless @Loggable @Default
 public class UserManagerOffline implements UserManager{
 
 	
@@ -23,7 +33,6 @@ public class UserManagerOffline implements UserManager{
 	@Override
 	public void setUser(User user) {
 		this.user = user;
-		
 	}
 	
 	

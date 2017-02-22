@@ -1,7 +1,8 @@
-package qa_cinema.data.users;
 /**
  * Created by Mark Lester
  */
+package qa_cinema.data.users;
+
 
 
 

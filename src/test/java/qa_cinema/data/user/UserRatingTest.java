@@ -1,3 +1,6 @@
+/**
+ * Created by Mark Lester
+ */
 package qa_cinema.data.user;
 
 import static org.junit.Assert.*;
