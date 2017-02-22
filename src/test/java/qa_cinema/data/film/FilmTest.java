@@ -3,6 +3,8 @@ package qa_cinema.data.film;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ public class FilmTest {
 
 	@Before
 	public void setUp() {
-		film = new Film("TheTest", 120, "The film is about a test of films", 2009);
+		film = new Film("TheTest", 120, "The film is about a test of films", "2009");
 	}
 
 	@Test
@@ -60,15 +62,39 @@ public class FilmTest {
 	@Test
 	public void testGetDate() {
 
-		assertEquals(2009, film.getDate());
+		assertEquals("2009", film.getDate());
 	}
 
 	@Test
 	public void testSetDate() {
 
-		int newDate = 2010;
+		String newDate = "2010";
 		film.setDate(newDate);
-		assertEquals(2010, film.getDate());
+		assertEquals("2010", film.getDate());
 	}
+	
+	////////////////////////////////////////////////////////////////////////
+	
+//	@Test
+//	public Classification TestgetClassification() {
+//		return classification;
+//	}
+//
+//	@Test
+//	public void setClassification(Classification classi) {
+//		this.classification = classi;
+//	}
+//	
+//	@Test
+//	public List<Genre> getGenres() {
+//		return genres;
+//	}
+//
+//	@Test
+//	public List<Role> getRoles() {
+//		return roles;
+//	}
+	
+	/////////////////////////////////////////////////////////////////////////
 
 }
