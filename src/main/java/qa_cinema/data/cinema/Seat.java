@@ -48,4 +48,5 @@ public class Seat {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
 }
