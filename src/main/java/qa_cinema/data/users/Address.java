@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class Address {
 
 	@Id
-	private int addressID;
+	private String addressID;
 
 	@NotNull
 	@Column(name = "line1")
@@ -39,7 +39,7 @@ public class Address {
 		super();
 	}
 
-	public Address(int addressID, String line1, String line2, String town, String county, String postcode) {
+	public Address(String addressID, String line1, String line2, String town, String county, String postcode) {
 		super();
 		this.addressID = addressID;
 		this.line1 = line1;
@@ -49,11 +49,11 @@ public class Address {
 		this.postcode = postcode;
 	}
 
-	public int getAddressID() {
+	public String getAddressID() {
 		return addressID;
 	}
 
-	public void setAddressID(int addressID) {
+	public void setAddressID(String addressID) {
 		this.addressID = addressID;
 	}
 

@@ -20,13 +20,14 @@ public class AddressManagerOffline implements AddressManager {
 	@Override
 	public Address persistAdrress(Address address) {
 		int id = testData.getAddressList().size();
-		address.setAddressID(id);
+		address.setAddressID("" + id);
 		testData.addAddress(address);
 		return address;
 	}
 
 	@Override
-	public Address findAddressById(int id) {
+	public Address findAddressById(String id) {
+
 		for (Address address : testData.getAddressList()) {
 			if (address.getAddressID() == id) {
 				return address;
@@ -42,7 +43,7 @@ public class AddressManagerOffline implements AddressManager {
 				return address;
 			}
 		}
-		throw new NoResultException("No Matching Id");
+		throw new NoResultException("No Matching Line1");
 	}
 
 	@Override
@@ -52,7 +53,7 @@ public class AddressManagerOffline implements AddressManager {
 				return address;
 			}
 		}
-		throw new NoResultException("No Matching Id");
+		throw new NoResultException("No Matching Line2");
 	}
 
 	@Override
@@ -62,7 +63,7 @@ public class AddressManagerOffline implements AddressManager {
 				return address;
 			}
 		}
-		throw new NoResultException("No Matching Id");
+		throw new NoResultException("No Matching Town");
 	}
 
 	@Override
@@ -72,7 +73,7 @@ public class AddressManagerOffline implements AddressManager {
 				return address;
 			}
 		}
-		throw new NoResultException("No Matching Id");
+		throw new NoResultException("No Matching County");
 	}
 
 	@Override
@@ -82,7 +83,7 @@ public class AddressManagerOffline implements AddressManager {
 				return address;
 			}
 		}
-		throw new NoResultException("No Matching Id");
+		throw new NoResultException("No Matching Postcode");
 	}
 
 	@Override
