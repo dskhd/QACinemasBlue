@@ -16,8 +16,9 @@ public class Payment {
 	@NotNull
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	@Column(name = "paymentsid", nullable = false , unique=true,insertable=true)
-	private int paymentsid;
+	private String paymentsid;
 
 	
 	@Column(name = "method", nullable = true)
@@ -33,7 +34,7 @@ public class Payment {
 
 	public Payment() {}
 
-	public Payment(int paymentsid, String method, boolean isPaid, String cardnumber, String email_address) {
+	public Payment(String paymentsid, String method, boolean isPaid, String cardnumber, String email_address) {
 		super();
 		this.paymentsid = paymentsid;
 		this.method = method;
@@ -41,11 +42,11 @@ public class Payment {
 		this.email_address = email_address;
 	}
 
-	public int getPaymentsid() {
+	public String getPaymentsid() {
 		return paymentsid;
 	}
 
-	public void setPaymentsid(int paymentsid) {
+	public void setPaymentsid(String paymentsid) {
 		this.paymentsid = paymentsid;
 	}
 
