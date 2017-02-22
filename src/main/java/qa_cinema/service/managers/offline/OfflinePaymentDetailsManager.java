@@ -4,11 +4,14 @@
 
 package qa_cinema.service.managers.offline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import qa_cinema.data.booking.Booking;
 import qa_cinema.data.booking.Payment;
+import qa_cinema.data.booking.tickets.Ticket;
 import qa_cinema.data.users.User;
 import qa_cinema.service.managers.PaymentDetailsManager;
 import qa_cinema.test_data.TestData;
@@ -50,8 +53,13 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 
 	@Override
 	public List<Payment> findUsersPaymentDetails(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Payment> payment = new ArrayList<>();
+		for(Booking booking : testData.getBookingMap().values()) {
+			if(booking.getUser() == user) {
+				payment.add(booking.getPaymentsid());
+			}
+		}
+		return payment;
 	}
 
 	@Override
@@ -59,5 +67,5 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 }
