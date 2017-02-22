@@ -1,3 +1,6 @@
+/**
+ * Created by Mark Lester
+ */
 package qa_cinema.service.managers;
 
 import qa_cinema.data.users.User;
