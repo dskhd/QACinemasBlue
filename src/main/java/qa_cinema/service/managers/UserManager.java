@@ -1,8 +1,11 @@
 package qa_cinema.service.managers;
 
+import qa_cinema.data.users.User;
+
 public interface UserManager {
 
-	
+	public User getUser();
+	public void setUser(User user);
 	
 	public String getId();
 	public String getFirstname();
