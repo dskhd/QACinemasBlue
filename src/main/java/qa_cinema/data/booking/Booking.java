@@ -1,8 +1,12 @@
+/*Author: Alex Dawkes*/
 package qa_cinema.data.booking;
 
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
+import qa_cinema.data.booking.tickets.Ticket;
+import qa_cinema.data.users.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,25 +31,33 @@ public class Booking {
 	private int bookingid;
 	
 	@NotNull
+	@Past
+	@Column(name="time_booked")
 	private String time_booked;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "users_email", nullable = false)
-	private String users_email;
+	private User users_email;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "payments_idpayments", nullable = false)
-	private int paymentsid;
+	private Payment paymentsid;
+	
+	@NotNull
+	@OneToMany
+	@JoinColumn(name = "TicketID", nullable = false)
+	private Ticket ticket;
 		
 	public Booking () {}
-	public Booking(int bookingid, String time_booked, String users_email, int paymentsid) {
+	public Booking(int bookingid, String time_booked, User users_email, Payment paymentsid, Ticket ticket) {
 		super();
 		this.bookingid = bookingid;
 		this.time_booked = time_booked;
 		this.users_email = users_email;
 		this.paymentsid = paymentsid;
+		this.ticket = ticket;
 	}
 	public int getBookingid() {
 		return bookingid;
@@ -59,18 +71,27 @@ public class Booking {
 	public void setTime_booked(String time_booked) {
 		this.time_booked = time_booked;
 	}
-	public String getUsers_email() {
+	public User getUsers_email() {
 		return users_email;
 	}
-	public void setUsers_email(String users_email) {
+	public void setUsers_email(User users_email) {
 		this.users_email = users_email;
 	}
-	public int getPaymentsid() {
+	public Payment getPaymentsid() {
 		return paymentsid;
 	}
-	public void setPaymentsid(int paymentsid) {
+	public void setPaymentsid(Payment paymentsid) {
 		this.paymentsid = paymentsid;
 	}
+	public Ticket getTicket() {
+		return ticket;
+	}
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+	
+	
+	
 	
 	
 	
