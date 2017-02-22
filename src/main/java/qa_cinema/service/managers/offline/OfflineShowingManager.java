@@ -3,6 +3,7 @@ package qa_cinema.service.managers.offline;
 import qa_cinema.test_data.TestData;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -20,7 +21,9 @@ import qa_cinema.logger.*;
 @Stateless 
 public class OfflineShowingManager implements ShowingManager {
 	@Inject
-	TestData testdata;
+	TestData testdata; 
+	
+	Collection<Showing> showings = testdata.getShowingMap().values();
 	
 	@Override
 	public List<Showing> allShowings() {
@@ -32,7 +35,6 @@ public class OfflineShowingManager implements ShowingManager {
 	public List<Showing> findByHour(String hour) {
 
 		hour = hour.substring(0, 7);
-		List<Showing> showings = new ArrayList<>(testdata.getShowingMap().values());
 		List<Showing> byHour = new ArrayList<Showing>();
 		for (Showing show : showings) {
 			if (show.getDateTime().substring(0, 7) == hour) {
@@ -46,7 +48,6 @@ public class OfflineShowingManager implements ShowingManager {
 	public List<Showing> findByDay(String date) {
 
 		date = date.substring(0, 6);
-		List<Showing> showings = new ArrayList<>(testdata.getShowingMap().values());
 		List<Showing> byDate = new ArrayList<Showing>();
 		for (Showing show : showings) {
 			if (show.getDateTime().substring(0, 6) == date) {
@@ -59,7 +60,6 @@ public class OfflineShowingManager implements ShowingManager {
 	@Override
 	public List<Showing> findByFilm(Film film) {
 
-		List<Showing> showings = new ArrayList<>(testdata.getShowingMap().values());
 		List<Showing> filmShowings = new ArrayList<Showing>();
 		for (Showing show : showings) {
 			if (show.getFilm() == film) {
@@ -75,7 +75,6 @@ public class OfflineShowingManager implements ShowingManager {
 	public List<Showing> byExperience(String experience) {
 
 
-		List<Showing> showings = new ArrayList<>(testdata.getShowingMap().values());
 		List<Showing> byExperience = new ArrayList<Showing>();
 		for (Showing show : showings) {
 			if (show.getExperience() == experience) {
@@ -88,7 +87,6 @@ public class OfflineShowingManager implements ShowingManager {
 	@Override
 	public List<Showing> byAccessabillity(String accessability) {
 
-		List<Showing> showings = new ArrayList<>(testdata.getShowingMap().values());
 		List<Showing> byAccessability = new ArrayList<Showing>();
 	
 		for (Showing show : showings) {
