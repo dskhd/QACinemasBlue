@@ -4,7 +4,6 @@ package qa_cinema.data.users;
  */
 
 
-import java.util.List;
 
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
@@ -37,19 +36,19 @@ public class UserRating {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="filmId")	
-	private List<Film> films;
+	private Film film;
 	
 	public UserRating() {
 		super();
 	}
 	
 	
-	public UserRating(int rating, String comment, User reviewer, List<Film> films) {
+	public UserRating(int rating, String comment, User reviewer, Film film) {
 		super();
 		this.rating = rating;
 		this.comment = comment;
 		this.reviewer = reviewer;
-		this.films = films;
+		this.film = film;
 	}
 
 
@@ -88,11 +87,11 @@ public class UserRating {
 	}
 
 
-	public List<Film> getFilms() {
-		return films;
+	public Film getFilms() {
+		return film;
 	}
-	public void setFilms(List<Film> films) {
-		this.films = films;
+	public void setFilms(Film film) {
+		this.film = film;
 	}
 	
 	

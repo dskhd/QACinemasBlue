@@ -1,21 +1,32 @@
-package qa_cinema.service.managers;
-
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
+package qa_cinema.service.managers.offline;
 
 import qa_cinema.data.users.User;
+import qa_cinema.service.managers.UserManager;
 
-public class UserManagerImpli implements UserManager{
+public class UserManagerOffline implements UserManager{
+
 	
-	
-	@Inject
-    protected EntityManager em;
 	private User user;
 	
-	public UserManagerImpli(int id) {
+	public UserManagerOffline(User user) {
 		super();
-		user = em.find(User.class, id);
+		this.user = user;
 	}
+	
+	
+	
+	@Override
+	public User getUser() {
+		return user;
+	}
+
+	@Override
+	public void setUser(User user) {
+		this.user = user;
+		
+	}
+	
+	
 
 	@Override
 	public String getId(){
@@ -49,35 +60,24 @@ public class UserManagerImpli implements UserManager{
 
 	@Override
 	public void updateLastName(String name) {
-		// TODO Auto-generated method stub
-		
+		user.setLastName(name);	
 	}
-
+	
 	@Override
 	public void updateMailingList(boolean onList) {
-		// TODO Auto-generated method stub
-		
+		user.setMailingList(onList);		
 	}
 
 	@Override
 	public void updatePassword(String password) {
-		// TODO Auto-generated method stub
-		
+		user.setPassword(password);
 	}
 
 	@Override
 	public void updateTelephone(String number) {
-		// TODO Auto-generated method stub
+		user.setTelephone(number);
 		
 	}
 
-
 	
-
-
-	
-	
-	
-	
-
 }
