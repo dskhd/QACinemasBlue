@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -21,10 +22,11 @@ public class Actor {
 	@Column(name = "LastName", length = 225, nullable = true)
 	private String lastName;
 	
-	//file_roles_FilmRolesID should be ActorID (generically, filmRoles referring to Directors, producers, Actors etc).
-	@ManyToMany
-	@JoinTable(name = "film_has_actor_roles", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "roles_role"))
-	private List<Role> roles;
+	@NotNull
+	@ManyToOne
+	@Column(name = "actors_ActorsID", nullable = false)
+	private String actor;
+	
 
 	public Actor(){}
 	
