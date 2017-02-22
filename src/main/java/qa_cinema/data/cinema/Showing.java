@@ -20,7 +20,7 @@ public class Showing{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "showingID",  nullable = false, unique = true )
-	private int showingID;
+	private String showingID;
 
 	@NotNull
 	@ManyToOne
@@ -49,7 +49,7 @@ public class Showing{
 	public Showing() { }
 	
 	//Overloading
-	public Showing(int showingID, Film film, Screen screen, String dateTime,  String experience, String accessability){
+	public Showing(String showingID, Film film, Screen screen, String dateTime,  String experience, String accessability){
 		this.showingID = showingID;
 		this.film = film;
 		this.screen = screen;
@@ -58,11 +58,11 @@ public class Showing{
 		this.accessability = accessability;
 	}
 	
-	public int getShowingID() {
+	public String getShowingID() {
 		return showingID;
 	}
 
-	public void setShowingID(int showingID) {
+	public void setShowingID(String showingID) {
 		this.showingID = showingID;
 	}
 	
