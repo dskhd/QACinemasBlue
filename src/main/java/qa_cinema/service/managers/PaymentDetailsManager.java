@@ -1,21 +1,26 @@
+/**
+ *  Author: Adam
+ */
+
 package qa_cinema.service.managers;
 
+import java.util.List;
+
 import qa_cinema.data.booking.Payment;
+import qa_cinema.data.users.User;
 
 public interface PaymentDetailsManager {
-	
-	Payment persistPaymentDetails(Payment payDetails);
-	
-	Payment createPaymentDetails(Payment payDetails);
-	Payment createEmailAddress(Payment payDetails); // create email if checking out not as a member? - Inside brackets correct?
-	
-	Payment updatePaymentDetails(Payment payDetails); // update everything
-	Payment updatePaymentMethod(Payment payDetails);
-	Payment updateCardDetails(Payment payDetails); 
-	Payment updateEmailAddress(Payment payDetails); // Update email address associated with the payment - receipts to be emailed
-	
-	Payment deletePaymentDetails(Payment payDetails); 
-	Payment deleteCardDetails(Payment payDetials); 
-	
 
+	public Payment persistPaymentDetails(Payment payDetails);
+
+	public Payment updatePaymentDetails(Payment payDetails); 																
+	public Payment updatePaymentMethod(Payment payDetails);
+																
+	public Payment deletePaymentDetails(Payment payDetails);
+	public Payment deleteCardDetails(String cardNumber);
+	
+	public List<Payment> findUsersPaymentDetails(User user); // or (String name) ?
+	public List<Payment> findAllUserPayDetails(Payment payDetails);
+	
 }
+
