@@ -2,8 +2,10 @@ package qa_cinema.service.managers.online;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 
+import qa_cinema.annotations.Loggable;
 import qa_cinema.data.booking.tickets.Ticket;
 import qa_cinema.data.film.Film;
 import qa_cinema.data.users.User;
@@ -11,6 +13,8 @@ import qa_cinema.service.managers.TicketManager;
 
 
 @Alternative
+@Stateless
+@Loggable
 public class OnlineTicketManager implements TicketManager {
 
 	@Override
@@ -37,6 +41,4 @@ public class OnlineTicketManager implements TicketManager {
 		return null;
 	}
 	
-	
-
 }
