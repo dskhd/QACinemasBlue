@@ -60,4 +60,13 @@ public class Screen {
 	public void setScreenType(String screenType) {
 		this.screenType = screenType;
 	}
+
+	public List<Seat> getSeat() {
+		return Seat;
+	}
+
+	public void setSeat(List<Seat> seat) {
+		Seat = seat;
+	}
+	
 }
