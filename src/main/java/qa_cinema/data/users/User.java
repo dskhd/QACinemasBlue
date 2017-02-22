@@ -4,6 +4,7 @@
 
 package qa_cinema.data.users;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -53,7 +54,7 @@ public class User {
 	      name="user_has_addresses",
 	      joinColumns = @JoinColumn(name="users_email", referencedColumnName="ID"),
 	      inverseJoinColumns = @JoinColumn(name="address_addressId", referencedColumnName="ID"))
-	  private List<Address> addresses;
+	private List<Address> addresses;
 	
 	
 	
