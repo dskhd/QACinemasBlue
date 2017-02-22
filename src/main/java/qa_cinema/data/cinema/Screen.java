@@ -24,7 +24,7 @@ public class Screen {
 	private String screenType;
 
 	
-	private List<Seat> Seats;
+	private List<Seat> seats;
 	
 	
 	public Screen() {
@@ -62,7 +62,7 @@ public class Screen {
 	}
 
 	public List<Seat> getSeat() {
-		return Seats;
+		return seats;
 	}
 
 	
