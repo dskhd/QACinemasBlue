@@ -31,7 +31,7 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(nullable = false, unique = true)
-	private int bookingid;
+	private String bookingid;
 	
 	@NotNull
 	@Past
@@ -54,17 +54,17 @@ public class Booking {
 	private List<Ticket> tickets = new ArrayList<>();
 		
 	public Booking () {}
-	public Booking(int bookingid, String time_booked, User user, Payment paymentsid) {
+	public Booking(String bookingid, String time_booked, User user, Payment paymentsid) {
 		super();
 		this.bookingid = bookingid;
 		this.time_booked = time_booked;
 		this.user = user;
 		this.paymentsid = paymentsid;
 		}
-	public int getBookingid() {
+	public String getBookingid() {
 		return bookingid;
 	}
-	public void setBookingid(int bookingid) {
+	public void setBookingid(String bookingid) {
 		this.bookingid = bookingid;
 	}
 	public String getTime_booked() {
