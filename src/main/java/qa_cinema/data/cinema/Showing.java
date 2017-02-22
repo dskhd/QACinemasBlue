@@ -25,12 +25,12 @@ public class Showing{
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "Film_FilmID", nullable=false, unique=true)
-	private Film filmID;
+	private Film film;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "screen_ScreenID", nullable=false)
-	private Screen screen_ScreenID;
+	private Screen screen;
 	
 	@NotNull
 	@Column(name="Time")
@@ -49,10 +49,10 @@ public class Showing{
 	public Showing() { }
 	
 	//Overloading
-	public Showing(int showingID, Film filmID, Screen screenID, String dateTime,  String experience, String accessability){
+	public Showing(int showingID, Film film, Screen screen, String dateTime,  String experience, String accessability){
 		this.showingID = showingID;
-		this.filmID = filmID;
-		this.screen_ScreenID = screenID;
+		this.film = film;
+		this.screen = screen;
 		this.dateTime = dateTime;
 		this.experience = experience;
 		this.accessability = accessability;
@@ -67,11 +67,11 @@ public class Showing{
 	}
 	
 	public Film getFilm() {
-		return filmID;
+		return film;
 	}
 
 	public void setFilm(Film film) {
-		this.filmID = film;
+		this.film = film;
 	}
 
 	public String getDateTime() {
@@ -83,11 +83,11 @@ public class Showing{
 	}
 
 	public Screen getScreen() {
-		return screen_ScreenID;
+		return screen;
 	}
 
 	public void setScreen(Screen screen) {
-		screen_ScreenID = screen;
+		this.screen = screen;
 	}
 
 	public String getExperience() {
