@@ -1,9 +1,9 @@
+/*Author: Alex Dawkes*/
 package qa_cinema.data.booking;
 
 
 import javax.validation.constraints.NotNull;
-
-
+import javax.validation.constraints.Past;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +27,8 @@ public class Booking {
 	private int bookingid;
 	
 	@NotNull
+	@Past
+	@Column(name="time_booked")
 	private String time_booked;
 	
 	@NotNull
@@ -38,14 +40,20 @@ public class Booking {
 	@ManyToOne
 	@JoinColumn(name = "payments_idpayments", nullable = false)
 	private int paymentsid;
+	
+	@NotNull
+	@OneToMany
+	@JoinColumn(name = "TicketID", nullable = false)
+	private int TicketID;
 		
 	public Booking () {}
-	public Booking(int bookingid, String time_booked, String users_email, int paymentsid) {
+	public Booking(int bookingid, String time_booked, String users_email, int paymentsid, int ticketID) {
 		super();
 		this.bookingid = bookingid;
 		this.time_booked = time_booked;
 		this.users_email = users_email;
 		this.paymentsid = paymentsid;
+		TicketID = ticketID;
 	}
 	public int getBookingid() {
 		return bookingid;
@@ -71,6 +79,14 @@ public class Booking {
 	public void setPaymentsid(int paymentsid) {
 		this.paymentsid = paymentsid;
 	}
+	public int getTicketID() {
+		return TicketID;
+	}
+	public void setTicketID(int ticketID) {
+		TicketID = ticketID;
+	}
+	
+	
 	
 	
 	
