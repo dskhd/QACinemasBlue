@@ -14,6 +14,10 @@ import qa_cinema.data.film.Actor;
 import qa_cinema.data.film.Film;
 import qa_cinema.data.users.User;
 
+/*
+@Startup
+@Singleton
+*/
 
 public class TestData {
 
@@ -67,10 +71,11 @@ public class TestData {
 		actorList.add(a);
 	}
 
+	/*
 	public void addUser(User u) {
 		userList.add(u);
 	}
-	
+	*/
 	
 	
 	public List<Ticket> getTicketList() {
