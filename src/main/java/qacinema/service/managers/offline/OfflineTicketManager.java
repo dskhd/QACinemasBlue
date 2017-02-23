@@ -29,7 +29,7 @@ public class OfflineTicketManager implements TicketManager{
 		int id = testData.getTicketMap().size();
 		ticket.setID("" + id);
 		ticket.setSeat(seatManager.findFirstFreeSeat(ticket.getShowing()));
-		testData.addTicket(ticket);
+		//testData.addTicket(ticket);
 		return ticket;
 	}
 
