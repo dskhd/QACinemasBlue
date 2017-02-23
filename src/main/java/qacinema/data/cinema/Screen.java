@@ -4,37 +4,32 @@
 
 package qacinema.data.cinema;
 
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
 @Entity
 @Table(name = "screen")
 public class Screen {
 	@NotNull
 	@Id
-	@Column(name = "ScreenID" , nullable = false, unique = true)
+	@Column(name = "screenID", nullable = false, unique = true)
 	private String screenID;
 	@NotNull
-	@Column(name = "MaxRows")
+	@Column(name = "maxRows")
 	private char maxRows;
 	@NotNull
-	@Column(name = "MaxCols")
+	@Column(name = "maxCols")
 	private int maxCols;
 	@NotNull
-	@Column (name = "ScreenType")
+	@Column(name = "screenType")
 	private String screenType;
+	private Map<Seat, Boolean> seats = new HashMap<>();
 
-	
-	private List<Seat> seats = new ArrayList<>();
-	
-	
 	public Screen() {
-		
 	}
-
 
 	public Screen(String screenID, char maxRows, int maxCols, String screenType) {
 		super();
@@ -42,27 +37,20 @@ public class Screen {
 		this.maxRows = maxRows;
 		this.maxCols = maxCols;
 		this.screenType = screenType;
-		
 		createSeatsList();
 	}
-	
-	private void createSeatsList(){
-		for(char ch = 'a'; ch <= maxRows; ch++){
-			for(int i=1; i<=maxCols; i++){
-				Seat aSeat = new Seat("" + ch + i, "regular");
-				seats.add(aSeat);
+
+	private void createSeatsList() {
+		for (char ch = 'A'; ch <= maxRows; ch++) {
+			for (int i = 1; i <= maxCols; i++) {
+				Seat aSeat = new Seat("" + ch + i, "Regular");
+				seats.put(aSeat, false);
 			}
-		}	
+		}
 	}
 
 	public String getScreenID() {
 		return screenID;
-	}
-
-
-	public void setScreenID(String screenID) {
-
-		this.screenID = screenID;
 	}
 
 
@@ -71,18 +59,8 @@ public class Screen {
 	}
 
 
-	public void setMaxRows(char maxRows) {
-		this.maxRows = maxRows;
-	}
-
-
 	public int getMaxCols() {
 		return maxCols;
-	}
-
-
-	public void setMaxCols(int maxCols) {
-		this.maxCols = maxCols;
 	}
 
 
@@ -90,22 +68,9 @@ public class Screen {
 		return screenType;
 	}
 
-
-	public void setScreenType(String screenType) {
-		this.screenType = screenType;
-	}
-
-
-	public List<Seat> getSeats() {
-		return seats;
-	}
-
-
-	public void setSeats(List<Seat> seats) {
-		this.seats = seats;
-	}
-
 	
+	public Map<Seat, Boolean> getSeats() {
+		return new HashMap<Seat, Boolean>(seats);
+	}
 
-	
 }

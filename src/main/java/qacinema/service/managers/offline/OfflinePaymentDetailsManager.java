@@ -11,10 +11,9 @@ import javax.inject.Inject;
 
 import qacinema.data.booking.Booking;
 import qacinema.data.booking.Payment;
-import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.users.User;
 import qacinema.service.managers.PaymentDetailsManager;
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
 
 public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 
@@ -23,7 +22,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 	@Override
 	public Payment persistPaymentDetails(Payment payDetails) {
 		int id = testData.getPaymentMap().size();
-		payDetails.set
+		payDetails.setPaymentsid("" + id);
 		return payDetails;
 	}
 
