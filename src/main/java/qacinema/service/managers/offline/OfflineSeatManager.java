@@ -11,11 +11,11 @@ import javax.persistence.NoResultException;
 import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
-import qacinema.service.managers.Seat_Manager;
+import qacinema.service.managers.SeatManager;
 import qacinema.testdata.TestData;
 
 @Stateless
-public class OfflineSeatManager implements Seat_Manager {
+public class OfflineSeatManager implements SeatManager {
 	@Inject
 	TestData testData;
 
