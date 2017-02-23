@@ -50,6 +50,16 @@ public class Role {
 	public void setActor(Actor actor) {
 		this.actor = actor;
 	}
+
+	public Film getFilmId() {
+		return FilmId;
+	}
+
+	public void setFilmId(Film filmId) {
+		FilmId = filmId;
+	}
+	
+	
 	
 	
 
