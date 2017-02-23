@@ -15,7 +15,7 @@ public class Screen {
 	@NotNull
 	@Id
 	@Column(name = "ScreenID" , nullable = false, unique = true)
-	private int screenID;
+	private String screenID;
 	@NotNull
 	@Column(name = "MaxRows")
 	private char maxRows;
@@ -34,7 +34,8 @@ public class Screen {
 	}
 
 
-	public Screen(int screenID, char maxRows, int maxCols, String screenType, List<Seat> seats) {
+
+	public Screen(String screenID, char maxRows, int maxCols, String screenType) {
 		super();
 		this.screenID = screenID;
 		this.maxRows = maxRows;
@@ -43,13 +44,13 @@ public class Screen {
 		this.seats = seats;
 	}
 
-
-	public int getScreenID() {
+	public String getScreenID() {
 		return screenID;
 	}
 
 
-	public void setScreenID(int screenID) {
+	public void setScreenID(String screenID) {
+
 		this.screenID = screenID;
 	}
 
