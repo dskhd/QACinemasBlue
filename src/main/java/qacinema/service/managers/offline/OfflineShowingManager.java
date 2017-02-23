@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Film;
 import qacinema.service.managers.ShowingManager;
-import qacinema.logger.*;
 
 /*
  * Created by James Lamkin
@@ -31,7 +30,7 @@ public class OfflineShowingManager implements ShowingManager {
 		return showings;
 	}
 
-	@Override @Loggable
+	@Override
 	public List<Showing> findByHour(String hour) {
 
 		hour = hour.substring(0, 7);
@@ -44,7 +43,7 @@ public class OfflineShowingManager implements ShowingManager {
 		return byHour;
 	}
 
-	@Override @Loggable
+	@Override
 	public List<Showing> findByDay(String date) {
 
 		date = date.substring(0, 6);
