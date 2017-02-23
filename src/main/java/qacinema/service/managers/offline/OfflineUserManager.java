@@ -1,92 +1,94 @@
 /**
  * Created by Mark Lester
+ * Editor Matt Gordon
  */
 package qacinema.service.managers.offline;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.inject.Inject;
+import javax.persistence.NoResultException;
 
 import qacinema.annotations.Loggable;
 import qacinema.data.users.User;
 import qacinema.service.managers.UserManager;
+import qacinema.testdata.TestData;
 
+@Stateless
+@Loggable
+@Default
+public class OfflineUserManager implements UserManager {
 
+	@Inject
+	private TestData testData;
 
-@Stateless @Loggable @Default
-public class OfflineUserManager implements UserManager{
-
-	
-	private User user;
-	
-	public OfflineUserManager(User user) {
-		super();
-		this.user = user;
-	}
-	
-	
-	
 	@Override
-	public User getUser() {
-		return user;
+	public User persistUser(User user) {
+		return null;
 	}
 
 	@Override
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
-	
+	public User findByEmail(String email) throws NoResultException {
+		for (User user : testData.getUserMap().values()) {
+			if (user.getEmail().equals(email)) {
+				return user;
+			}
+		}
 
-	@Override
-	public String getId(){
-		return user.getEmail();
-	}
-	
-	@Override
-	public String getFirstname(){
-		return user.getFirstName();
-	}
-	
-	@Override
-	public String getLastName(){
-		return user.getLastName();
-	}
-	
-	@Override
-	public boolean getMailingList(){
-		return user.getMailingList();
-	}
-	
-	@Override
-	public String getPassword(){
-		return user.getPassword();
-	}
-	
-	@Override
-	public String getTelephone(){
-		return user.getTelephone();
+		throw new NoResultException("No Matching Email");
 	}
 
 	@Override
-	public void updateLastName(String name) {
-		user.setLastName(name);	
-	}
-	
-	@Override
-	public void updateMailingList(boolean onList) {
-		user.setMailingList(onList);		
+	public List<User> findByFirstName(String firstName) {
+		List<User> userList = new ArrayList<>();
+		for (User user : testData.getUserMap().values()) {
+			if (user.getFirstName().equals(firstName)) {
+				userList.add(user);
+				return userList;
+			}
+		}
+
+		throw new NoResultException("No Matching First Name");
 	}
 
 	@Override
-	public void updatePassword(String password) {
-		user.setPassword(password);
+	public List<User> findByLastName(String lastName) {
+		List<User> userList = new ArrayList<>();
+		for (User user : testData.getUserMap().values()) {
+			if (user.getLastName().equals(lastName)) {
+				userList.add(user);
+				return userList;
+			}
+		}
+
+		throw new NoResultException("No Matching Last Name");
 	}
 
 	@Override
-	public void updateTelephone(String number) {
-		user.setTelephone(number);
-		
+	public List<User> findAllUsers() {
+		List<User> userList = new ArrayList<>();
+		userList.addAll(testData.getUserMap().values());
+		if (!userList.isEmpty()) {
+			return userList;
+		}
+
+		throw new NoResultException("No Users found");
 	}
 
-	
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
