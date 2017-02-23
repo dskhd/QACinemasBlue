@@ -14,6 +14,7 @@ public class FilmTest {
 	Film film;
 	Genre genre;
 	List<Genre> gen;
+	Role rol;
 
 	@Before
 	public void setUp() {
@@ -86,13 +87,22 @@ public class FilmTest {
 		assertEquals("2010", film.getDate());
 	}
 	
-	//TODO need to get this to display String. Doesn't work
 	@Test
 	public void testGetGenres() {
 		film.setGenres(gen);
 		System.out.println(film.getGenres().get(0).toString());
-		assertEquals("Adventure" , film.getGenres().get(0).toString());
+		assertEquals("Adventure" , film.getGenres().get(0).getGenre());
 	}
+	
+	@Test
+	public void testSetGenres() {
+		film.setGenres(gen);
+		System.out.println(film.getGenres().get(0).toString());
+		assertEquals("Adventure" , film.getGenres().get(0).getGenre());
+	}
+	
+	
+	//TODO implement all the other List<object> tests akin to Genres (If necessary).
 	
 //	//TODO need to get this to display String.
 //	@Test
@@ -101,12 +111,5 @@ public class FilmTest {
 //		System.out.println(film.getGenres().get(1).toString());
 //		assertEquals("qacinema.data.film.Genre@6d5380c2", film.getGenres().get(1).toString());
 //	}
-	
-	
-	
-	
-	
-
-
 
 }

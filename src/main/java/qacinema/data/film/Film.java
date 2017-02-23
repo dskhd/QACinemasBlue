@@ -117,13 +117,13 @@ public class Film {
 	public void setClassification(Classification classi) {
 		this.classification = classi;
 	}
-	
-	public void setGenres(List<Genre> genres) {
-		this.genres = genres;
-	}
 
 	public List<Genre> getGenres() {
 		return genres;
+	}
+	
+	public void setGenres(List<Genre> genres) {
+		this.genres = genres;
 	}
 
 	public List<Role> getRoles() {
@@ -149,18 +149,6 @@ public class Film {
 	public void setRatings(List<UserRating> ratings) {
 		this.ratings = ratings;
 	}
-	
-	
-	
-	
-	
-
-	
-	
-
-	
-	
-	
 
 }
 
