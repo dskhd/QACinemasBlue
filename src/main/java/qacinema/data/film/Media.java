@@ -19,7 +19,6 @@ public class Media {
 	
 	
 	
-	private String filmId;
 	
 	@NotNull
 	@Column (nullable = false)

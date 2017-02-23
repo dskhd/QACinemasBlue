@@ -23,7 +23,7 @@ public class OfflineMediaManager implements MediaManager {
 	@Override
 	public List<Media> findAllMediaByFilm(Film film) {
 		Collection<Film> filmList = test.getFilmMap().values();
-		List<Media> mediaList;
+		List<Media> mediaList = new ArrayList<>();
 		for (Film eachFilm : filmList){
 			if (eachFilm == film){
 				mediaList = eachFilm.getMedia();
@@ -93,7 +93,7 @@ public class OfflineMediaManager implements MediaManager {
 
 	@Override
 	public Media findFilmPosterByName(String name) {
-		Film film;
+		Film film = null;
 		Collection<Film> filmList = test.getFilmMap().values();
 		for (Film eachFilm : filmList){
 			if (eachFilm.getTitle()==name){
