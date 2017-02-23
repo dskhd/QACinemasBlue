@@ -28,7 +28,7 @@ public class OfflineTicketManager implements TicketManager{
 		OfflineSeatManager seatManager = new OfflineSeatManager();
 		int id = testData.getTicketMap().size();
 		ticket.setID("" + id);
-		ticket.setSeat(seatManager.);
+		ticket.setSeat(seatManager.findFirstFreeSeat(ticket.getShowing()));
 		testData.addTicket(ticket);
 		return ticket;
 	}
