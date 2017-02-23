@@ -1,22 +1,16 @@
 
 package qacinema.service.managers.offline;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 
 import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
-import qacinema.data.film.Film;
 import qacinema.service.managers.Seat_Manager;
 import qacinema.testdata.TestData;
 
@@ -26,86 +20,31 @@ public class OfflineSeatManager implements Seat_Manager {
 	TestData testData;
 
 	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, Film film) {
-		String date = Utilities.getDate();
+	public Map<Seat, Boolean> fildAllSeats(Showing showing) {
+		Map<Seat, Boolean> seats = null;
+		seats = showing.getScreen().getSeats();
 		Map<Integer, Ticket> ticketList = testData.getTicketMap();
-		Map<Integer, Showing> showings = testData.getShowingMap();
-		Map<String, Integer> seats = null;
-		List<String> seatsNextToEachOther = new ArrayList<String>();
-		Showings.checkShowingsForFilmsMatchingToday(film, date, ticketList, showings, seats);
-		Seats.getEmptySeatsNextToeachOther(number_of_seats, seats, seatsNextToEachOther);
-		return seatsNextToEachOther;
-	}
-
-	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, String film) {
-		Map<Integer, Film> films = testData.getFilmMap();
-		Film filmToSearch = null;
-		filmToSearch = searchAllFilmsToMatchTitle(film, films, filmToSearch);
-		List<String> seatsNextToEachOther = findSeatsNextToEachOther(number_of_seats, filmToSearch);
-		return seatsNextToEachOther;
-	}
-
-	private Film searchAllFilmsToMatchTitle(String film, Map<Integer, Film> films, Film filmToSearch) {
-		for (Entry<Integer, Film> filmFromList : films.entrySet()) {
-			filmToSearch = checkIfFilmIsTitleString(film, (Film) filmFromList);
+		for (Ticket ticketInMap : ticketList.values()) {
+			if (ticketInMap.getShowing().equals(showing)) {
+				seats.put(ticketInMap.getSeat(), true);
+			}
 		}
-		return filmToSearch;
-	}
-
-	private Film checkIfFilmIsTitleString(String film, Film filmFromList) {
-		Film filmToSearch = null;
-		if (isFilmTitleSameAsString(film, filmFromList)) {
-			filmToSearch = filmFromList;
-		}
-		return filmToSearch;
-	}
-
-	private boolean isFilmTitleSameAsString(String film, Film filmFromList) {
-		return filmFromList.getTitle().contains(film);
-	}
-
-	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, Showing showing) {
-	
-		String date = showing.getDateTime();
-		Film film = showing.getFilm();
-		Map<Integer, Ticket> ticketList = testData.getTicketMap();
-		Map<String, Integer> seats = null;
-		List<String> seatsNextToEachOther = new ArrayList<String>();
-		Showings.checkShowingIsForTodayAndSelectedFilm(film, date, ticketList, seats, showing);
-		Seats.getEmptySeatsNextToeachOther(number_of_seats, seats, seatsNextToEachOther);
-		return seatsNextToEachOther;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, Film film) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, String film) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, Showing showing) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Map<String, Integer> fildAllSeats(Showing showing) {
-		Map<String, Integer> seats = null;
-		Seats.setEmptySeats(seats, showing);
 		return seats;
 	}
 
 	@Override
-	public Seat findFirstFreeSeat(Showing showing) {
-		Seat seat = new Seat(findSeatsNextToEachOther(1, showing).get(0).toString(), "");
-		return seat;
+	public Seat findFirstFreeSeat(Showing showing) throws NoResultException {
+		Map<Seat, Boolean> seats = fildAllSeats(showing);
+		for (Entry<Seat, Boolean> seatFromList : seats.entrySet()) {
+			if (seatFromList.getValue() == false) {
+				return seatFromList.getKey();
+			}
+		}
+		
+		throw new NoResultException("No Seats found.");
 	}
+
+	
+	
+	
 }

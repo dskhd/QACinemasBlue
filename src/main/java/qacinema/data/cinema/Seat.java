@@ -13,10 +13,8 @@ import javax.validation.constraints.NotNull;
 public class Seat {
 	@NotNull
 	@Id
-	@Column(name = "seat" , nullable = false, unique = true)
+	@Column(name = "seat", nullable = false, unique = true)
 	private String seat;
-
-
 	@NotNull
 	@Column(name = "type")
 	private String type;
@@ -24,10 +22,9 @@ public class Seat {
 	public Seat() {
 	}
 
-	public Seat(String seat,  String type) {
+	public Seat(String seat, String type) {
 		super();
 		this.seat = seat;
-		
 		this.type = type;
 	}
 
@@ -39,8 +36,6 @@ public class Seat {
 		this.seat = seat;
 	}
 
-
-
 	public String getType() {
 		return type;
 	}
@@ -48,5 +43,4 @@ public class Seat {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
 }
