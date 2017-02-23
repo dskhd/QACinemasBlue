@@ -14,6 +14,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import qacinema.data.booking.tickets.Ticket;
+import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Film;
 import qacinema.service.managers.Seat_Manager;
@@ -103,7 +104,8 @@ public class OfflineSeatManager implements Seat_Manager {
 	}
 
 	@Override
-	public List<String> findFirstFreeSeat(Showing showing) {
-		return findSeatsNextToEachOther(1, showing);
+	public Seat findFirstFreeSeat(Showing showing) {
+		Seat seat = new Seat(findSeatsNextToEachOther(1, showing).get(0).toString(), "");
+		return seat;
 	}
 }
