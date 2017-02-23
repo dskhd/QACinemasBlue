@@ -17,21 +17,26 @@ public class Media {
 	@Column(nullable = false, unique = true)
 	private int mediaID;
 	
+	
+	
+	
 	@NotNull
 	@Column (nullable = false)
 	private String url;
 	
-	public enum MediaType{IMAGE,VIDEO,SOUNDCLIP,POSTER};
+	
 	
 	@NotNull
 	@Column (nullable = false)
 	private MediaType mediaType;
 	
 	
-	
+	public Media(){
+		this.url = "N/a";
+		this.mediaType = MediaType.ERROR;
+	}
 	
 	public Media(String url, MediaType mediaType) {
-		super();
 		this.url = url;
 		this.mediaType = mediaType;
 	}
