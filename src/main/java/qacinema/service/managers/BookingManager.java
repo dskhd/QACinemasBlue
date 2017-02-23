@@ -11,10 +11,11 @@ public interface BookingManager {
 
 	public Booking persistBooking(Booking booking);
 	public Booking findByBookingId(String bookingid);
-	public List<Booking> findByEmail(User user);
+	public List<Booking> findByUser(User user);
 	public List<Ticket> findAllTickets(Booking booking);
 	public List<Booking> findByPaymentID(String paymentid);
 	public void updateBooking(Booking booking);
 	public void deleteBooking(Booking booking);
+	public void addTicketToBooking(String bookingid, Ticket ticketToAdd);
 		
 }
