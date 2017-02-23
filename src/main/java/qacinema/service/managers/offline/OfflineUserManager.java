@@ -13,12 +13,12 @@ import qacinema.service.managers.UserManager;
 
 
 @Stateless @Loggable @Default
-public class UserManagerOffline implements UserManager{
+public class OfflineUserManager implements UserManager{
 
 	
 	private User user;
 	
-	public UserManagerOffline(User user) {
+	public OfflineUserManager(User user) {
 		super();
 		this.user = user;
 	}
