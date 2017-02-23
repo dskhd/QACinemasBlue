@@ -53,6 +53,9 @@ public class Film {
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
 	private List<Genre> genres;
 	
+	@OneToMany
+	private List<Media> media;
+	
 	//TODO Need to check with James, this is a one to Many relationship.
 	private List<Role> roles;
 
@@ -114,6 +117,21 @@ public class Film {
 	public List<Role> getRoles() {
 		return roles;
 	}
+
+	public List<Media> getMedia() {
+		return media;
+	}
+
+	public void setMedia(List<Media> media) {
+		this.media = media;
+	}
+	
+	
+	
+
+	
+	
+
 	
 	
 	
