@@ -25,6 +25,10 @@ public class Actor {
 
 	public Actor(){}
 	
+	public Actor(String firstName){
+		this.firstName = firstName;
+	}
+	
 	public Actor(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
