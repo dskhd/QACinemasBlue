@@ -1,5 +1,6 @@
 package qacinema.data.film;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -47,23 +48,22 @@ public class Film {
 	private Classification classification;
 	
 	@OneToMany(mappedBy = "film")
-	private List<UserRating> ratings;
+	private List<UserRating> ratings = new ArrayList<>();
 
 	@ManyToMany
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
-	private List<Genre> genres;
+	private List<Genre> genres = new ArrayList<>();
 	
 	@OneToMany
-	private List<Media> media;
+	private List<Media> media = new ArrayList<>();
 	
 	//TODO Need to check with James, this is a one to Many relationship.
-	private List<Role> roles;
+	private List<Role> roles = new ArrayList<>();
 
 	public Film() {
 	}
 
 	public Film(String title, int lengthMins, String description, String date) {
-		super();
 		this.title = title;
 		this.lengthMins = lengthMins;
 		this.description = description;
@@ -148,6 +148,14 @@ public class Film {
 
 	public void setRatings(List<UserRating> ratings) {
 		this.ratings = ratings;
+	}
+	
+	public void addRating(UserRating rating){
+		this.ratings.add(rating);
+	}
+	
+	public void addMedia(Media media){
+		this.media.add(media);
 	}
 
 }
