@@ -22,27 +22,45 @@ import qacinema.service.managers.PaymentDetailsManager;
 public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 
 	@Inject PaymentDetailsManager pdm;
-	
+
 	@Override
-	public Payment persistPaymentDetails(Payment payDetails) {
+	public Payment persistPaymentDetails(Payment paymentDetails) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Payment updatePaymentDetails(Payment payDetails) {
+	public Payment findUserPaymentDetailsByID(User user, String paymentId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Payment updatePaymentMethod(Payment payDetails) {
+	public Payment findUserpaymentDetailsViaBooking(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Payment deletePaymentDetails(Payment payDetails) {
+	public List<Payment> findAllUserPaymentDetails(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Payment updatePaymentDetails(Payment paymentDetails) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Payment updatePaymentMethod(Payment paymentDetails) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Payment deletePaymentDetails(Payment paymentDetails) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -52,19 +70,5 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<Payment> findUsersPaymentDetails(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Payment> findAllUserPayDetails(Payment payDetails) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 
 }
