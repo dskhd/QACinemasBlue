@@ -15,7 +15,7 @@ public class Screen {
 	@NotNull
 	@Id
 	@Column(name = "ScreenID" , nullable = false, unique = true)
-	private int screenID;
+	private String screenID;
 	@NotNull
 	@Column(name = "Capacity")
 	private int capacity;
@@ -30,18 +30,18 @@ public class Screen {
 	public Screen() {
 	}
 
-	public Screen(int screenID, int capacity, String screenType) {
+	public Screen(String screenID, int capacity, String screenType) {
 		super();
 		this.screenID = screenID;
 		this.capacity = capacity;
 		this.screenType = screenType;
 	}
 
-	public int getScreenID() {
+	public String getScreenID() {
 		return screenID;
 	}
 
-	public void setScreenID(int screenID) {
+	public void setScreenID(String screenID) {
 		this.screenID = screenID;
 	}
 
