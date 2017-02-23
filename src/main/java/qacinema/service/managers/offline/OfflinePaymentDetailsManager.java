@@ -65,18 +65,13 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public List<Payment> findUsersPaymentDetails(User user) {
-		List<Payment> payment = new ArrayList<>();
-		for(Booking booking : testData.getBookingMap().values()) {
-			if(booking.getUser() == user) {
-				payment.add(booking.getPayment());
-			}
-		}
-		return payment;
+	public Payment deleteCardDetails(String cardNumber) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Payment deleteCardDetails(String cardNumber) {
+	public Payment deletePaymentDetails(Payment paymentDetails) {
 		// TODO Auto-generated method stub
 		return null;
 	}
