@@ -63,7 +63,7 @@ public class TestData {
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
-	public Payment payment = new Payment("1", "Credit Card", true, "12345678910", "johndoe@gmail.com");
+	public Payment payment = new Payment("1", "FartPal", "0101010101", "Ieatshite@shit.com");
 	public Seat seat = new Seat("A1","Fluffy");
 	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
 	public Screen screen = new Screen("1", 'n',30,"2D");
@@ -88,7 +88,8 @@ public class TestData {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
-		user.setAddressess((List<Address>) address); ////////// will be sorted out by MATT
+		user.setAddressList((List<Address>) address); ////////// will be sorted out by MATT
+
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
@@ -122,12 +123,12 @@ public class TestData {
 	}
 	
 	public void addSeat(Seat seat) {
-		seat.set(""+seat.hashCode()); ////////////////////////// no seat ID to set
+		seat.setSeatNum(""+seat.hashCode()); 
 		this.seatMap.put(seat.hashCode(),seat);
 	}
 	
 	public void addScreen(Screen screen) { 
-		screen.setScreenID(""+screen.hashCode());
+		screen.getScreenID(""+screen.hashCode());
 		this.screenMap.put(screen.hashCode(),screen);
 	}
 
@@ -137,12 +138,12 @@ public class TestData {
 	}
 	
 	public void addFilm(Film film) { 
-		film.set(""+film.hashCode()); ///////////// no film ID to set
+		film.setFilmId(""+film.hashCode()); 
 		this.filmMap.put(film.hashCode(),film);
 	}
 	
 	public void addActor(Actor actor) { 
-		actor.set(""+actor.hashCode()); ///////////////no actor ID to set
+		actor.setActorId(""+actor.hashCode());
 		this.actorMap.put(actor.hashCode(),actor);
 	}
 
