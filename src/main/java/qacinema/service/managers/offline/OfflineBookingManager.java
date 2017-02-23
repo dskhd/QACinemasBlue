@@ -18,7 +18,6 @@ import qacinema.data.users.User;
 import qacinema.service.managers.BookingManager;
 import qacinema.testdata.TestData;
 
-
 @Default
 @Stateless
 @Loggable
@@ -50,8 +49,8 @@ public class OfflineBookingManager implements BookingManager {
 	@Override
 	public List<Booking> findByUser(User user) {
 		List<Booking> userBookings = new ArrayList<>();
-		for (Booking booking : testData.getBookingMap().values()){
-			if(booking.getUser() == user){
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.getUser() == user) {
 				userBookings.add(booking);
 			}
 		}
@@ -61,8 +60,8 @@ public class OfflineBookingManager implements BookingManager {
 	@Override
 	public List<Ticket> findAllTickets(Booking booking) {
 		List<Ticket> bookedTickets = new ArrayList<>();
-		for(Booking mapBooking: testData.getBookingMap().values()){
-			if(mapBooking.equals(booking)){
+		for (Booking mapBooking : testData.getBookingMap().values()) {
+			if (mapBooking.equals(booking)) {
 				bookedTickets.addAll(booking.getTickets());
 			}
 		}
@@ -72,8 +71,8 @@ public class OfflineBookingManager implements BookingManager {
 	@Override
 	public List<Booking> findByPaymentID(String paymentid) {
 		List<Booking> payBookings = new ArrayList<>();
-		for(Booking booking : testData.getBookingMap().values()){
-			if(booking.getPaymentsid().equals(paymentid)){
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.getPayment().getPaymentsid().equals(paymentid)) {
 				payBookings.add(booking);
 			}
 		}
@@ -82,10 +81,11 @@ public class OfflineBookingManager implements BookingManager {
 
 	@Override
 	public void updateBooking(Booking bookingToUpdate) {
-		for (Booking booking : testData.getBookingMap().values()){
-			if(booking.equals(bookingToUpdate)){
-				//Enter code that updates it to whatever, probably need to overload this method
-				//so you can put in multiple things to update
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.equals(bookingToUpdate)) {
+				// Enter code that updates it to whatever, probably need to
+				// overload this method
+				// so you can put in multiple things to update
 			}
 		}
 
@@ -93,8 +93,8 @@ public class OfflineBookingManager implements BookingManager {
 
 	@Override
 	public void deleteBooking(Booking bookingToDelete) {
-		for (Booking booking : testData.getBookingMap().values() ){
-			if(booking.equals(bookingToDelete)){
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.equals(bookingToDelete)) {
 				testData.getBookingMap().remove(bookingToDelete.getBookingid());
 			}
 		}
@@ -103,9 +103,19 @@ public class OfflineBookingManager implements BookingManager {
 
 	@Override
 	public void addTicketToBooking(String bookingid, Ticket ticketToAdd) {
-		for (Booking booking : testData.getBookingMap().values()){
-			if(booking.getBookingid().equals(bookingid)){
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.getBookingid().equals(bookingid)) {
 				booking.addTicket(ticketToAdd);
+			}
+		}
+	}
+
+	@Override
+	public void removeTicketFromBooking(String bookingid, String ticketID) {
+		List<Ticket> bookedTickets = testData.getBookingMap().get(bookingid).getTickets();
+		for (Ticket ticket : bookedTickets) {
+			if (ticket.getTicketID().equals(ticketID)) {
+				bookedTickets.remove(ticketID);
 			}
 		}
 	}

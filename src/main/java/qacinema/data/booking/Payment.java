@@ -34,7 +34,7 @@ public class Payment {
 
 	public Payment() {}
 
-	public Payment(String paymentsid, String method, boolean isPaid, String cardnumber, String email_address) {
+	public Payment(String paymentsid, String method, String cardnumber, String email_address) {
 		super();
 		this.paymentsid = paymentsid;
 		this.method = method;
