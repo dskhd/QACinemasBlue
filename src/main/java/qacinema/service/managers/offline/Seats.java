@@ -13,15 +13,11 @@ public class Seats {
 		}
 	}
 
-	static void setSeatsForScreenCapacity(Map<String, Integer> seats, Showing showing) {
-		for (int x = 0; x < showing.getScreen().getCapacity(); x++) {
-			setEmptySeats(seats);
-		}
-	}
-
-	static  void setEmptySeats(Map<String, Integer> seats) {
-		for (char row = 'a'; row < 'z'; row++) {// for each row
-			for (int col = 0; col < 41; col++) {// for each seat on row
+	static  void setEmptySeats(Map<String, Integer> seats , Showing showing) {
+		int maxRows = showing.getScreen().getMaxRows();
+		int maxCols = showing.getScreen().getMaxCols();
+		for (char row = 'a'; row < maxRows; row++) {// for each row
+			for (int col = 0; col < maxCols; col++) {// for each seat on row
 				String seatname = "" + row + col;// seatname A1,A2...B5...Z41
 				seats.put(seatname, 0);
 			}
