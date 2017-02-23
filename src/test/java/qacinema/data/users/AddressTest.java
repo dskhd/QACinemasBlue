@@ -5,11 +5,7 @@ package qacinema.data.users;
 
 import static org.junit.Assert.*;
 
-
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import qacinema.data.users.Address;
@@ -21,7 +17,7 @@ public class AddressTest {
 
 	@Before
 	public void setUp() {
-		address.setAddressID(1);
+		address.setAddressID("1");
 		address.setCounty("county");
 		address.setLine1("line1");
 		address.setLine2("line2");
@@ -36,7 +32,7 @@ public class AddressTest {
 	
 	@Test
 	public void getAddressId() {
-		assertEquals(1,address.getAddressID());
+		assertEquals("1",address.getAddressID());
 	}
 	
 	@Test

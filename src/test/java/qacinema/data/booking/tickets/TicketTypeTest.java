@@ -1,4 +1,4 @@
-package qacinema.data.booking;
+package qacinema.data.booking.tickets;
 
 import static org.junit.Assert.*;
 
