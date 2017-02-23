@@ -36,10 +36,9 @@ public class OfflineBookingManager implements BookingManager {
 
 	@Override
 	public Booking findByBookingId(String bookingid) throws NoResultException {
-		Map<Integer, Booking> bookMap = testData.getBookingMap();
-		for (Entry<Integer, Booking> booking : bookMap.entrySet()) {
-			if (booking.getValue().getBookingid().equals(bookingid)) {
-				return booking.getValue();
+		for (Booking booking : testData.getBookingMap().values()) {
+			if (booking.getBookingid().equals(bookingid)) {
+				return booking;
 			}
 		}
 		throw new NoResultException("No matching BookingID found.");
