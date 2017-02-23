@@ -56,7 +56,7 @@ public class User {
 	      name="user_has_addresses",
 	      joinColumns = @JoinColumn(name="users_email", referencedColumnName="ID"),
 	      inverseJoinColumns = @JoinColumn(name="address_addressId", referencedColumnName="ID"))
-	private List<Address> addressess;
+	private List<Address> addresses;
 	
 	
 	
