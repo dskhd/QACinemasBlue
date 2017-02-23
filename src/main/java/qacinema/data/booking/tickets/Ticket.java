@@ -56,6 +56,8 @@ public class Ticket {
 		this.ticketID = ticketID;
 		this.ticketType = ticketType.getType();
 		this.showing = showing;
+		
+		this.price = ticketType.getPrice();
 	}
 	
 	public Ticket() {

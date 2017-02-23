@@ -27,6 +27,7 @@ public class Seat {
 		this.seatNum = seat;
 		this.type = type;
 	}
+	
 
 	public String getSeatNum() {
 		return seatNum;
