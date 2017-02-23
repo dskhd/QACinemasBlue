@@ -95,8 +95,9 @@ public class TestData {
 		this.ticketMap.put(ticket.hashCode(),ticket);
 	}
 	
-	public void addUser(User user) { 
+	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
 		user.set(""+user.hashCode());
+		user.setAddressess();
 		this.userMap.put(user.hashCode(),user);
 	}
 	
@@ -143,6 +144,8 @@ public class TestData {
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
+	
+	
 	public Map<Integer, Ticket> getTicketMap() {
 		return ticketMap;
 	}

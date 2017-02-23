@@ -4,7 +4,6 @@
 
 package qacinema.data.users;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -77,7 +76,14 @@ public class User {
 	}
 	
 	
-	
+	public List<Address> getAddressess() {
+		return addressess;
+	}
+
+	public void setAddressess(List<Address> addressess) {
+		this.addressess = addressess;
+	}
+
 	
 	public String getEmail() {
 		return email;
@@ -133,12 +139,6 @@ public class User {
 	public void setMailingList(boolean mailingList) {
 		this.mailingList = mailingList;
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }
