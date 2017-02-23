@@ -1,6 +1,5 @@
 package qacinema.data.film;
 
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -14,18 +13,23 @@ public class FilmTest {
 	Film film;
 	Genre genre;
 	List<Genre> gen;
-	Role rol;
+	Role role;
+	List<Role> rol;
 
 	@Before
 	public void setUp() {
 		film = new Film("Lord of the Rings", 180, "Three Hobbits go on a journey", "2004");
-		
+
 		int x = 0;
-		String[] genres = {"Adventure", "Action", "Fantasy"};
+		String[] genres = { "Adventure", "Action", "Fantasy" };
+		String[] roles = {"Gandalf", "Bilbo", "Gimli"};
 		gen = new ArrayList<Genre>();
-		while(x <3){
+		rol = new ArrayList<Role>();
+		while (x < 3) {
 			genre = new Genre(genres[x]);
 			gen.add(genre);
+			role = new Role(roles[x]);
+			rol.add(role);
 			x++;
 		}
 		
@@ -86,30 +90,29 @@ public class FilmTest {
 		film.setDate(newDate);
 		assertEquals("2010", film.getDate());
 	}
-	
+
 	@Test
 	public void testGetGenres() {
 		film.setGenres(gen);
-		System.out.println(film.getGenres().get(0).toString());
-		assertEquals("Adventure" , film.getGenres().get(0).getGenre());
+		assertEquals("Adventure", film.getGenres().get(0).getGenre());
 	}
-	
+
 	@Test
 	public void testSetGenres() {
 		film.setGenres(gen);
-		System.out.println(film.getGenres().get(0).toString());
-		assertEquals("Adventure" , film.getGenres().get(0).getGenre());
+		assertEquals("Adventure", film.getGenres().get(0).getGenre());
+	}
+
+	@Test
+	public void testGetRoles() {
+		film.setRoles(rol);
+		assertEquals("Gandalf", film.getRoles().get(0).getRole());
 	}
 	
-	
-	//TODO implement all the other List<object> tests akin to Genres (If necessary).
-	
-//	//TODO need to get this to display String.
-//	@Test
-//	public void testSetGenres() {
-//		film.setGenres(gen);
-//		System.out.println(film.getGenres().get(1).toString());
-//		assertEquals("qacinema.data.film.Genre@6d5380c2", film.getGenres().get(1).toString());
-//	}
+	@Test
+	public void testSetRoles() {
+		film.setRoles(rol);
+		assertEquals("Gandalf", film.getRoles().get(0).getRole());
+	}
 
 }
