@@ -15,10 +15,13 @@ public class Screen {
 	@NotNull
 	@Id
 	@Column(name = "ScreenID" , nullable = false, unique = true)
-	private int screenID;
+	private String screenID;
 	@NotNull
-	@Column(name = "Capacity")
-	private int capacity;
+	@Column(name = "MaxRows")
+	private char maxRows;
+	@NotNull
+	@Column(name = "MaxCols")
+	private int maxCols;
 	@NotNull
 	@Column (name = "ScreenType")
 	private String screenType;
@@ -30,40 +33,68 @@ public class Screen {
 	public Screen() {
 	}
 
-	public Screen(int screenID, int capacity, String screenType) {
+
+
+	public Screen(String screenID, char maxRows, int maxCols, String screenType) {
 		super();
 		this.screenID = screenID;
-		this.capacity = capacity;
+		this.maxRows = maxRows;
+		this.maxCols = maxCols;
 		this.screenType = screenType;
+		this.seats = seats;
 	}
 
-	public int getScreenID() {
+	public String getScreenID() {
 		return screenID;
 	}
 
-	public void setScreenID(int screenID) {
+
+	public void setScreenID(String screenID) {
+
 		this.screenID = screenID;
 	}
 
-	public int getCapacity() {
-		return capacity;
+
+	public int getMaxRows() {
+		return maxRows;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+
+	public void setMaxRows(char maxRows) {
+		this.maxRows = maxRows;
 	}
+
+
+	public int getMaxCols() {
+		return maxCols;
+	}
+
+
+	public void setMaxCols(int maxCols) {
+		this.maxCols = maxCols;
+	}
+
 
 	public String getScreenType() {
 		return screenType;
 	}
 
+
 	public void setScreenType(String screenType) {
 		this.screenType = screenType;
 	}
 
-	public List<Seat> getSeat() {
+
+	public List<Seat> getSeats() {
 		return seats;
 	}
+
+
+	public void setSeats(List<Seat> seats) {
+		this.seats = seats;
+	}
+
+	
 
 	
 }

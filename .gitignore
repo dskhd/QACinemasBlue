@@ -2,10 +2,10 @@
 .gitignore
 .project
 .classpath
-# pom.xml
 /bin/
 .settings
 /project
 .git
 sonar*
 .sonar
+pom.xml

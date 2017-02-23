@@ -4,7 +4,6 @@
 
 package qacinema.data.users;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -49,12 +48,14 @@ public class User {
 	
 	
 	
+	
+	
 	@ManyToMany
 	@JoinTable(
 	      name="user_has_addresses",
 	      joinColumns = @JoinColumn(name="users_email", referencedColumnName="ID"),
 	      inverseJoinColumns = @JoinColumn(name="address_addressId", referencedColumnName="ID"))
-	private List<Address> addresses;
+	private List<Address> addressess;
 	
 	
 	
@@ -75,7 +76,14 @@ public class User {
 	}
 	
 	
-	
+	public List<Address> getAddressess() {
+		return addressess;
+	}
+
+	public void setAddressess(List<Address> addressess) {
+		this.addressess = addressess;
+	}
+
 	
 	public String getEmail() {
 		return email;
@@ -131,12 +139,6 @@ public class User {
 	public void setMailingList(boolean mailingList) {
 		this.mailingList = mailingList;
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }

@@ -72,12 +72,13 @@ public class FilmTest {
 		assertEquals("2010", film.getDate());
 	}
 	
-	////////////////////////////////////////////////////////////////////////
 	
 //	@Test
 //	public Classification TestgetClassification() {
-//		return classification;
+//		
+//		return null;
 //	}
+//	
 //
 //	@Test
 //	public void setClassification(Classification classi) {
@@ -94,6 +95,5 @@ public class FilmTest {
 //		return roles;
 //	}
 	
-	/////////////////////////////////////////////////////////////////////////
 
 }
