@@ -1,11 +1,11 @@
-package qa_cinema.data;
+package qacinema.data;
 
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import qa_cinema.test_data.TestData;
+import qacinema.test_data.TestData;
 
 /**
  * 

@@ -3,13 +3,13 @@
 */
 
 
-package qa_cinema.data.booking;
+package qacinema.data.booking;
 
 import org.junit.Test;
 
 import junit.framework.*;
-import qa_cinema.data.cinema.Screen;
-import qa_cinema.data.cinema.Seat;
+import qacinema.data.cinema.Screen;
+import qacinema.data.cinema.Seat;
 
 
 public class TestSeatsAndScreens {
