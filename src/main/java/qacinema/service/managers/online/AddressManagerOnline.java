@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 
 import qacinema.annotations.Loggable;
 import qacinema.data.users.Address;
+import qacinema.data.users.User;
 import qacinema.service.managers.AddressManager;
 
 @Alternative
@@ -27,37 +28,37 @@ public class AddressManagerOnline implements AddressManager {
 	}
 
 	@Override
-	public Address findAddressById(String id) {
+	public Address findAddressById(User user, String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Address findByLine1(String line1) {
+	public Address findByLine1(User user, String line1) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Address findByLine2(String line2) {
+	public Address findByLine2(User user, String line2) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Address findByTown(String town) {
+	public Address findByTown(User user, String town) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Address findByCounty(String county) {
+	public Address findByCounty(User user, String county) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Address findByPostcode(String postcode) {
+	public Address findByPostcode(User user, String postcode) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -79,6 +80,7 @@ public class AddressManagerOnline implements AddressManager {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 }
