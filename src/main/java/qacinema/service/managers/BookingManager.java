@@ -17,5 +17,6 @@ public interface BookingManager {
 	public void updateBooking(Booking booking);
 	public void deleteBooking(Booking booking);
 	public void addTicketToBooking(String bookingid, Ticket ticketToAdd);
+	public void removeTicketFromBooking(String bookingid, String ticketID);
 		
 }
