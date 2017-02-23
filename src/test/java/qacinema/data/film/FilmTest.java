@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import qacinema.data.users.UserRating;
+
 public class FilmTest {
 
 	Film film;
@@ -113,6 +115,46 @@ public class FilmTest {
 	public void testSetRoles() {
 		film.setRoles(rol);
 		assertEquals("Gandalf", film.getRoles().get(0).getRole());
+	}
+	
+	@Test
+	public void testClassification(){
+		Classification classification = Classification.CLASS_U;
+		film.setClassification(classification);
+		assertEquals(classification, film.getClassification());
+		
+	}
+	
+	@Test
+	public void testUserRatings(){
+		UserRating rating = new UserRating(4, "Blah", null, null);
+		film.addRating(rating);
+		assertEquals(rating, film.getRatings().get(0));
+		
+		ArrayList<UserRating> userRatings = new ArrayList<>();
+		userRatings.add(rating);
+		film.setRatings(userRatings);
+		assertEquals(userRatings, film.getRatings());
+	}
+	
+	@Test
+	public void testMedia(){
+		Media media = new Media("blah", MediaType.IMAGE);
+		ArrayList<Media> mediaList = new ArrayList<>();
+		mediaList.add(media);
+		
+		film.addMedia(media);
+		assertEquals(media, film.getMedia().get(0));
+		
+		film.setMedia(mediaList);
+		assertEquals(mediaList, film.getMedia());
+	}
+	
+	@Test
+	public void testID(){
+		assertEquals(null, film.getFilmId());
+		film.setFilmId("1");
+		assertEquals("1", film.getFilmId());
 	}
 
 }
