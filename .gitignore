@@ -2,7 +2,6 @@
 .gitignore
 .project
 .classpath
-# pom.xml
 /bin/
 .settings
 /project
