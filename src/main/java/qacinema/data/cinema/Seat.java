@@ -14,7 +14,7 @@ public class Seat {
 	@NotNull
 	@Id
 	@Column(name = "seat", nullable = false, unique = true)
-	private String seat;
+	private String seatNum;
 	@NotNull
 	@Column(name = "type")
 	private String type;
@@ -24,16 +24,16 @@ public class Seat {
 
 	public Seat(String seat, String type) {
 		super();
-		this.seat = seat;
+		this.seatNum = seat;
 		this.type = type;
 	}
 
-	public String getSeat() {
-		return seat;
+	public String getSeatNum() {
+		return seatNum;
 	}
 
-	public void setSeat(String seat) {
-		this.seat = seat;
+	public void setSeatNum(String seat) {
+		this.seatNum = seat;
 	}
 
 	public String getType() {
