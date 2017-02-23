@@ -22,6 +22,7 @@ import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Actor;
 import qacinema.data.film.Film;
+import qacinema.data.film.Role;
 import qacinema.data.users.Address;
 import qacinema.data.users.User;
 
@@ -41,6 +42,7 @@ public class TestData {
 	private Map<Integer,Seat> seatMap;
 	private Map<Integer,Screen> screenMap;
 	private Map<Integer,Address> addressMap;
+	private Map<Integer,Role> roleMap;
 	
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -57,19 +59,21 @@ public class TestData {
 		seatMap = new HashMap<>();
 		screenMap = new HashMap<>();
 		addressMap = new HashMap<>();
+		roleMap = new HashMap<>();
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
 	public Payment payment = new Payment("1", "Credit Card", true, "12345678910", "johndoe@gmail.com");
 	public Seat seat = new Seat("A1","Fluffy");
 	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
-	public Screen screen = new Screen("1",100,"2D");
+	public Screen screen = new Screen("1", 'n',30,"2D");
 	public Showing showing = new Showing("1", film, screen, "22022017160000", "2D", "Audio Described");
-	public Ticket ticket = new Ticket("1", ticketType, seat, showing);
+	public Ticket ticket = new Ticket("1", ticketType, showing);
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
 	public Booking booking = new Booking("1","12:00",user,payment);
 	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");// address
+	public Role role = new Role("Forrest Gump");
 										
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
@@ -82,25 +86,25 @@ public class TestData {
 	
 	public void addAddress(Address address) {
 		address.setAddressID(""+address.hashCode());
-		address.setCounty(address.getCounty());///////////////////////////////////////
-		address.setLine1(address.getLine1());/////////////////////////////////////////
-		address.setLine2(address.getLine2());//////////////  NEEDED?  ////////////////
-		address.setPostcode(address.getPostcode());///////////////////////////////////
-		address.setTown(address.getTown());///////////////////////////////////////////
 		this.addressMap.put(address.hashCode(), address);
-		User user = new User();
-		user.setAddressess((List<Address>) address);
-	}
+		
 	
-	public void addTicket(Ticket ticket) { 
-		ticket.setID(""+ticket.hashCode());
-		this.ticketMap.put(ticket.hashCode(),ticket);
+		user.setAddressess((List<Address>) address); ////////// will be sorted out by MATT
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
 		user.set(""+user.hashCode());//////////////// no user ID to set
 		user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
+	
+
+
+	public void addTicket(Ticket ticket) { 
+		ticket.setID(""+ticket.hashCode());
+		this.ticketMap.put(ticket.hashCode(),ticket);
+	}
+	
+
 	}
 	
 	public void addTickets(Booking booking) { 
@@ -146,6 +150,24 @@ public class TestData {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
+	
+	
+	public Map<Integer, Role> getRoleMap() {
+		return roleMap;
+	}
+
+	public void setRoleMap(Map<Integer, Role> roleMap) {
+		this.roleMap = roleMap;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
 	
 	public Map<Integer, Ticket> getTicketMap() {
 		return ticketMap;
