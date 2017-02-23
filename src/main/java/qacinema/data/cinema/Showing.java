@@ -37,8 +37,8 @@ public class Showing {
 	@Column(name = "Accessability", length = 45)
 	private String accessability;
 
-	// no-args constructor
 	public Showing() {
+		// No-argument constructor for injection
 	}
 
 	// Overloading

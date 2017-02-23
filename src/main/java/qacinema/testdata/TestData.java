@@ -63,7 +63,7 @@ public class TestData {
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
-	public Payment payment = new Payment("1", "Credit Card", true, "12345678910", "johndoe@gmail.com");
+	public Payment payment = new Payment("1", "Credit Card", "12345678910", "johndoe@gmail.com");
 	public Seat seat = new Seat("A1","Fluffy");
 	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
 	public Screen screen = new Screen("1", 'n',30,"2D");
@@ -88,11 +88,11 @@ public class TestData {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
-		user.setAddressList((List<Address>) address);
+
+		user.addAddressToList(address); 
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
-		user.set(""+user.hashCode());//////////////// no user ID to set
 		//user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
 	}
