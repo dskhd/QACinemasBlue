@@ -14,7 +14,7 @@ import qacinema.annotations.Loggable;
 public class LoggingInterceptor {
 	@Inject private Logger log;
 	
-	@AroundInvoke public Object logMethod(InvocationContext iCxt) throws Exception{
+	@AroundInvoke public Object logMethod(InvocationContext iCxt) throws Exception {
 		log.entering(iCxt.getTarget().getClass().getName(), iCxt.getMethod().getName());
 		try{
 			return iCxt.proceed();

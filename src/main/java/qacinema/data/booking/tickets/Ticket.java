@@ -15,8 +15,6 @@ import qacinema.data.booking.Booking;
 import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 
-
-
 /**
  * @author AlexN
  */
@@ -54,10 +52,9 @@ public class Ticket {
 	private Booking booking;
 	
 
-	public Ticket(String ticketID, TicketType ticketType, Seat seat, Showing showing) {
+	public Ticket(String ticketID, TicketType ticketType, Showing showing) {
 		this.ticketID = ticketID;
 		this.ticketType = ticketType.getType();
-		this.seat = seat;
 		this.showing = showing;
 	}
 	
@@ -87,6 +84,10 @@ public class Ticket {
 	
 	public float getPrice(){
 		return price;
+	}
+	
+	public void setSeat(Seat seat){
+		this.seat = seat;
 	}
 	
 }
