@@ -83,12 +83,12 @@ public class Film {
 		this.lengthMins = lengthMins;
 	}
 
-	public String getDescirption() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescirption(String descirption) {
-		this.description = descirption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getDate() {
