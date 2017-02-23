@@ -5,7 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
+
 
 /**
  * 
