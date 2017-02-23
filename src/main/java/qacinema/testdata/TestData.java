@@ -72,7 +72,7 @@ public class TestData {
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
 	public Booking booking = new Booking("1","12:00",user,payment);
-	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");// address
+	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
 	public Role role = new Role("Forrest Gump");
 										
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,14 +88,14 @@ public class TestData {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
-	
 		user.setAddressess((List<Address>) address); ////////// will be sorted out by MATT
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
 		user.set(""+user.hashCode());//////////////// no user ID to set
-		user.setAddressess(user.getAddressess());
+		//user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
+	}
 	
 
 
@@ -103,10 +103,7 @@ public class TestData {
 		ticket.setID(""+ticket.hashCode());
 		this.ticketMap.put(ticket.hashCode(),ticket);
 	}
-	
-
-	}
-	
+		
 	public void addTickets(Booking booking) { 
 		booking.setBookingid(""+booking.hashCode());
 		booking.setBookingid(""+booking.hashCode());
@@ -149,8 +146,6 @@ public class TestData {
 	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-
-	
 	
 	public Map<Integer, Role> getRoleMap() {
 		return roleMap;
