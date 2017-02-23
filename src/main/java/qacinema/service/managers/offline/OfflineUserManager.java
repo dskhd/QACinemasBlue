@@ -65,7 +65,7 @@ public class OfflineUserManager implements UserManager {
 			}
 		}
 
-		throw new NoResultException("No Matching First Name");
+		throw new NoResultException("No Matching Last Name");
 	}
 
 	@Override
