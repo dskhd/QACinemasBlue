@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import javax.persistence.NoResultException;
 import qacinema.data.users.Address;
 import qacinema.service.managers.AddressManager;
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
 
 public class AddressManagerOffline implements AddressManager {
 
