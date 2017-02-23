@@ -14,7 +14,7 @@ import qacinema.testdata.TestData;
 
 
 @Stateless 
-public class FilmManagerOffline implements FilmManager {
+public class OfflineFilmManager implements FilmManager {
 	
 	@Inject
 	private TestData testData;
@@ -39,47 +39,51 @@ public class FilmManagerOffline implements FilmManager {
 	@Override
 	public List<Film> findByTitle(String title) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmMap().values())
+		for(Film film : testData.getFilmMap().values()){
 			if(film.getTitle().contains(title))
 				results.add(film);
+		}
 		return results;
 	}
 
 	@Override
 	public List<Film> findByGenre(String genre) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmMap().values())
+		for(Film film : testData.getFilmMap().values()){
 			if(film.getGenres().contains(genre))
 				results.add(film);
+		}
 		return results;
 	}
 
 	@Override
 	public List<Actor> findByActor(String name) {
 		List<Actor> results = new ArrayList<Actor>();
-		for (Actor actors : testData.getActorMap().values())
-			if(actors.getFirstName().contains(name))
+		for (Actor actors : testData.getActorMap().values()){
+			String actorName = actors.getFirstName() + " " + actors.getLastName();
+			if(actorName.contains(name))
 				results.add(actors);
-			else if(actors.getLastName().contains(name))
-				results.add(actors);
+		}
 		return results;
 	}
 	
 	@Override
 	public List<Role> findByRole(String role) {
 		List<Role> results = new ArrayList<Role>();
-		for (Role roles : testData.getRoleMap().values())
+		for (Role roles : testData.getRoleMap().values()){
 			if(roles.getRole().contains(role))
 				results.add(roles);
+		}
 		return results;
 	}
 
 	@Override
 	public List<Film> findByDate(String date) {
 		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmMap().values())
+		for(Film film : testData.getFilmMap().values()){
 			if(film.getDate().contains(date))
 				results.add(film);
+		}
 		return results;
 	}
 
