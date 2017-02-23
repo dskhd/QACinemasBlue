@@ -14,7 +14,7 @@ import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.film.Film;
 import qacinema.data.users.User;
 import qacinema.service.managers.TicketManager;
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
 
 @Default
 @Stateless

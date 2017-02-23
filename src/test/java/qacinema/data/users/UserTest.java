@@ -5,10 +5,7 @@ package qacinema.data.users;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import qacinema.data.users.User;
@@ -16,13 +13,7 @@ import qacinema.data.users.User;
 
 public class UserTest {
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 	@Before
 	public void setUp() throws Exception {
@@ -33,12 +24,6 @@ public class UserTest {
 		user.setMailingList(false);
 		user.setPassword("password1");
 		user.setTelephone("01246123456");
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		
-		
 	}
 
 	User user = new User();
