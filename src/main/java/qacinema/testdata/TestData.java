@@ -88,6 +88,7 @@ public class TestData {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
+
 		user.addAddressToList(address); 
 	}
 	
@@ -163,6 +164,9 @@ public class TestData {
 		this.role = role;
 	}
 	
+	public int ticketMapSize() { ////////////////////////// created because I couldn't return size of "getTicketMap"
+		return ticketMap.size();
+	}
 	
 	public Map<Integer, Ticket> getTicketMap() {
 		return ticketMap;

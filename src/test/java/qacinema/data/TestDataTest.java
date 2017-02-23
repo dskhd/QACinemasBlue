@@ -1,14 +1,18 @@
 package qacinema.data;
 
-import static org.mockito.Mockito.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import static org.junit.Assert.*;
 import javax.inject.Inject;
-import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.Rule;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
 import qacinema.data.booking.Booking;
 import qacinema.data.booking.Payment;
 import qacinema.data.booking.tickets.CustomerType;
@@ -26,7 +30,8 @@ import qacinema.data.users.Address;
 import qacinema.data.users.User;
 import qacinema.testdata.TestData;
 
-
+import static org.mockito.Mockito.*;
+import static moxie.hamcrest.IsMapWithSize.mapWithSize;;
 /**
  * 
  * @author Adam
@@ -36,27 +41,45 @@ import qacinema.testdata.TestData;
  */
 
 public class TestDataTest {
-
+	@Mock
 	public TestData newData = mock(TestData.class);
-	
-	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+		
+	
 	@Test
 	public void testAddToTicketList() {
-		System.out.println("Enter: testAddToTicketList");
-		//newData.addTicket(newData.ticket); // add to ticketList by inputting constructor relevant info
-		
-		when(newData.addTicket(newData.ticket)).thenReturn(newData.getTicketMap().size());
-		
-		
-		//assertThat(newData.getTicketMap().size(), is(1));
-		
-		assertEquals(1, newData.getTicketMap().size());
+		/* EXAMPLE THAT WORKS
+		 Map<String, Integer> map = new HashMap<>();
+		    map.put("key", 1);
+		    assertThat(map, mapWithSize(1));
+		  */ 
 		
 		
+		newData.addTicket(newData.ticket);
 		
+		assertThat(newData.getTicketMap(), mapWithSize(1));
+		
+		
+		
+		
+		/*
+		System.out.println("before for1");
+		for (Integer key : newData.getTicketMap().keySet()) {
+		    System.out.println(key + " " + newData.getTicketMap().get(key));
+		}
+		System.out.println("before for2");
+		for (Entry<Integer, Ticket> entry : newData.getTicketMap().entrySet()) {
+		    String key = entry.getKey().toString();
+		    Ticket value = entry.getValue();
+		    System.out.println("key, " + key + " value " + value);
+		}
+		System.out.println(newData.getTicketMap().toString());
+		*/
+		
+		
+				
 	}
 	/*
 	@Test
