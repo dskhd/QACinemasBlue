@@ -1,7 +1,7 @@
 /**
  * Created by Mark Lester
  */
-package qacinema.data.user;
+package qacinema.data.users;
 
 import static org.junit.Assert.*;
 
