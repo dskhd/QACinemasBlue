@@ -5,6 +5,7 @@
 package qacinema.data.cinema;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -27,12 +28,12 @@ public class Screen {
 	private String screenType;
 
 	
-	private List<Seat> seats;
+	private List<Seat> seats = new ArrayList<>();
 	
 	
 	public Screen() {
+		
 	}
-
 
 
 	public Screen(String screenID, char maxRows, int maxCols, String screenType) {
@@ -41,7 +42,17 @@ public class Screen {
 		this.maxRows = maxRows;
 		this.maxCols = maxCols;
 		this.screenType = screenType;
-		this.seats = seats;
+		
+		createSeatsList();
+	}
+	
+	private void createSeatsList(){
+		for(char ch = 'a'; ch <= maxRows; ch++){
+			for(int i=1; i<=maxCols; i++){
+				Seat aSeat = new Seat("" + ch + i, "regular");
+				seats.add(aSeat);
+			}
+		}	
 	}
 
 	public String getScreenID() {
