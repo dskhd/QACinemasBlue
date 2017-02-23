@@ -1,15 +1,14 @@
 package qacinema.data;
 
+import static org.mockito.Mockito.*;
+
 import static org.junit.Assert.*;
-
 import javax.inject.Inject;
-
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.hamcrest.CoreMatchers.is;
-
 import static org.hamcrest.MatcherAssert.assertThat;
-
 import qacinema.data.booking.Booking;
 import qacinema.data.booking.Payment;
 import qacinema.data.booking.tickets.CustomerType;
@@ -38,8 +37,7 @@ import qacinema.testdata.TestData;
 
 public class TestDataTest {
 
-	@Inject
-	public TestData newData;
+	public TestData newData = mock(TestData.class);
 	
 	
 	
@@ -48,11 +46,16 @@ public class TestDataTest {
 	@Test
 	public void testAddToTicketList() {
 		System.out.println("Enter: testAddToTicketList");
-		newData.addTicket(newData.ticket); // add to ticketList by inputting constructor relevant info
+		//newData.addTicket(newData.ticket); // add to ticketList by inputting constructor relevant info
+		
+		when(newData.addTicket(newData.ticket)).thenReturn(newData.getTicketMap().size());
+		
 		
 		//assertThat(newData.getTicketMap().size(), is(1));
 		
 		assertEquals(1, newData.getTicketMap().size());
+		
+		
 		
 	}
 	/*
