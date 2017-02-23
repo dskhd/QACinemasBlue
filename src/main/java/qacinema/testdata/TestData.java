@@ -98,12 +98,13 @@ public class TestData {
 	}
 	
 
-
-	public void addTicket(Ticket ticket) { 
+///////////////////////////////////////////////////////////////////
+	public Ticket addTicket(Ticket ticket) {              //////////
 		ticket.setID(""+ticket.hashCode());
 		this.ticketMap.put(ticket.hashCode(),ticket);
+		return ticket;
 	}
-		
+///////////////////////////////////////////////////////////////////		
 	public void addTickets(Booking booking) { 
 		booking.setBookingid(""+booking.hashCode());
 		booking.setBookingid(""+booking.hashCode());
