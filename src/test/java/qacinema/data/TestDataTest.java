@@ -2,9 +2,29 @@ package qacinema.data;
 
 import static org.junit.Assert.*;
 
-import org.junit.Assert;
+import javax.inject.Inject;
+
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import qacinema.data.booking.Booking;
+import qacinema.data.booking.Payment;
+import qacinema.data.booking.tickets.CustomerType;
+import qacinema.data.booking.tickets.DaysOfWeek;
+import qacinema.data.booking.tickets.Ticket;
+import qacinema.data.booking.tickets.TicketType;
+import qacinema.data.booking.tickets.TimesOfDay;
+import qacinema.data.cinema.Screen;
+import qacinema.data.cinema.Seat;
+import qacinema.data.cinema.Showing;
+import qacinema.data.film.Actor;
+import qacinema.data.film.Film;
+import qacinema.data.film.Role;
+import qacinema.data.users.Address;
+import qacinema.data.users.User;
 import qacinema.testdata.TestData;
 
 
@@ -18,38 +38,52 @@ import qacinema.testdata.TestData;
 
 public class TestDataTest {
 
-	public TestData newData = TestData.getData();
-
-	@Test
-	public void testAddToTicketList() {
-		newData.getTicketList().add(); // add to ticketList by inputting constructor relevant info
-		assertEquals(1,newData.getTicketList().size());
-	}
+	@Inject
+	public TestData newData;
+	
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	@Test
+	public void testAddToTicketList() {
+		System.out.println("Enter: testAddToTicketList");
+		newData.addTicket(newData.ticket); // add to ticketList by inputting constructor relevant info
+		
+		//assertThat(newData.getTicketMap().size(), is(1));
+		
+		assertEquals(1, newData.getTicketMap().size());
+		
+	}
+	/*
+	@Test
 	public void testAddToShowingList() {
-		newData.getShowingList().add()
-		assertEquals(1,newData.getShowingList().size());
+		System.out.println("Enter: testAddToShowingList");
+		newData.addShowing(showing);
+		assertEquals(1,newData.getShowingMap().size());
 	}
 	
 	@Test
 	public void testAddToFilmList() {
-		newData.getFilmList().add()
-		assertEquals(1,newData.getFilmList().size());
+		System.out.println("Enter: testAddToFilmList");
+		newData.addFilm(film);
+		assertEquals(1,newData.getFilmMap().size());
 	}
 
 	
 	@Test
 	public void testAddToActorList() {
-		newData.getActorList().add();
-		assertEquals(1,newData.getActorList().size());
+		System.out.println("Enter: testAddToActorList");
+		newData.addActor(actor);
+		assertEquals(1,newData.getActorMap().size());
 	}
 
 	@Test
 	public void testAddToUserList() {
-		newData.getUserList().add();
-		assertEquals(1,newData.getUserList().size());
+		System.out.println("Enter: testAddToUserList");
+		newData.addUser(user);
+		assertEquals(1,newData.getUserMap().size());
 	}
-
+*/
 
 }

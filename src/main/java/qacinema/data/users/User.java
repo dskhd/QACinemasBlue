@@ -77,11 +77,11 @@ public class User {
 	
 	
 	public List<Address> getAddressess() {
-		return addressess;
+		return addresses;
 	}
 
-	public void setAddressess(List<Address> addressess) {
-		this.addressess = addressess;
+	public void setAddressess(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
 	
