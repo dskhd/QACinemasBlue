@@ -55,7 +55,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 		List<Payment> payment = new ArrayList<>();
 		for(Booking booking : testData.getBookingMap().values()) {
 			if(booking.getUser() == user) {
-				payment.add(booking.getPaymentsid());
+				payment.add(booking.getPayment());
 			}
 		}
 		return payment;
