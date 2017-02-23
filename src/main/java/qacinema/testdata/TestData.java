@@ -88,6 +88,8 @@ public class TestData {
 		address.setPostcode(address.getPostcode());///////////////////////////////////
 		address.setTown(address.getTown());///////////////////////////////////////////
 		this.addressMap.put(address.hashCode(), address);
+		User user = new User();
+		user.setAddressess((List<Address>) address);
 	}
 	
 	public void addTicket(Ticket ticket) { 
@@ -96,19 +98,19 @@ public class TestData {
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
-		user.set(""+user.hashCode());
-		user.setAddressess();
+		user.set(""+user.hashCode());//////////////// no user ID to set
+		user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
 	}
 	
 	public void addTickets(Booking booking) { 
 		booking.setBookingid(""+booking.hashCode());
-		booking.set
+		booking.setBookingid(""+booking.hashCode());
 		this.bookingMap.put(booking.hashCode(),booking);
 	}
 	
 	public void addTicketType(TicketType ticketType) { 
-		ticketType.setType(""+ticketType.hashCode());
+		ticketType.setType(""+ticketType.hashCode()); ////////////////////// no ticket type ID to set
 		this.ticketTypeMap.put(ticketType.hashCode(),ticketType);
 	}
 	
@@ -118,7 +120,7 @@ public class TestData {
 	}
 	
 	public void addSeat(Seat seat) {
-		seat.set(""+seat.hashCode());
+		seat.set(""+seat.hashCode()); ////////////////////////// no seat ID to set
 		this.seatMap.put(seat.hashCode(),seat);
 	}
 	
@@ -133,18 +135,17 @@ public class TestData {
 	}
 	
 	public void addFilm(Film film) { 
-		film.set(""+film.hashCode());
+		film.set(""+film.hashCode()); ///////////// no film ID to set
 		this.filmMap.put(film.hashCode(),film);
 	}
 	
 	public void addActor(Actor actor) { 
-		actor.set(""+actor.hashCode());
+		actor.set(""+actor.hashCode()); ///////////////no actor ID to set
 		this.actorMap.put(actor.hashCode(),actor);
 	}
-	
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
-	
 	
 	public Map<Integer, Ticket> getTicketMap() {
 		return ticketMap;
@@ -224,6 +225,14 @@ public class TestData {
 
 	public void setScreenMap(Map<Integer, Screen> screenMap) {
 		this.screenMap = screenMap;
+	}
+
+	public Map<Integer, Address> getAddressMap() {
+		return addressMap;
+	}
+
+	public void setAddressMap(Map<Integer, Address> addressMap) {
+		this.addressMap = addressMap;
 	}
 
 	public TicketType getTicketType() {
@@ -306,5 +315,12 @@ public class TestData {
 		this.booking = booking;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
 
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }
