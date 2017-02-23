@@ -70,6 +70,14 @@ public class Film {
 		this.date = date;
 	}
 
+	public String getFilmId() {
+		return filmId;
+	}
+
+	public void setFilmId(String filmId) {
+		this.filmId = filmId;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -110,12 +118,20 @@ public class Film {
 		this.classification = classi;
 	}
 	
+	public void setGenres(List<Genre> genres) {
+		this.genres = genres;
+	}
+
 	public List<Genre> getGenres() {
 		return genres;
 	}
 
 	public List<Role> getRoles() {
 		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	public List<Media> getMedia() {
@@ -125,6 +141,16 @@ public class Film {
 	public void setMedia(List<Media> media) {
 		this.media = media;
 	}
+
+	public List<UserRating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<UserRating> ratings) {
+		this.ratings = ratings;
+	}
+	
+	
 	
 	
 	
