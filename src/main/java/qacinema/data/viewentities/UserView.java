@@ -5,31 +5,31 @@ import javax.persistence.Column;
 public class UserView {
 	
 	@Column
-	String userName;
+	private String userName;
 	
 	@Column
-	String email;
+	private String email;
 	
 	@Column
-	String dob;
+	private String dob;
 	
 	@Column 
-	String line1;
+	private String line1;
 	
 	@Column 
-	String line2;
+	private String line2;
 	
 	@Column 
-	String town;
+	private String town;
 	
 	@Column 
-	String postcode;
+	private String postcode;
 	
 	@Column 
-	String county;
+	private String county;
 	
 	@Column 
-	String addressType;
+	private String addressType;
 
 	public String getUserName() {
 		return userName;

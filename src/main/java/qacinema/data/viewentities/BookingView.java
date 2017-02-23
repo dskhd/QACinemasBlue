@@ -5,19 +5,19 @@ import javax.persistence.Column;
 public class BookingView {
 	
 	@Column
-	String bookingID;
+	private String bookingID;
 	
 	@Column
-	String timeBooked; //is this a date type?
+	private String timeBooked; //is this a date type?
 	
 	@Column
-	String userName;
+	private String userName;
 	
 	@Column
-	int numberOfTickets;
+	private int numberOfTickets;
 	
 	@Column
-	double totalPrice;
+	private double totalPrice;
 
 	public String getBookingID() {
 		return bookingID;

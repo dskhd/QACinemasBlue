@@ -5,25 +5,25 @@ import javax.persistence.Column;
 public class PaymentView {
 	
 	@Column 
-	String paymentsID;
+	private String paymentsID;
 	
 	@Column 
-	String method;
+	private String method;
 	
 	@Column 
-	String cardNumber;
+	private String cardNumber;
 	
 	@Column 
-	boolean isPaid;
+	private boolean isPaid;
 	
 	@Column 
-	String bookingID;
+	private String bookingID;
 	
 	@Column 
-	String email;
+	private String email;
 	
 	@Column 
-	String fullName;
+	private String fullName;
 
 	public String getPaymentsID() {
 		return paymentsID;

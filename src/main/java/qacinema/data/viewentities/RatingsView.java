@@ -5,25 +5,25 @@ import javax.persistence.Column;
 public class RatingsView {
 	
 	@Column 
-	String userAlias;
+	private String userAlias;
 	
 	@Column 
-	String filmID;
+	private String filmID;
 	
 	@Column 
-	String title;
+	private String title;
 	
 	@Column 
-	int rating;
+	private int rating;
 	
 	@Column 
-	String reviewText;
+	private String reviewText;
 	
 	@Column 
-	String email;
+	private String email;
 	
 	@Column 
-	String ratingID;
+	private String ratingID;
 
 	public String getUserAlias() {
 		return userAlias;

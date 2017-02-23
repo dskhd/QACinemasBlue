@@ -5,25 +5,25 @@ import javax.persistence.Column;
 public class TicketView {
 	
 	@Column 	
-	String ticketID;
+	private String ticketID;
 	
 	@Column 
-	String ticketType;
+	private String ticketType;
 	
 	@Column 
-	double price;
+	private double price;
 	
 	@Column 
-	String bookingsID;
+	private String bookingsID;
 	
 	@Column 
-	String screenID;
+	private String screenID;
 	
 	@Column 
-	String seat; //int?
+	private String seat; //int?
 	
 	@Column 
-	String showTime;
+	private  String showTime;
 
 	public String getTicketID() {
 		return ticketID;

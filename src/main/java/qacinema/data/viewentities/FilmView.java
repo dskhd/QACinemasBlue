@@ -7,25 +7,25 @@ import qacinema.data.film.Classification;
 public class FilmView {
 
 	@Column
-	String title;
+	private String title;
 	
 	@Column
-	String description;
+	private String description;
 	
 	@Column
-	int length;
+	private int length;
 	
 	@Column 
-	String filmID;
+	private String filmID;
 
 	@Column 
-	String classificationID;
+	private String classificationID;
 	
 	@Column 
-	Classification classificationType; //yes? no? String?
+	private Classification classificationType; //yes? no? String?
 
 	@Column 
-	String classificationDescription;
+	private String classificationDescription;
 
 	public String getTitle() {
 		return title;

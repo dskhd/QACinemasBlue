@@ -5,16 +5,16 @@ import javax.persistence.Column;
 public class RolesView {
 
 	@Column 
-	String title;
+	private String title;
 
 	@Column 
-	String filmID;
+	private String filmID;
 
 	@Column 
-	String actorName;
+	private String actorName;
 	
 	@Column 
-	String role;
+	private String role;
 
 	public String getTitle() {
 		return title;
