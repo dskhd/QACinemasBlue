@@ -1,13 +1,8 @@
 package qacinema.data.film;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -22,10 +17,10 @@ public class Actor {
 	@Column(name = "LastName", length = 225, nullable = true)
 	private String lastName;
 	
+	@Id
 	@NotNull
-	@ManyToOne
-	@Column(name = "actors_ActorsID", nullable = false)
-	private String actor;
+	@Column(name = "ActorID", length = 225, nullable = false)
+	private String actorId;
 	
 
 	public Actor(){}
