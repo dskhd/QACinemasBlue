@@ -11,7 +11,7 @@ public class ClassificationTest {
 	Classification cl;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		cl = Classification.CLASS_18;
 	}
 

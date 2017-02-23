@@ -12,7 +12,7 @@ public class GenreTest {
 	
 	
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		gen = new Genre("Horror");
 		
 	}
