@@ -17,7 +17,7 @@ public class UserRatingTest {
 
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		userRating.setComment("hello");
 		//userRating.setFilms(films);
 		//userRating.setReviewer(User);

@@ -16,7 +16,7 @@ public class UserTest {
 
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		user.setAccountType("gold");
 		user.setEmail("user@mail");
 		user.setFirstName("name1");

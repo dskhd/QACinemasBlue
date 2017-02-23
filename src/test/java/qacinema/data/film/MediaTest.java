@@ -14,7 +14,7 @@ public class MediaTest {
 	Media med;
 
 	@Before
-	public void setUp() throws Exception {
+	public void setUp() {
 		med = new Media("http://ourwebsite.com/mediafolder/img001.png", MediaType.IMAGE);
 	}
 
