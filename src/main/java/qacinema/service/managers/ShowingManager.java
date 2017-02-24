@@ -11,7 +11,7 @@ public interface ShowingManager {
 	public List<Showing> findByDay(String date);
 	public List<Showing> findByFilm(Film film);
 	public List<Showing> byExperience(String experience);
-	public List<Showing> byAccessabillity(String accessability);
+	public List<Showing> byAccessibility(String accessibility);
 	
 	
 }

@@ -11,7 +11,19 @@ import qacinema.data.film.Film;;
  * Created by James Lamkin
  */
 @Entity
-@Table(name = "Showing")
+@Table(name = "showing")
+@NamedQueries({
+	@NamedQuery(name="Showing.FIND_BY_DATE_TIME",
+				query ="SELECT s FROM showings s WHERE s.showTime = :showTime"),
+	@NamedQuery(name = "Showing.FIND_ALL",
+				query = "SELECT s FROM showing s"),
+	@NamedQuery(name = "Showing.FIND_BY_EXPERIENCE",
+				query = "SELECT s FROM showing s WHERE s.experience = :experience"),
+	@NamedQuery(name = "Showing.FIND_BY_FILMID",
+				query = "SELECT s FROM showing s WHERE s.filmID = :filmID"),
+	@NamedQuery(name = "Showing.findAccessability",
+				query = "SELECT s FROM showing s WHERE s.accessability = :accessability")			
+})
 public class Showing {
 	@NotNull
 	@Id
@@ -37,6 +49,12 @@ public class Showing {
 	@Column(name = "Accessability", length = 45)
 	private String accessability;
 
+	public static final String FIND_BY_DATE_TIME = "Showing.findByTime";
+	public static final String FIND_ALL = "Showing.findAll";
+	public static final String FIND_BY_EXPERIENCE = "Showing.findExperience";
+	public static final String FIND_BY_FILMID = "Showing.findFilmID";
+	public static final String FIND_BY_ACCESSABILITY = "Showing.findAccessability";
+	
 	public Showing() {
 		// No-argument constructor for injection
 	}
@@ -50,7 +68,7 @@ public class Showing {
 		this.experience = experience;
 		this.accessability = accessability;
 	}
-
+	
 	public String getShowingID() {
 		return showingID;
 	}
