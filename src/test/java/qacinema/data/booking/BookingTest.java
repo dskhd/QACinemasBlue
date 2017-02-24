@@ -28,7 +28,7 @@ public class BookingTest {
 	public void setup() {
 		testUser = new User("email", "password", "accountType", "firstname", "lastname", "telephone", false);
 		testPayment = new Payment("1", "method", "cardnumber", "email");
-		testBooking = new Booking("1", "time", testUser, testPayment);
+		testBooking = new Booking("1", testUser, testPayment);
 		testPayment2 = new Payment("2", "method2", "cardnumber2", "email2");
 		testTicketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
 		testShowing = new Showing();

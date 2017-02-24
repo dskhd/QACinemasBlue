@@ -73,7 +73,7 @@ public class TestData {
 	public Ticket ticket = new Ticket("1", ticketType, showing);
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
-	public Booking booking = new Booking("1","12:00",user,payment);
+	public Booking booking = new Booking("1",user,payment);
 	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
 	public Role role = new Role("Forrest Gump");
 										
