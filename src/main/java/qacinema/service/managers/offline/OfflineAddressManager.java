@@ -10,7 +10,7 @@ import qacinema.data.users.User;
 import qacinema.service.managers.AddressManager;
 import qacinema.testdata.TestData;
 
-public class AddressManagerOffline implements AddressManager {
+public class OfflineAddressManager implements AddressManager {
 
 	@Inject
 	private TestData testData;
