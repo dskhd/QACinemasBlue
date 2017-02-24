@@ -22,13 +22,14 @@ import qacinema.data.cinema.Showing;
 @Table(name = "ticket")
 @NamedQueries({
 	@NamedQuery(query="SELECT t FROM ticketView t WHERE t.ticketID = :id", name="Ticket.FIND_BY_ID"),
-	@NamedQuery(query="SELECT t FROM booking b JOIN b.tickets t WHERE b.userEmail=:userEmail", name = "Ticket.FIND_ALL_BY_USER"),
-	@NamedQuery(query="SELECT t FROM :tickets t JOIN film f WHERE t.showing.film.filmID=:filmID", name="Ticket.FIND_BY_FILM")
+	@NamedQuery(query="SELECT tickets FROM booking WHERE booking.userEmail = :userEmail ", name = "Ticket.FIND_ALL_BY_USER"),
+	@NamedQuery(query="SELECT t from tickets where ticket.showing.film.flimdID=:filmID", name="Ticket.FIND_ALL_BY_FILM")
 })
 public class Ticket {
 	
 	public static final String FIND_BY_ID = "Ticket.FIND_BY_ID";
 	public static final String FIND_ALL_BY_USER = "Ticket.FIND_ALL_BY_USER";
+	public static final String FIND_ALL_BY_FILM = "Ticket.FIND_ALL_BY_FILM";
 
 	@NotNull
 	@Id
