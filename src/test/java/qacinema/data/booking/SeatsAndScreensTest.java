@@ -2,6 +2,7 @@ package qacinema.data.booking;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import qacinema.data.cinema.Screen;
@@ -9,29 +10,27 @@ import qacinema.data.cinema.Seat;
 
 public class SeatsAndScreensTest {
 
+	private Screen screen;
+	private Seat seat;
+	
+	@Before
+	public void setUp(){
+		screen = new Screen("1", 'n', 10, "Standard");
+		seat = new Seat("A43", "Regular");
+	}
+
+	
 	@Test
-	private void testScreenCapacity() {
-		Screen testScreen = new Screen(1, 1066, "Standad");
-		int x = testScreen.getCapacity();
-		assertEquals(x, 1066);
+	public void testScreenType(){ 
+		assertEquals("Standard", screen.getScreenType());
 	}
 	@Test
-	private void testScreenType() {
-		Screen testScreen = new Screen(1, 1066, "Standad");
-		String x = testScreen.getScreenType();
-		assertEquals(x, "Standard");
-	}
-	@Test
-	private void testSeatType() {
-		Seat testSeat = new Seat("BB", 1, "Regular");
-		String x = testSeat.getType();
-		assertEquals(x, "Regular");
+	public void testSeatType() {
+		assertEquals("Regular", seat.getType());
 	}
 	
 	@Test
-	private void testSeatNumber() {
-		Seat testSeat = new Seat("BB", 1, "Regular");
-		String x = testSeat.getSeat();
-		assertEquals(x, "BB");
+	public void testSeatNumber() {
+		assertEquals("A43", seat.getSeat());
 	}
 }

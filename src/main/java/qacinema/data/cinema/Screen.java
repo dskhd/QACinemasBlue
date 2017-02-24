@@ -29,6 +29,7 @@ public class Screen {
 	private Map<Seat, Boolean> seats = new HashMap<>();
 
 	public Screen() {
+		//Empty constructor for injection
 	}
 
 	public Screen(String screenID, char maxRows, int maxCols, String screenType) {
@@ -43,7 +44,7 @@ public class Screen {
 	private void createSeatsList() {
 		for (char ch = 'A'; ch <= maxRows; ch++) {
 			for (int i = 1; i <= maxCols; i++) {
-				Seat aSeat = new Seat("" + ch + i, "Regular");
+				Seat aSeat = new Seat(Character.toString(ch) + i, "Regular");
 				seats.put(aSeat, false);
 			}
 		}

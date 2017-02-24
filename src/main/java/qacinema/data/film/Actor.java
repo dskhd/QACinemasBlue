@@ -25,6 +25,10 @@ public class Actor {
 
 	public Actor(){}
 	
+	public Actor(String firstName){
+		this.firstName = firstName;
+	}
+	
 	public Actor(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -45,5 +49,15 @@ public class Actor {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+	public String getActorId() {
+		return actorId;
+	}
+
+	public void setActorId(String actorId) {
+		this.actorId = actorId;
+	}
+	
+	
 
 }

@@ -73,7 +73,7 @@ public class OfflineBookingManager implements BookingManager {
 	public List<Booking> findByPaymentID(String paymentid) {
 		List<Booking> payBookings = new ArrayList<>();
 		for(Booking booking : testData.getBookingMap().values()){
-			if(booking.getPaymentsid().equals(paymentid)){
+			if(booking.getPayment().getPaymentsid().equals(paymentid)){
 				payBookings.add(booking);
 			}
 		}
@@ -110,4 +110,15 @@ public class OfflineBookingManager implements BookingManager {
 		}
 	}
 
-}
+	@Override
+	public void removeTicketFromBooking(String bookingid, String ticketID) {
+				List<Ticket> bookedTickets = testData.getBookingMap().get(bookingid).getTickets();
+				for (Ticket ticket : bookedTickets){
+					if(ticket.getTicketID().equals(ticketID)){
+						bookedTickets.remove(ticketID);
+					}
+				}
+			}
+		
+		
+	}

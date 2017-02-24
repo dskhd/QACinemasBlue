@@ -46,7 +46,7 @@ public class Booking {
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "payments_idpayments", nullable = false)
-	private Payment paymentsid;
+	private Payment payment;
 	
 	@NotNull
 	@OneToMany
@@ -54,12 +54,12 @@ public class Booking {
 	private List<Ticket> tickets = new ArrayList<>();
 		
 	public Booking () {}
-	public Booking(String bookingid, String time_booked, User user, Payment paymentsid) {
+	public Booking(String bookingid, String time_booked, User user, Payment payment) {
 		super();
 		this.bookingid = bookingid;
 		this.time_booked = time_booked;
 		this.user = user;
-		this.paymentsid = paymentsid;
+		this.payment = payment;
 		}
 	public String getBookingid() {
 		return bookingid;
@@ -76,29 +76,21 @@ public class Booking {
 	public User getUser() {
 		return user;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public Payment getPayment() {
+		return payment;
 	}
-	public Payment getPaymentsid() {
-		return paymentsid;
-	}
-	public void setPaymentsid(Payment paymentsid) {
-		this.paymentsid = paymentsid;
+	public void setPayment(Payment payment) {
+		this.payment = payment;
 	}
 	public List<Ticket> getTickets() {
 		return tickets;
 	}
-	public void setTickets(List<Ticket> tickets) {
-		this.tickets = tickets;
-	}
-	
 	public void addTicket(Ticket ticket){
 		tickets.add(ticket);	
 	}
-	
-	
-	
-	
+	public void removeTicket(Ticket ticket){
+		tickets.remove(ticket);
+	}
 	
 	
 }
