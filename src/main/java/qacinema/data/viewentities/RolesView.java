@@ -1,20 +1,36 @@
+
 package qacinema.data.viewentities;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 
+//findFilmsByActor
+//findActorsByFilmTitle
+@Entity
+@Table
+@NamedQueries({ @NamedQuery(name = "rolesView.findFilmsByActor",
+query = "SELECT s FROM rolesView where rolesView.Actor = :actor"),
+	@NamedQuery(name = "rolesView.findActorsByFilmTitle", query = "SELECT s FROM rolesView where rolesView.Film = :film") })
 public class RolesView {
-
-	@Column 
+	@Column
 	private String title;
-
-	@Column 
+	@Column
 	private String filmID;
-
-	@Column 
+	@Column
 	private String actorName;
-	
-	@Column 
+	@Column
 	private String role;
+	
+	public static final String	FIND_BY_ACTOR =	"rolesView.findActorsByFilmTitle";
+	public static final String FIND_BY_FILM =	"rolesView.findFilmsByActor";
+
+
+	public RolesView(String title, String filmID, String actorName, String role) {
+		super();
+		this.title = title;
+		this.filmID = filmID;
+		this.actorName = actorName;
+		this.role = role;
+	}
 
 	public String getTitle() {
 		return title;
@@ -31,5 +47,4 @@ public class RolesView {
 	public String getRole() {
 		return role;
 	}
-
 }
