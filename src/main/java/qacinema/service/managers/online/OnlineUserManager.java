@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.NamedQuery;
 import javax.persistence.PersistenceContext;
 
 import qacinema.data.users.User;
@@ -35,13 +34,13 @@ public class OnlineUserManager implements UserManager {
 	}
 
 	@Override
-	public List<User> findByFirstName(String firstName) {
+	public List<User> findUsersByFirstName(String firstName) {
 		em.find(User.class, firstName);
 		return null;
 	}
 
 	@Override
-	public List<User> findByLastName(String lastName) {
+	public List<User> findUsersByLastName(String lastName) {
 		em.find(User.class, lastName);
 		return null;
 	}
