@@ -17,14 +17,9 @@ public class Media {
 	@Column(nullable = false, unique = true)
 	private int mediaID;
 	
-	
-	
-	
 	@NotNull
 	@Column (nullable = false)
-	private String url;
-	
-	
+	private String url;	
 	
 	@NotNull
 	@Column (nullable = false)
