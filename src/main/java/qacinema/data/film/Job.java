@@ -4,14 +4,14 @@ public enum Job {
 	
 	ACTOR("Actor"), VOICE("Voice"), DIRECTOR("Director"), PRODUCER("Producer");
 	
-	private final String job;
+	private final String jobTitle;
 	
 	private Job(String job){
-		this.job = job;
+		this.jobTitle = job;
 	}
 
 	public String getJob() {
-		return this.job;
+		return this.jobTitle;
 	}
 }
 

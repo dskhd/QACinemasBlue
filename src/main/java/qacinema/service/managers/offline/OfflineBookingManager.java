@@ -1,3 +1,4 @@
+/*Author: Alex Dawkes*/
 package qacinema.service.managers.offline;
 
 import java.util.ArrayList;
@@ -15,7 +16,8 @@ import qacinema.data.booking.Booking;
 import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.users.User;
 import qacinema.service.managers.BookingManager;
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
+
 
 @Default
 @Stateless
@@ -46,7 +48,7 @@ public class OfflineBookingManager implements BookingManager {
 	}
 
 	@Override
-	public List<Booking> findByEmail(User user) {
+	public List<Booking> findByUser(User user) {
 		List<Booking> userBookings = new ArrayList<>();
 		for (Booking booking : testData.getBookingMap().values()){
 			if(booking.getUser() == user){
@@ -71,7 +73,7 @@ public class OfflineBookingManager implements BookingManager {
 	public List<Booking> findByPaymentID(String paymentid) {
 		List<Booking> payBookings = new ArrayList<>();
 		for(Booking booking : testData.getBookingMap().values()){
-			if(booking.getPaymentsid().equals(paymentid)){
+			if(booking.getPayment().getPaymentsid().equals(paymentid)){
 				payBookings.add(booking);
 			}
 		}
@@ -79,15 +81,44 @@ public class OfflineBookingManager implements BookingManager {
 	}
 
 	@Override
-	public void updateBooking(Booking booking) {
-		// TODO Auto-generated method stub
+	public void updateBooking(Booking bookingToUpdate) {
+		for (Booking booking : testData.getBookingMap().values()){
+			if(booking.equals(bookingToUpdate)){
+				//Enter code that updates it to whatever, probably need to overload this method
+				//so you can put in multiple things to update
+			}
+		}
 
 	}
 
 	@Override
-	public void deleteBooking(Booking booking) {
-		// TODO Auto-generated method stub
+	public void deleteBooking(Booking bookingToDelete) {
+		for (Booking booking : testData.getBookingMap().values() ){
+			if(booking.equals(bookingToDelete)){
+				testData.getBookingMap().remove(bookingToDelete.getBookingid());
+			}
+		}
 
 	}
 
-}
+	@Override
+	public void addTicketToBooking(String bookingid, Ticket ticketToAdd) {
+		for (Booking booking : testData.getBookingMap().values()){
+			if(booking.getBookingid().equals(bookingid)){
+				booking.addTicket(ticketToAdd);
+			}
+		}
+	}
+
+	@Override
+	public void removeTicketFromBooking(String bookingid, String ticketID) {
+				List<Ticket> bookedTickets = testData.getBookingMap().get(bookingid).getTickets();
+				for (Ticket ticket : bookedTickets){
+					if(ticket.getTicketID().equals(ticketID)){
+						bookedTickets.remove(ticketID);
+					}
+				}
+			}
+		
+		
+	}

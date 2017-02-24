@@ -3,98 +3,54 @@
  */
 package qacinema.service.managers.online;
 
-
+import java.util.List;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import qacinema.data.users.User;
 import qacinema.service.managers.UserManager;
 
-
 @Stateless
-public class UserManagerOnline implements UserManager{
-	
-	
-	@PersistenceContext
-    protected EntityManager em;
-	
-	
-	private User user;
-	
-	
+public class UserManagerOnline implements UserManager {
+
 	@Override
-	public User getUser() {
-		return user;
+	public User persistUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
-	
-	@Override
-	public String getId(){
-		return user.getEmail();
-	}
-	
-	@Override
-	public String getFirstname(){
-		return user.getFirstName();
-	}
-	
-	@Override
-	public String getLastName(){
-		return user.getLastName();
-	}
-	
-	@Override
-	public boolean getMailingList(){
-		return user.getMailingList();
-	}
-	
-	@Override
-	public String getPassword(){
-		return user.getPassword();
-	}
-	
-	@Override
-	public String getTelephone(){
-		return user.getTelephone();
+	public User findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void updateLastName(String name) {
-		user.setLastName(name);	
-	}
-	
-	@Override
-	public void updateMailingList(boolean onList) {
-		user.setMailingList(onList);		
+	public List<User> findByFirstName(String firstName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void updatePassword(String password) {
-		user.setPassword(password);
+	public List<User> findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public void updateTelephone(String number) {
-		user.setTelephone(number);
-		
+	public List<User> findAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
 
+	}
 
-	
+	@Override
+	public void deleteUser(User user) {
+		// TODO Auto-generated method stub
 
-
-	
-	
-	
-	
-
+	}
 }

@@ -1,6 +1,5 @@
-package qacinema.data.cinema;
 
-import java.util.List;
+package qacinema.data.cinema;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,45 +10,39 @@ import qacinema.data.film.Film;;
 /*
  * Created by James Lamkin
  */
-
 @Entity
-@Table(name="Showing")
-public class Showing{
-	
+@Table(name = "Showing")
+public class Showing {
 	@NotNull
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "showingID",  nullable = false, unique = true )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "showingID", nullable = false, unique = true)
 	private String showingID;
-
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "Film_FilmID", nullable=false, unique=true)
+	@JoinColumn(name = "Film_FilmID", nullable = false, unique = true)
 	private Film film;
-	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "screen_ScreenID", nullable=false)
+	@JoinColumn(name = "screen_ScreenID", nullable = false)
 	private Screen screen;
-	
 	@NotNull
-	@Column(name="Time")
+	@Column(name = "Time")
 	@Temporal(TemporalType.DATE)
 	private String dateTime;
-	
 	@NotNull
 	@Column(name = "Experience", length = 45)
 	private String experience;
-	
 	@NotNull
-	@Column(name = "Accessability", length = 45) 
+	@Column(name = "Accessability", length = 45)
 	private String accessability;
-	
-	//no-args constructor
-	public Showing() { }
-	
-	//Overloading
-	public Showing(String showingID, Film film, Screen screen, String dateTime,  String experience, String accessability){
+
+	public Showing() {
+		// No-argument constructor for injection
+	}
+
+	// Overloading
+	public Showing(String showingID, Film film, Screen screen, String dateTime, String experience, String accessability) {
 		this.showingID = showingID;
 		this.film = film;
 		this.screen = screen;
@@ -57,7 +50,7 @@ public class Showing{
 		this.experience = experience;
 		this.accessability = accessability;
 	}
-	
+
 	public String getShowingID() {
 		return showingID;
 	}
@@ -65,7 +58,7 @@ public class Showing{
 	public void setShowingID(String showingID) {
 		this.showingID = showingID;
 	}
-	
+
 	public Film getFilm() {
 		return film;
 	}
@@ -105,7 +98,4 @@ public class Showing{
 	public void setAccessability(String accessability) {
 		this.accessability = accessability;
 	}
-
-	
-
 }

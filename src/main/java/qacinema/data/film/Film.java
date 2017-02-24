@@ -1,5 +1,6 @@
 package qacinema.data.film;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -47,24 +48,34 @@ public class Film {
 	private Classification classification;
 	
 	@OneToMany(mappedBy = "film")
-	private List<UserRating> ratings;
+	private List<UserRating> ratings = new ArrayList<>();
 
 	@ManyToMany
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
-	private List<Genre> genres;
+	private List<Genre> genres = new ArrayList<>();
+	
+	@OneToMany
+	private List<Media> media = new ArrayList<>();
 	
 	//TODO Need to check with James, this is a one to Many relationship.
-	private List<Role> roles;
+	private List<Role> roles = new ArrayList<>();
 
 	public Film() {
 	}
 
 	public Film(String title, int lengthMins, String description, String date) {
-		super();
 		this.title = title;
 		this.lengthMins = lengthMins;
 		this.description = description;
 		this.date = date;
+	}
+
+	public String getFilmId() {
+		return filmId;
+	}
+
+	public void setFilmId(String filmId) {
+		this.filmId = filmId;
 	}
 
 	public String getTitle() {
@@ -83,12 +94,12 @@ public class Film {
 		this.lengthMins = lengthMins;
 	}
 
-	public String getDescirption() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescirption(String descirption) {
-		this.description = descirption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getDate() {
@@ -106,17 +117,46 @@ public class Film {
 	public void setClassification(Classification classi) {
 		this.classification = classi;
 	}
-	
+
 	public List<Genre> getGenres() {
 		return genres;
+	}
+	
+	public void setGenres(List<Genre> genres) {
+		this.genres = genres;
 	}
 
 	public List<Role> getRoles() {
 		return roles;
 	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public List<Media> getMedia() {
+		return media;
+	}
+
+	public void setMedia(List<Media> media) {
+		this.media = media;
+	}
+
+	public List<UserRating> getRatings() {
+		return ratings;
+	}
+
+	public void setRatings(List<UserRating> ratings) {
+		this.ratings = ratings;
+	}
 	
+	public void addRating(UserRating rating){
+		this.ratings.add(rating);
+	}
 	
-	
+	public void addMedia(Media media){
+		this.media.add(media);
+	}
 
 }
 

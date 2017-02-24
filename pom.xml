@@ -74,11 +74,6 @@
 
 		<!-- Import the CDI API, we use provided scope as the API is included in 
 			WildFly -->
-		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -97,11 +92,6 @@
 
 		<!-- Import the Common Annotations API (JSR-250), we use provided scope 
 			as the API is included in WildFly -->
-		<dependency>
-			<groupId>org.jboss.spec.javax.annotation</groupId>
-			<artifactId>jboss-annotations-api_1.2_spec</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- Import the JAX-RS API, we use provided scope as the API is included 
 			in WildFly -->
@@ -110,6 +100,23 @@
 			<artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-all</artifactId>
+    <version>1.3</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.moxiemocks/moxie -->
+<dependency>
+    <groupId>org.moxiemocks</groupId>
+    <artifactId>moxie</artifactId>
+    <version>1.1</version>
+</dependency>
+
+
+
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -149,6 +156,11 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.7.11</version>
+		</dependency>
 	</dependencies>
 
 	<build>
