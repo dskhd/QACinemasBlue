@@ -31,6 +31,6 @@ public class SeatsAndScreensTest {
 	
 	@Test
 	public void testSeatNumber() {
-		assertEquals("A43", seat.getSeat());
+		assertEquals("A43", seat.getSeatNum());
 	}
 }
