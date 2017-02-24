@@ -22,8 +22,8 @@ import qacinema.data.cinema.Showing;
 @Table(name = "ticket")
 @NamedQueries({
 	@NamedQuery(query="SELECT t FROM ticketView t WHERE t.ticketID = :id", name="Ticket.FIND_BY_ID"),
-	@NamedQuery(query="SELECT tickets FROM ", name = "Ticket.FIND_ALL_BY_USER")
-	
+	@NamedQuery(query="SELECT t FROM booking b JOIN b.tickets t WHERE b.userEmail=:userEmail", name = "Ticket.FIND_ALL_BY_USER"),
+	@NamedQuery(query="SELECT t FROM :tickets t JOIN film f WHERE t.showing.film.filmID=:filmID", name="Ticket.FIND_BY_FILM")
 })
 public class Ticket {
 	

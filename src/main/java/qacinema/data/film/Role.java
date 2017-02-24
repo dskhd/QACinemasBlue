@@ -9,11 +9,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "roles")
+@NamedQueries({ @NamedQuery(query = "SELECT r FROM roleview r WHERE r.name = :name", name = "Role.FIND_BY_NAME"),
+	@NamedQuery(name = "Role.FIND_ALL", query = "SELECT r FROM roles r"), })
 public class Role {
 
 	@Id

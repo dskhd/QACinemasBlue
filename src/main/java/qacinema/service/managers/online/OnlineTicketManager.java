@@ -57,7 +57,7 @@ public class OnlineTicketManager implements TicketManager {
 		List<Ticket> allTickets = getTicketsFromUser(user);
 		
 		
+		
 		return null;
-	}
-	
+	}	
 }
