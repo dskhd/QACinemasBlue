@@ -34,6 +34,8 @@ public class UserHaveAddresses {
 		this.userEmail = userEmail;
 		this.addressID = addressID;
 	}
+<<<<<<< HEAD
+=======
 
 	public String getAddressType() {
 		return addressType;
@@ -61,4 +63,5 @@ public class UserHaveAddresses {
 	
 	
 
+>>>>>>> c00eecfc10c0825ec7c474be7d69745276f0f8b3
 }
