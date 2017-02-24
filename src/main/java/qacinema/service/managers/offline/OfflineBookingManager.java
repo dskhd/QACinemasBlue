@@ -28,7 +28,7 @@ public class OfflineBookingManager implements BookingManager {
 	private TestData testData;
 
 	@Override
-	public Booking persistBooking(Booking booking) {
+	public Booking persistBooking(Booking booking) { //This needs fixing or the test is wrong or something
 		int id = testData.getBookingMap().size();
 		booking.setBookingid("" + id);
 		testData.setBooking(booking);
@@ -45,6 +45,15 @@ public class OfflineBookingManager implements BookingManager {
 		}
 		throw new NoResultException("No matching BookingID found.");
 
+	}
+
+	@Override
+	public List<Booking> findAllBookings() {
+		List<Booking> allBookings = new ArrayList<>();
+		for (Booking booking : testData.getBookingMap().values()){
+			allBookings.add(booking);
+		}
+		return allBookings;
 	}
 
 	@Override
@@ -119,6 +128,7 @@ public class OfflineBookingManager implements BookingManager {
 					}
 				}
 			}
+
 		
 		
 	}
