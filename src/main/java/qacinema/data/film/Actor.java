@@ -1,3 +1,7 @@
+/*Author: Sam Jackson
+ * 
+ */
+
 package qacinema.data.film;
 
 import javax.persistence.Column;
