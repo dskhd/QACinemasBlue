@@ -110,7 +110,7 @@ public Map<Integer, Genre> getGenreMap() {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
-		user.addAddressToList(address); 
+		//user.addAddressToList(address); 
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
@@ -148,7 +148,6 @@ public Map<Integer, Genre> getGenreMap() {
 	}
 	
 	public void addScreen(Screen screen) { 
-		screen.getScreenID(""+screen.hashCode());
 		this.screenMap.put(screen.hashCode(),screen);
 	}
 
