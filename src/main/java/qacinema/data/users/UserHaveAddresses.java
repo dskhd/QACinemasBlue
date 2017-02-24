@@ -34,5 +34,4 @@ public class UserHaveAddresses {
 		this.userEmails = userEmails;
 		this.addressIDs = addressIDs;
 	}
-
 }
