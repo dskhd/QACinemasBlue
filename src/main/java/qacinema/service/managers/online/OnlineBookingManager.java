@@ -2,17 +2,33 @@ package qacinema.service.managers.online;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import qacinema.annotations.Loggable;
 import qacinema.data.booking.Booking;
 import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.users.User;
 import qacinema.service.managers.BookingManager;
 
+
+@Alternative @Stateless @Loggable @Transactional(
+		rollbackOn=Exception.class)
 public class OnlineBookingManager implements BookingManager {
 
+	@PersistenceContext(
+			unitName="QACinemasBlue")
+	private EntityManager eM;
+	
 	@Override
 	public Booking persistBooking(Booking booking) {
-		
-		return null;
+		eM.getTransaction().begin();
+		eM.persist(booking);
+		eM.getTransaction().commit();
+		return findByBookingId(booking.getBookingid());
 	}
 
 	@Override

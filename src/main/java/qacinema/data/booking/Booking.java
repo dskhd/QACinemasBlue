@@ -7,6 +7,7 @@ import javax.validation.constraints.Past;
 
 import qacinema.data.booking.tickets.Ticket;
 import qacinema.data.users.User;
+import qacinema.service.managers.offline.QACinemaUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.swing.text.Utilities;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -30,22 +32,22 @@ public class Booking {
 	@NotNull
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(nullable = false, unique = true)
+	@Column(name ="bookingID", nullable = false, unique = true)
 	private String bookingid;
 	
 	@NotNull
 	@Past
-	@Column(name="time_booked")
-	private String time_booked;
+	@Column(name="timeBooked")
+	private String timeBooked;
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "users_email", nullable = false)
+	@JoinColumn(name = "userEmail", nullable = false)
 	private User user;
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "payments_idpayments", nullable = false)
+	@JoinColumn(name = "paymentsID", nullable = false)
 	private Payment payment;
 	
 	@NotNull
@@ -54,10 +56,10 @@ public class Booking {
 	private List<Ticket> tickets = new ArrayList<>();
 		
 	public Booking () {}
-	public Booking(String bookingid, String time_booked, User user, Payment payment) {
+	public Booking(String bookingid, User user, Payment payment) {
 		super();
 		this.bookingid = bookingid;
-		this.time_booked = time_booked;
+		this.timeBooked = QACinemaUtilities.getDate();
 		this.user = user;
 		this.payment = payment;
 		}
@@ -68,10 +70,10 @@ public class Booking {
 		this.bookingid = bookingid;
 	}
 	public String getTime_booked() {
-		return time_booked;
+		return timeBooked;
 	}
-	public void setTime_booked(String time_booked) {
-		this.time_booked = time_booked;
+	public void setTime_booked(String timeBooked) {
+		this.timeBooked = timeBooked;
 	}
 	public User getUser() {
 		return user;
