@@ -126,11 +126,6 @@ public class TestData {
 		seat.setSeatNum(""+seat.hashCode()); 
 		this.seatMap.put(seat.hashCode(),seat);
 	}
-	
-	public void addScreen(Screen screen) { 
-		screen.getScreenID(""+screen.hashCode());
-		this.screenMap.put(screen.hashCode(),screen);
-	}
 
 	public void addShowing(Showing showing) { 
 		showing.setShowingID(""+showing.hashCode());
