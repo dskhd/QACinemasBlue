@@ -22,6 +22,7 @@ import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Actor;
 import qacinema.data.film.Film;
+import qacinema.data.film.Genre;
 import qacinema.data.film.Role;
 import qacinema.data.users.Address;
 import qacinema.data.users.User;
@@ -43,6 +44,7 @@ public class TestData {
 	private Map<Integer,Screen> screenMap;
 	private Map<Integer,Address> addressMap;
 	private Map<Integer,Role> roleMap;
+	private Map<Integer,Genre> genreMap;
 	
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +62,7 @@ public class TestData {
 		screenMap = new HashMap<>();
 		addressMap = new HashMap<>();
 		roleMap = new HashMap<>();
+		genreMap = new HashMap<>();
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
@@ -73,11 +76,28 @@ public class TestData {
 	public Ticket ticket = new Ticket("1", ticketType, showing);
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
-	public Booking booking = new Booking("1","12:00",user,payment);
+	public Booking booking = new Booking("1",user,payment);
 	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
 	public Role role = new Role("Forrest Gump");
+	public Genre genre = new Genre("Fantasy");
 										
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public Map<Integer, Genre> getGenreMap() {
+		return genreMap;
+	}
+
+	public void setGenreMap(Map<Integer, Genre> genreMap) {
+		this.genreMap = genreMap;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Have a check of the "setID" method within your class to make sure that its either the same as used here, or change to
 	 * make it appear here the same as in your class
@@ -90,7 +110,7 @@ public class TestData {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
 		
-		user.addAddressToList(address); 
+		//user.addAddressToList(address); 
 	}
 	
 	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
@@ -126,6 +146,11 @@ public class TestData {
 		seat.setSeatNum(""+seat.hashCode()); 
 		this.seatMap.put(seat.hashCode(),seat);
 	}
+	
+	public void addScreen(Screen screen) { 
+		this.screenMap.put(screen.hashCode(),screen);
+	}
+
 
 	public void addShowing(Showing showing) { 
 		showing.setShowingID(""+showing.hashCode());

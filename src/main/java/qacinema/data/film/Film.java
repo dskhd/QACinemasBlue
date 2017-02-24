@@ -1,3 +1,7 @@
+/*Author: Sam Jackson
+ * 
+ */
+
 package qacinema.data.film;
 
 import java.util.ArrayList;
@@ -11,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.*;
@@ -19,7 +25,13 @@ import qacinema.data.users.UserRating;
 
 @Entity
 @Table(name = "film")
+@NamedQueries({ @NamedQuery(query = "SELECT fi FROM filmview fi WHERE fi.name = :name", name = "Film.FIND_BY_NAME"),
+		@NamedQuery(name = "Film.FIND_ALL", query = "SELECT fi FROM film fi"), })
+
 public class Film {
+	
+	public static final String FIND_BY_NAME = "Film.findByName";
+	public static final String FIND_ALL = "Film.findAll";
 
 	@NotNull
 	@Id
@@ -46,18 +58,18 @@ public class Film {
 	@Column(name = "Classification", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Classification classification;
-	
+
 	@OneToMany(mappedBy = "film")
 	private List<UserRating> ratings = new ArrayList<>();
 
 	@ManyToMany
 	@JoinTable(name = "film_has_genres", joinColumns = @JoinColumn(name = "film_FilmID"), inverseJoinColumns = @JoinColumn(name = "genres_GenreID"))
 	private List<Genre> genres = new ArrayList<>();
-	
+
 	@OneToMany
 	private List<Media> media = new ArrayList<>();
-	
-	//TODO Need to check with James, this is a one to Many relationship.
+
+	// TODO Need to check with James, this is a one to Many relationship.
 	private List<Role> roles = new ArrayList<>();
 
 	public Film() {
@@ -121,7 +133,7 @@ public class Film {
 	public List<Genre> getGenres() {
 		return genres;
 	}
-	
+
 	public void setGenres(List<Genre> genres) {
 		this.genres = genres;
 	}
@@ -149,14 +161,13 @@ public class Film {
 	public void setRatings(List<UserRating> ratings) {
 		this.ratings = ratings;
 	}
-	
-	public void addRating(UserRating rating){
+
+	public void addRating(UserRating rating) {
 		this.ratings.add(rating);
 	}
-	
-	public void addMedia(Media media){
+
+	public void addMedia(Media media) {
 		this.media.add(media);
 	}
 
 }
-

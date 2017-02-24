@@ -79,15 +79,9 @@ public class OfflineUserManager implements UserManager {
 		throw new NoResultException("No Users found");
 	}
 
-	@Override
-	public void updateUser(User user) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public void deleteUser(User user) {
-		// TODO Auto-generated method stub
 
 	}
 

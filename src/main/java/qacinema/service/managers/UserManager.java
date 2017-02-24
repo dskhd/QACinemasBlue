@@ -15,6 +15,5 @@ public interface UserManager {
 	public List<User> findByFirstName(String firstName);
 	public List<User> findByLastName(String lastName);
 	public List<User> findAllUsers();
-	public void updateUser(User user);
 	public void deleteUser(User user);
 }

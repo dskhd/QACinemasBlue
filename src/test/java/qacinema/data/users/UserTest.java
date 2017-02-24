@@ -32,8 +32,6 @@ public class UserTest {
 		address.setLine2("line2");
 		address.setPostcode("postcode");
 		address.setTown("town");
-		addressList.add(address);
-		user.setAddressList(addressList);
 	}
 
 	User user = new User();
@@ -74,15 +72,6 @@ public class UserTest {
 		assertEquals(false, user.getMailingList());
 	}
 
-	@Test
-	public void testGetAddress() {
-		boolean addressFound = false;
-		for (Address address : user.getAddressList()) {
-			if (address.getAddressID().equals("1")) {
-				addressFound = true;
-			}
-		}
-		assertTrue(addressFound);
-	}
+	
 
 }

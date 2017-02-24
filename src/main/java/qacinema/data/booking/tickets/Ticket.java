@@ -6,12 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import qacinema.data.booking.Booking;
 import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 
@@ -19,8 +19,16 @@ import qacinema.data.cinema.Showing;
  * @author AlexN
  */
 @Entity
-@Table(name = "tickets")
+@Table(name = "ticket")
+@NamedQueries({
+	@NamedQuery(query="SELECT t FROM ticketView t WHERE t.ticketID = :id", name="Ticket.FIND_BY_ID"),
+	@NamedQuery(query="SELECT t FROM booking b JOIN b.tickets t WHERE b.userEmail=:userEmail", name = "Ticket.FIND_ALL_BY_USER"),
+	@NamedQuery(query="SELECT t FROM :tickets t JOIN film f WHERE t.showing.film.filmID=:filmID", name="Ticket.FIND_BY_FILM")
+})
 public class Ticket {
+	
+	public static final String FIND_BY_ID = "Ticket.FIND_BY_ID";
+	public static final String FIND_ALL_BY_USER = "Ticket.FIND_ALL_BY_USER";
 
 	@NotNull
 	@Id
@@ -29,13 +37,12 @@ public class Ticket {
 
 	@NotNull
 	@ManyToOne
-	@Column(name = "ticket_type_type", nullable = false)
 	private String ticketType;
 
+	
+	//TODO - FIX THIS BIT!
 	@NotNull
-	@ManyToOne
-	@JoinColumns({ @JoinColumn(name = "seats_seat", nullable = false),
-			@JoinColumn(name = "seats_screen_screenID", nullable = false) })
+	@JoinColumn(name = "seatID")
 	private Seat seat;
 
 	@NotNull
@@ -46,10 +53,6 @@ public class Ticket {
 	@NotNull
 	@Column(name="price")
 	private float price;
-	
-	@NotNull
-	@JoinColumn(name="bookings_bookingid", nullable=false)
-	private Booking booking;
 	
 
 	public Ticket(String ticketID, TicketType ticketType, Showing showing) {

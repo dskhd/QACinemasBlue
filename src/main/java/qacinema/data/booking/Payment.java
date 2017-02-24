@@ -6,12 +6,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "payments")
+
+@NamedQueries({
+	@NamedQuery(query = "SELECT p FROM payment p WHERE p.name = :name", name="Stock.FIND_BY_NAME"),
+	@NamedQuery(name = "Payment.FIND_ALL", query = "SELECT p FROM payment p"),
+})
+
 public class Payment {
+	
+	public static final String 	FIND_BY_PAYMENT_ID = "Payment.findByPaymentID", 
+								FIND_ALL = "Payment.findAll";
 
 	@NotNull
 	@Id
@@ -41,7 +52,7 @@ public class Payment {
 		this.cardnumber = cardnumber;
 		this.email_address = email_address;
 	}
-
+	
 	public String getPaymentsid() {
 		return paymentsid;
 	}
