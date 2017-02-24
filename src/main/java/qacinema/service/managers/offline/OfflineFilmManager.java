@@ -33,7 +33,7 @@ public class OfflineFilmManager implements FilmManager {
 	}
 
 	@Override
-	public Film findById(int filmId) {
+	public Film findById(String filmId) {
 		return testData.getFilmMap().get(filmId);
 	}
 

@@ -41,5 +41,13 @@ public class ActorTest {
 		act.setLastName(newLastName);
 		assertEquals("Hanks", act.getLastName());
 	}
+	
+	@Test
+	public void testGetSetActorId() {
+		
+		String actorId = "1";
+		act.setActorId(actorId);
+		assertEquals("1", act.getActorId());
+	}
 
 }

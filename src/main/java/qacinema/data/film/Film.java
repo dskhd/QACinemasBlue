@@ -25,8 +25,8 @@ import qacinema.data.users.UserRating;
 
 @Entity
 @Table(name = "film")
-@NamedQueries({ @NamedQuery(query = "SELECT fi FROM film fi WHERE fi.name = :name", name = "Film.FIND_BY_NAME"),
-		@NamedQuery(name = "Film.FIND_ALL", query = "SELECT title FROM film Film"), })
+@NamedQueries({ @NamedQuery(query = "SELECT fi FROM filmview fi WHERE fi.name = :name", name = "Film.FIND_BY_NAME"),
+		@NamedQuery(name = "Film.FIND_ALL", query = "SELECT fi FROM film fi"), })
 
 public class Film {
 	

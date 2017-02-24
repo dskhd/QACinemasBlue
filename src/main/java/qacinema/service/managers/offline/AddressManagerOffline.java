@@ -3,9 +3,6 @@
  */
 package qacinema.service.managers.offline;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.persistence.NoResultException;
 import qacinema.data.users.Address;
@@ -24,8 +21,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findAddressById(User user, String id) {
-		for (Address address : user.getAddressList()) {
+	public Address findAddressById(String id) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getAddressID().equals(id)) {
 				return address;
 			}
@@ -34,8 +31,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findByLine1(User user, String line1) {
-		for (Address address : user.getAddressList()) {
+	public Address findByLine1(String line1) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getLine1().equals(line1)) {
 				return address;
 			}
@@ -44,8 +41,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findByLine2(User user, String line2) {
-		for (Address address : user.getAddressList()) {
+	public Address findByLine2(String line2) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getLine2().equals(line2)) {
 				return address;
 			}
@@ -54,8 +51,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findByTown(User user, String town) {
-		for (Address address : user.getAddressList()) {
+	public Address findByTown(String town) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getTown().equals(town)) {
 				return address;
 			}
@@ -64,8 +61,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findByCounty(User user, String county) {
-		for (Address address : user.getAddressList()) {
+	public Address findByCounty(String county) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getCounty().equals(county)) {
 				return address;
 			}
@@ -74,8 +71,8 @@ public class AddressManagerOffline implements AddressManager {
 	}
 
 	@Override
-	public Address findByPostcode(User user, String postcode) {
-		for (Address address : user.getAddressList()) {
+	public Address findByPostcode(String postcode) {
+		for (Address address : testData.getAddressMap().values()) {
 			if (address.getPostcode().equals(postcode)) {
 				return address;
 			}

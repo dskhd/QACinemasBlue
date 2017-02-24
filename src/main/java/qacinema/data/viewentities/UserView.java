@@ -1,7 +1,11 @@
 package qacinema.data.viewentities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "userView")
 public class UserView {
 	
 	@Column
@@ -31,6 +35,9 @@ public class UserView {
 	@Column 
 	private String addressType;
 
+	
+	
+	
 	public String getUserName() {
 		return userName;
 	}

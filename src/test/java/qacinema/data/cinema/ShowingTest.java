@@ -3,6 +3,8 @@ package qacinema.data.cinema;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import qacinema.data.film.Film;
+
 
 public class ShowingTest {
 
@@ -28,18 +30,17 @@ public class ShowingTest {
 	public void testScreen(){
 		Showing show = new Showing();
 		
-		show.setScreen(4);
-		int screen = show.getScreen();
-		assertEquals(screen, 4);
+		show.setScreen(new Screen("4", 'A', 12, ""));
+		Screen screen = show.getScreen();
+		assertEquals(screen, screen);
 	}
 	
 	@Test
 	public void testFilm(){
 		Showing show = new Showing();
-		
-		show.setFilm(2);
-		int film = show.getFilm();
-		assertEquals(film, 2);
+		Film film = new Film();
+		show.setFilm(film);
+		assertEquals(film, show.getFilm());
 	}
 	
 	@Test
@@ -55,34 +56,11 @@ public class ShowingTest {
 	public void testShowingID(){
 		Showing show = new Showing();
 		
-		show.setShowingID(3);
-		int showID = show.getShowingID();
-		assertEquals(showID, 3);
+		show.setShowingID("3");
+		String showID = show.getShowingID();
+		assertEquals(showID, "3");
 		
 	}
-	
-	@Test
-	public void testConsutructor(){
-		Showing show = new Showing(3, 2, 4, "10022017164500", "IMAX", "Subtitled");
-		int showID = show.getShowingID();
-		assertEquals(showID, 3);
-		
-		String access = show.getAccessability();
-		assertEquals(access,"Subtitled");
-		
-		int film = show.getFilm();
-		assertEquals(film, 2);
-		
-		int screen = show.getScreen();
-		assertEquals(screen, 4);
-		
-		String time = show.getDateTime();
-		assertEquals("10022017164500", time);
-		
-		String exp = show.getExperience();
-		assertEquals(exp,"IMAX" );
-		
-		
-	}
+
 	
 }
