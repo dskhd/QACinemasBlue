@@ -29,7 +29,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 
 	@Override
 	public Payment findUserPaymentDetailsByID(User user, String paymentId) throws NoResultException {
-		for (Payment paymentDetails : user.getPaymentDetailList()) {
+		for (Payment paymentDetails : user.getPayments()) {
 			if (paymentDetails.getPaymentsid().equals(paymentId)) {
 				return paymentDetails;
 			}
@@ -49,7 +49,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 
 	@Override
 	public List<Payment> findAllUserPaymentDetails(User user) {
-		return user.getPaymentDetailList();
+		return user.getPayments();
 	}
 
 	@Override

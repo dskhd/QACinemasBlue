@@ -19,20 +19,46 @@ public class UserHaveAddresses {
 
 	@NotNull
 	@Column(name = "userEmails")
-	private String userEmails;
+	private String userEmail;
 
 	@NotNull
 	@Column(name = "addressIDs")
-	private String addressIDs;
+	private String addressID;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userEmails")
 	private User user;
 
-	public UserHaveAddresses(String addressType, String userEmails, String addressIDs) {
+	public UserHaveAddresses(String addressType, String userEmail, String addressID) {
 		this.addressType = addressType;
-		this.userEmails = userEmails;
-		this.addressIDs = addressIDs;
+		this.userEmail = userEmail;
+		this.addressID = addressID;
 	}
+
+	public String getAddressType() {
+		return addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmails) {
+		this.userEmail = userEmails;
+	}
+
+	public String getAddressID() {
+		return addressID;
+	}
+
+	public void setAddressID(String addressID) {
+		this.addressID = addressID;
+	}
+	
+	
 
 }
