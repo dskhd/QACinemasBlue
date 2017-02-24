@@ -11,7 +11,7 @@ public interface FilmManager {
 	
 	public Film persistFilm(Film film);
 	public Actor persistActor(Actor actor);
-	public Film findById(int filmId);
+	public Film findById(String filmId);
 	public List<Film> findByTitle(String title);
 	public List<Genre> findByGenre(String genre);
 	public List<Actor> findByActor(String actor);
