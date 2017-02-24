@@ -54,10 +54,9 @@ public class OnlineTicketManager implements TicketManager {
 
 	@Override
 	public List<Ticket> getTicketsFromFilm(User user, Film film) {
-		List<Ticket> allTickets = getTicketsFromUser(user);
+		TypedQuery<Ticket> query = entityManager.createNamedQuery(Ticket.FIND_ALL_BY_FILM, Ticket.class);
+		query.setParameter("filmID", film.getFilmId());
 		
-		
-		
-		return null;
+		return query.getResultList();
 	}	
 }
