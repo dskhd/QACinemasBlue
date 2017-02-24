@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import qacinema.data.film.Actor;
 import qacinema.data.film.Film;
+import qacinema.data.film.Genre;
 import qacinema.data.film.Role;
 import qacinema.service.managers.FilmManager;
 import qacinema.testdata.TestData;
@@ -47,11 +48,11 @@ public class OfflineFilmManager implements FilmManager {
 	}
 
 	@Override
-	public List<Film> findByGenre(String genre) {
-		List<Film> results = new ArrayList<Film>();
-		for(Film film : testData.getFilmMap().values()){
-			if(film.getGenres().contains(genre))
-				results.add(film);
+	public List<Genre> findByGenre(String genre) {
+		List<Genre> results = new ArrayList<Genre>();
+		for(Genre genres : testData.getGenreMap().values()){
+			if(genres.getGenre().contains(genre))
+				results.add(genres);
 		}
 		return results;
 	}

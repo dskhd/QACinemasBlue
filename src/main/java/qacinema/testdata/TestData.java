@@ -22,6 +22,7 @@ import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Actor;
 import qacinema.data.film.Film;
+import qacinema.data.film.Genre;
 import qacinema.data.film.Role;
 import qacinema.data.users.Address;
 import qacinema.data.users.User;
@@ -43,6 +44,7 @@ public class TestData {
 	private Map<Integer,Screen> screenMap;
 	private Map<Integer,Address> addressMap;
 	private Map<Integer,Role> roleMap;
+	private Map<Integer,Genre> genreMap;
 	
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,6 +62,7 @@ public class TestData {
 		screenMap = new HashMap<>();
 		addressMap = new HashMap<>();
 		roleMap = new HashMap<>();
+		genreMap = new HashMap<>();
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
@@ -76,8 +79,25 @@ public class TestData {
 	public Booking booking = new Booking("1","12:00",user,payment);
 	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
 	public Role role = new Role("Forrest Gump");
+	public Genre genre = new Genre("Fantasy");
 										
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public Map<Integer, Genre> getGenreMap() {
+		return genreMap;
+	}
+
+	public void setGenreMap(Map<Integer, Genre> genreMap) {
+		this.genreMap = genreMap;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Have a check of the "setID" method within your class to make sure that its either the same as used here, or change to
 	 * make it appear here the same as in your class
