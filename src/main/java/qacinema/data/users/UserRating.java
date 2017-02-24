@@ -19,7 +19,7 @@ import javax.persistence.JoinColumn;
 public class UserRating {
 
 	@Id
-	@Column(name = "user_ratingid")
+	@Column(name = "ratingid")
 	private int ratingId;
 	
 	@NotNull
@@ -27,16 +27,16 @@ public class UserRating {
 	private int rating;
 	
 	@NotNull
-	@Column(name = "comment")
+	@Column(name = "reviewText")
 	private String comment;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="user_email")	
+	@JoinColumn(name="userEmail")	
 	private User reviewer;
 	
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="filmId")	
+	@JoinColumn(name="filmIDs")	
 	private Film film;
 	
 	public UserRating() {
@@ -44,6 +44,16 @@ public class UserRating {
 	}
 	
 	
+	public Film getFilm() {
+		return film;
+	}
+
+
+	public void setFilm(Film film) {
+		this.film = film;
+	}
+
+
 	public UserRating(int rating, String comment, User reviewer, Film film) {
 		super();
 		this.rating = rating;
