@@ -16,7 +16,7 @@ import qacinema.service.managers.AddressManager;
 @Alternative
 @Stateless
 @Loggable
-public class AddressManagerOnline implements AddressManager {
+public class OnlineAddressManager implements AddressManager {
 
 	@Inject
 	protected EntityManager em;
