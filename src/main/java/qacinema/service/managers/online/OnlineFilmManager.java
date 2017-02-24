@@ -16,20 +16,26 @@ import qacinema.data.film.Genre;
 import qacinema.data.film.Role;
 import qacinema.service.managers.FilmManager;
 
-@Alternative @Stateless @Loggable @Transactional(rollbackOn= Exception.class)
+@Alternative
+@Stateless
+@Loggable
+@Transactional(rollbackOn = Exception.class)
 public class OnlineFilmManager implements FilmManager {
 
-	@PersistenceContext(unitName = "QACubenasBluePU") //TODO change
+	@PersistenceContext(unitName = "QACubenasBluePU") // TODO change
 	private EntityManager entityManager;
-	
-	
-	
+
 	@Override
 	public Film persistFilm(Film film) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(film);
 		entityManager.getTransaction().commit();
-		return null; //TODO change
+		return null; // TODO change
+	}
+
+	@Override
+	public Film findById(String filmId) {
+		return entityManager.find(Film.class, filmId);
 	}
 
 	@Override
@@ -38,11 +44,6 @@ public class OnlineFilmManager implements FilmManager {
 		entityManager.persist(actor);
 		entityManager.getTransaction().commit();
 		return null;
-	}
-
-	@Override
-	public Film findById(int filmId) {
-		return entityManager.find(Film.class, filmId);
 	}
 
 	@Override
