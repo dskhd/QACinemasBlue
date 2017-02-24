@@ -97,6 +97,9 @@ public class User {
 	
 	
 	
+	
+	
+	
 	public List<UserRating> getRatings() {
 		return ratings;
 	}
