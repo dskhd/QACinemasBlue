@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull;
 
 public class Payment {
 	
-	public static final String 	FIND_BY_NAME = "Payment.findByPaymentID", 
+	public static final String 	FIND_BY_PAYMENT_ID = "Payment.findByPaymentID", 
 								FIND_ALL = "Payment.findAll";
 
 	@NotNull
@@ -53,15 +53,6 @@ public class Payment {
 		this.email_address = email_address;
 	}
 	
-	/*
-	//@Override
-	public List<Payment> findByPaymentID(String name) {
-		TypedQuery<Payment> query = entityManager.createNamedQuery(Payment.FIND_BY_NAME, Payment.class);
-		query.setParameter("name", name);
-		return query.getResultList();
-	}
-	*/
-
 	public String getPaymentsid() {
 		return paymentsid;
 	}

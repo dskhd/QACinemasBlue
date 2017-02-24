@@ -35,7 +35,7 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 	
 	//@Override
 	public List<Payment> findByPaymentID(String name) {
-		TypedQuery<Payment> query = entityManager.createNamedQuery(Payment.FIND_BY_NAME, Payment.class);
+		TypedQuery<Payment> query = entityManager.createNamedQuery(Payment.FIND_BY_PAYMENT_ID, Payment.class);
 		query.setParameter("name", name);
 		return query.getResultList();
 	}
@@ -49,7 +49,7 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 		return findByPaymentID(paymentDetails.getPaymentsid()).get(0);
 		
 	}
-
+	
 	
 	@Override
 	public Payment findUserPaymentDetailsByID(User user, String paymentId) {
