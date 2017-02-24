@@ -19,7 +19,7 @@ import qacinema.data.film.Film;
 import qacinema.service.managers.ShowingManager;
 
 @Alternative @Stateless @Loggable @Transactional(rollbackOn=Exception.class)
-public class ShowingManagerOnline implements ShowingManager {
+public class OnlineShowingManager implements ShowingManager {
 	
 	@PersistenceContext(unitName="QACinemasBluePU")
 	private EntityManager entityManager;
