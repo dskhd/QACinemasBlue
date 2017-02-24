@@ -16,19 +16,19 @@ public class Genre {
 	private int id;
 	
 	@NotNull
-	private String genre;
+	private String genreName;
 	
 	
 	public Genre(String genre){
-		this.genre = genre;
+		this.genreName = genre;
 	}
 	
 	public String getGenre() {
-		return genre;
+		return genreName;
 	}
 
 	public void setGenre(String genre) {
-		this.genre = genre;
+		this.genreName = genre;
 	}
 	
 	public int getId(){

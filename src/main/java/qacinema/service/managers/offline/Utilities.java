@@ -11,5 +11,4 @@ public class Utilities {
 		String date = dateFormat.format(cal);
 		return date;
 	}
-	
 }

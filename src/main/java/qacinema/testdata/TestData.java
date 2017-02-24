@@ -1,4 +1,4 @@
-package qacinema.test_data;
+package qacinema.testdata;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +22,7 @@ import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Actor;
 import qacinema.data.film.Film;
+import qacinema.data.film.Role;
 import qacinema.data.users.Address;
 import qacinema.data.users.User;
 
@@ -30,9 +31,7 @@ import qacinema.data.users.User;
 @Singleton
 public class TestData {
 
-	//public static TestData data = new TestData(); DELETE DUE TO @SINGLETON IMPLEMENTATION
-
-	private Map<Integer,Ticket> ticketMap; // converting from lists to maps
+	private Map<Integer,Ticket> ticketMap; 
 	private Map<Integer,Showing> showingMap;
 	private Map<Integer,Film> filmMap;
 	private Map<Integer,Actor> actorMap;
@@ -43,6 +42,8 @@ public class TestData {
 	private Map<Integer,Seat> seatMap;
 	private Map<Integer,Screen> screenMap;
 	private Map<Integer,Address> addressMap;
+	private Map<Integer,Role> roleMap;
+	
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@PostConstruct
@@ -58,45 +59,61 @@ public class TestData {
 		seatMap = new HashMap<>();
 		screenMap = new HashMap<>();
 		addressMap = new HashMap<>();
+		roleMap = new HashMap<>();
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
-	public Payment payment = new Payment(1, "Credit Card", true, "12345678910", "johndoe@gmail.com");
+
+	public Payment payment = new Payment("1", "Credit Card", "12345678910", "johndoe@gmail.com");
+
 	public Seat seat = new Seat("A1","Fluffy");
-	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", 2014);
-	public Screen screen = new Screen(1,100,"2D");
-	public Showing showing = new Showing(1, film, screen, "22022017160000", "2D", "Audio Described");
-	public Ticket ticket = new Ticket("1", ticketType, seat, showing);
+	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
+	public Screen screen = new Screen("1", 'n',30,"2D");
+	public Showing showing = new Showing("1", film, screen, "22022017160000", "2D", "Audio Described");
+	public Ticket ticket = new Ticket("1", ticketType, showing);
 	public Actor actor = new Actor("Tom", "Hanks");
 	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
-	public Booking booking = new Booking(1,"12:00",user,payment);
+	public Booking booking = new Booking("1","12:00",user,payment);
+	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
+	public Role role = new Role("Forrest Gump");
 										
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Have a check of the "setID" method within your class to make sure that its either the same as used here, or change to
 	 * make it appear here the same as in your class
-	 * 
-	 * Should updates/Deletes also be implemented?
+
 	 * 
 	 */
 	
-	public void addTicket(Ticket ticket) { 
-		ticket.setID(""+ticket.hashCode());
-		this.ticketMap.put(ticket.hashCode(),ticket);
+	
+	public void addAddress(Address address) {
+		address.setAddressID(""+address.hashCode());
+		this.addressMap.put(address.hashCode(), address);
+		
+		user.addAddressToList(address); 
 	}
 	
-	public void addUser(User user) { 
-		user.set(""+user.hashCode());
+	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
+		//user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
 	}
 	
+
+///////////////////////////////////////////////////////////////////
+	public Ticket addTicket(Ticket ticket) {              //////////
+		ticket.setID(""+ticket.hashCode());
+		this.ticketMap.put(ticket.hashCode(),ticket);
+		return ticket;
+	}
+///////////////////////////////////////////////////////////////////		
 	public void addTickets(Booking booking) { 
+		booking.setBookingid(""+booking.hashCode());
 		booking.setBookingid(""+booking.hashCode());
 		this.bookingMap.put(booking.hashCode(),booking);
 	}
 	
 	public void addTicketType(TicketType ticketType) { 
-		ticketType.setType(""+ticketType.hashCode());
+		ticketType.setType(""+ticketType.hashCode()); ////////////////////// no ticket type ID to set
 		this.ticketTypeMap.put(ticketType.hashCode(),ticketType);
 	}
 	
@@ -106,13 +123,8 @@ public class TestData {
 	}
 	
 	public void addSeat(Seat seat) {
-		seat.set(""+seat.hashCode());
+		seat.setSeatNum(""+seat.hashCode()); 
 		this.seatMap.put(seat.hashCode(),seat);
-	}
-	
-	public void addScreen(Screen screen) { 
-		screen.setScreenID(""+screen.hashCode());
-		this.screenMap.put(screen.hashCode(),screen);
 	}
 
 	public void addShowing(Showing showing) { 
@@ -121,17 +133,37 @@ public class TestData {
 	}
 	
 	public void addFilm(Film film) { 
-		film.set(""+film.hashCode());
+		film.setFilmId(""+film.hashCode()); 
 		this.filmMap.put(film.hashCode(),film);
 	}
 	
 	public void addActor(Actor actor) { 
-		actor.set(""+actor.hashCode());
+		actor.setActorId(""+actor.hashCode());
 		this.actorMap.put(actor.hashCode(),actor);
 	}
-	
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	
+	public Map<Integer, Role> getRoleMap() {
+		return roleMap;
+	}
+
+	public void setRoleMap(Map<Integer, Role> roleMap) {
+		this.roleMap = roleMap;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+	
+	public int ticketMapSize() { ////////////////////////// created because I couldn't return size of "getTicketMap"
+		return ticketMap.size();
+	}
+	
 	public Map<Integer, Ticket> getTicketMap() {
 		return ticketMap;
 	}
@@ -210,6 +242,14 @@ public class TestData {
 
 	public void setScreenMap(Map<Integer, Screen> screenMap) {
 		this.screenMap = screenMap;
+	}
+
+	public Map<Integer, Address> getAddressMap() {
+		return addressMap;
+	}
+
+	public void setAddressMap(Map<Integer, Address> addressMap) {
+		this.addressMap = addressMap;
 	}
 
 	public TicketType getTicketType() {
@@ -292,5 +332,12 @@ public class TestData {
 		this.booking = booking;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
 
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
 }

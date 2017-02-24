@@ -25,9 +25,11 @@ public class OfflineTicketManager implements TicketManager{
 
 	@Override
 	public Ticket persistTicket(Ticket ticket) {
+		OfflineSeatManager seatManager = new OfflineSeatManager();
 		int id = testData.getTicketMap().size();
 		ticket.setID("" + id);
-		testData.addTicket(ticket);
+		ticket.setSeat(seatManager.findFirstFreeSeat(ticket.getShowing()));
+		//testData.addTicket(ticket);
 		return ticket;
 	}
 

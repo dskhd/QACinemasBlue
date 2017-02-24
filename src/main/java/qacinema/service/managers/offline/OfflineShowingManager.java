@@ -1,6 +1,6 @@
 package qacinema.service.managers.offline;
 
-import qacinema.test_data.TestData;
+import qacinema.testdata.TestData;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,10 +9,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import qacinema.annotations.Loggable;
 import qacinema.data.cinema.Showing;
 import qacinema.data.film.Film;
 import qacinema.service.managers.ShowingManager;
-import qacinema.logger.*;
 
 /*
  * Created by James Lamkin

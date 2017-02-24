@@ -8,3 +8,4 @@
 .git
 sonar*
 .sonar
+pom.xml

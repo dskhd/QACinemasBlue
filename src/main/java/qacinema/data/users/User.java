@@ -1,10 +1,10 @@
 /**
  * Created by Mark Lester
+ * Editor Matt Gordon
  */
 
 package qacinema.data.users;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotNull;
 
-
+import qacinema.data.booking.Payment;
 
 @Table(name = "users")
 @Entity
@@ -43,27 +43,19 @@ public class User {
 	@Column(name = "mailing_list")
 	@NotNull
 	private boolean mailingList;
-	
-	@OneToMany(mappedBy="reviewer")
+
+	@OneToMany(mappedBy = "reviewer")
 	private List<UserRating> ratings;
-	
-	
-	
-	
-	
+
 	@ManyToMany
-	@JoinTable(
-	      name="user_has_addresses",
-	      joinColumns = @JoinColumn(name="users_email", referencedColumnName="ID"),
-	      inverseJoinColumns = @JoinColumn(name="address_addressId", referencedColumnName="ID"))
-	private List<Address> addressess;
-	
-	
-	
-	public User(){
+	@JoinTable(name = "user_has_addresses", joinColumns = @JoinColumn(name = "users_email", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "address_addressId", referencedColumnName = "ID"))
+	private List<Address> addressList;
+	private List<Payment> paymentDetailList;
+
+	public User() {
 		super();
-	}	
-	
+	}
+
 	public User(String email, String password, String accountType, String firstName, String lastName, String telephone,
 			boolean mailingList) {
 		super();
@@ -75,70 +67,85 @@ public class User {
 		this.telephone = telephone;
 		this.mailingList = mailingList;
 	}
-	
-	
-	
-	
+
+	public List<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void addAddressToList(Address address) {
+		addressList.add(address);
+	}
+
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
+	}
+
+	public List<Payment> getPaymentDetailList() {
+		return paymentDetailList;
+	}
+
+	public void addPaymentDetailsToList(Payment payment) {
+		paymentDetailList.add(payment);
+	}
+
+	public void setPaymentDetailList(List<Payment> paymentDetailList) {
+		this.paymentDetailList = paymentDetailList;
+	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
 	public String getAccountType() {
 		return accountType;
 	}
+
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	
+
 	public String getTelephone() {
 		return telephone;
 	}
+
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	
-	
+
 	public boolean getMailingList() {
 		return mailingList;
 	}
+
 	public void setMailingList(boolean mailingList) {
 		this.mailingList = mailingList;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

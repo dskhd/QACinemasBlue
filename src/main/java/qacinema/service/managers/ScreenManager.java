@@ -10,7 +10,7 @@ import qacinema.data.cinema.Showing;
 import qacinema.data.film.Film;
 
 
-public interface Screen_Manager {
+public interface ScreenManager {
 	
 	public List<Screen> FindScreenByFilm(Film film);
 	public List<Screen> FindScreenByFilm(String film);

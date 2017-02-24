@@ -15,101 +15,113 @@ import qacinema.data.film.MediaType;
 import qacinema.service.managers.MediaManager;
 import qacinema.testdata.TestData;
 
-@Loggable @Default @Stateless
+@Loggable
+@Default
+@Stateless
 public class OfflineMediaManager implements MediaManager {
 
-	@Inject private TestData test;
-	
+	@Inject
+	private TestData test;
+
 	@Override
 	public List<Media> findAllMediaByFilm(Film film) {
 		Collection<Film> filmList = test.getFilmMap().values();
-		List<Media> mediaList;
-		for (Film eachFilm : filmList){
-			if (eachFilm == film){
+		List<Media> mediaList = new ArrayList<>();
+		for (Film eachFilm : filmList) {
+			if (eachFilm == film) {
 				mediaList = eachFilm.getMedia();
-			}	
+			}
 		}
 		return mediaList;
 	}
-	
+
 	@Override
 	public List<Media> findImagesByFilm(Film film) {
 		List<Media> mediaList = findAllMediaByFilm(film);
-		
+
 		List<Media> mediaListTrimmed = new ArrayList<>();
-		for (Media m : mediaList){
-			if (m.getMediaType() == MediaType.IMAGE){
+		for (Media m : mediaList) {
+			if (m.getMediaType() == MediaType.IMAGE) {
 				mediaListTrimmed.add(m);
 			}
 		}
-		
-		return mediaListTrimmed; 
-		
-	}
 
-	
+		return mediaListTrimmed;
+	}
 
 	@Override
 	public List<Media> findVideosByFilm(Film film) {
 		List<Media> mediaList = findAllMediaByFilm(film);
-		
+
 		List<Media> mediaListTrimmed = new ArrayList<>();
-		for (Media m : mediaList){
-			if (m.getMediaType() == MediaType.VIDEO){
+		for (Media m : mediaList) {
+			if (m.getMediaType() == MediaType.VIDEO) {
 				mediaListTrimmed.add(m);
 			}
 		}
-		
-		return mediaListTrimmed; 
+
+		return mediaListTrimmed;
 	}
 
 	@Override
-	public List<Media> findSoundClipsByFilm(Film film) {
+	public List<Media> findThumbnailByFilm(Film film) {
 		List<Media> mediaList = findAllMediaByFilm(film);
-		
+
 		List<Media> mediaListTrimmed = new ArrayList<>();
-		for (Media m : mediaList){
-			if (m.getMediaType() == MediaType.SOUNDCLIP){
+		for (Media m : mediaList) {
+			if (m.getMediaType() == MediaType.THUMBNAIL) {
 				mediaListTrimmed.add(m);
 			}
 		}
-		
-		return mediaListTrimmed;  
+
+		return mediaListTrimmed;
 	}
 
 	@Override
 	public Media findFilmPoster(Film film) {
 		List<Media> mediaList = findAllMediaByFilm(film);
-		
+
 		Media filmPoster = new Media();
-		for (Media m : mediaList){
-			if (m.getMediaType() == MediaType.POSTER){
+		for (Media m : mediaList) {
+			if (m.getMediaType() == MediaType.POSTER) {
 				filmPoster = m;
 			}
 		}
-		
-		return filmPoster; 
+
+		return filmPoster;
 	}
 
 	@Override
 	public Media findFilmPosterByName(String name) {
-		Film film;
+		Film film = null;
 		Collection<Film> filmList = test.getFilmMap().values();
-		for (Film eachFilm : filmList){
-			if (eachFilm.getTitle()==name){
+		for (Film eachFilm : filmList) {
+			if (eachFilm.getTitle() == name) {
 				film = eachFilm;
 			}
 		}
 		List<Media> mediaList = findAllMediaByFilm(film);
-		
+
 		Media filmPoster = new Media();
-		for (Media m : mediaList){
-			if (m.getMediaType() == MediaType.POSTER){
+		for (Media m : mediaList) {
+			if (m.getMediaType() == MediaType.POSTER) {
 				filmPoster = m;
 			}
 		}
-		
-		return filmPoster; 
+
+		return filmPoster;
+	}
+
+	@Override
+	public List<Media> findAllMediaByName(String name) {
+		Collection<Film> filmList = test.getFilmMap().values();
+		List<Media> mediaList = new ArrayList<>();
+		for (Film eachFilm : filmList) {
+			if (eachFilm.getTitle() == name) {
+				mediaList = eachFilm.getMedia();
+			}
+		}
+		return mediaList;
 	}
 
 }

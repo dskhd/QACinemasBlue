@@ -1,73 +1,50 @@
 
 package qacinema.service.managers.offline;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.persistence.NoResultException;
 
 import qacinema.data.booking.tickets.Ticket;
+import qacinema.data.cinema.Seat;
 import qacinema.data.cinema.Showing;
-import qacinema.data.film.Film;
-import qacinema.service.managers.Seat_Manager;
-import qacinema.test_data.TestData;
+import qacinema.service.managers.SeatManager;
+import qacinema.testdata.TestData;
 
 @Stateless
-public class OfflineSeatManager implements Seat_Manager {
+public class OfflineSeatManager implements SeatManager {
 	@Inject
 	TestData testData;
 
 	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, Film film) {
-		String date = Utilities.getDate();
-		List<Ticket> ticketList = testData.getTicketList();
-		List<Showing> showings = testData.getShowingList();
-		Map<String, Integer> seats = null;
-		List<String> seatsNextToEachOther = new ArrayList<String>();
-		Showings.checkShowingsForFilmsMatchingToday(film, date, ticketList, showings, seats);
-		Seats.getEmptySeatsNextToeachOther(number_of_seats, seats, seatsNextToEachOther);
-		return seatsNextToEachOther;
+	public Map<Seat, Boolean> fildAllSeats(Showing showing) {
+		Map<Seat, Boolean> seats = null;
+		seats = showing.getScreen().getSeats();
+		Map<Integer, Ticket> ticketList = testData.getTicketMap();
+		for (Ticket ticketInMap : ticketList.values()) {
+			if (ticketInMap.getShowing().equals(showing)) {
+				seats.put(ticketInMap.getSeat(), true);
+			}
+		}
+		return seats;
 	}
 
 	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, String film) {
-		// TODO Auto-generated method stub
-		return null;
+	public Seat findFirstFreeSeat(Showing showing) throws NoResultException {
+		Map<Seat, Boolean> seats = fildAllSeats(showing);
+		for (Entry<Seat, Boolean> seatFromList : seats.entrySet()) {
+			if (seatFromList.getValue() == false) {
+				return seatFromList.getKey();
+			}
+		}
+		
+		throw new NoResultException("No Seats found.");
 	}
 
-	@Override
-	public List<String> findSeatsNextToEachOther(int number_of_seats, Showing showing) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, Film film) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, String film) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> findAvailableSeatsNextToSeat(String seat, Showing showing) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> fildAllSeats() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
+	
 }
