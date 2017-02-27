@@ -1,0 +1,67 @@
+@CHARSET "ISO-8859-1";
+
+
+
+
+#logOnTitleDiv{
+	position: relative;
+	right: -5%;
+	top: -5%
+}
+
+#logOnTextBoxesDiv{
+	position:relative;
+	right: -45%;
+	position:relative;
+	top: -50%;
+	
+}
+
+
+.pageTitle{
+	color:white;
+	font-size: 30px;
+}
+.inputboxDescription{
+	position:relative;
+	top: 10px;
+	color:white	
+}
+.logOnTextBox{
+}
+
+.anchor{
+	color:white;
+	position: relative;
+	top: 35px
+}
+
+
+
+body{
+	background-color: #600010
+}
+
+.logOnTitle{
+	
+}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
