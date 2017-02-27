@@ -45,9 +45,7 @@ public class TestData {
 	private Map<Integer,Address> addressMap;
 	private Map<Integer,Role> roleMap;
 	private Map<Integer,Genre> genreMap;
-	
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@PostConstruct
 	private void setupTestData() { 
 		ticketMap = new HashMap<>();
@@ -64,11 +62,9 @@ public class TestData {
 		roleMap = new HashMap<>();
 		genreMap = new HashMap<>();
 	}
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
-
 	public Payment payment = new Payment("1", "Credit Card", "12345678910", "johndoe@gmail.com");
-
 	public Seat seat = new Seat("A1","Fluffy");
 	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
 	public Screen screen = new Screen("1", 'n',30,"2D");
@@ -81,51 +77,31 @@ public class TestData {
 	public Role role = new Role("Forrest Gump");
 	public Genre genre = new Genre("Fantasy");
 										
-public Map<Integer, Genre> getGenreMap() {
-		return genreMap;
-	}
-
-	public void setGenreMap(Map<Integer, Genre> genreMap) {
-		this.genreMap = genreMap;
-	}
-
-	public Genre getGenre() {
-		return genre;
-	}
-
-	public void setGenre(Genre genre) {
-		this.genre = genre;
-	}
-
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
 	 * Have a check of the "setID" method within your class to make sure that its either the same as used here, or change to
 	 * make it appear here the same as in your class
 
-	 * 
 	 */
-	
 	
 	public void addAddress(Address address) {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
+
 		
 		//user.addAddressToList(address); 
 	}
 	
-	public void addUser(User user) { /////////////////// ADD ADDRESS TO USER FROM ADDRESS
-		//user.setAddressess(user.getAddressess());
+	public void addUser(User user) { 
+		user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
 	}
 	
-
-///////////////////////////////////////////////////////////////////
-	public Ticket addTicket(Ticket ticket) {              //////////
+	public Ticket addTicket(Ticket ticket) {              
 		ticket.setID(""+ticket.hashCode());
 		this.ticketMap.put(ticket.hashCode(),ticket);
 		return ticket;
 	}
-///////////////////////////////////////////////////////////////////		
+	
 	public void addTickets(Booking booking) { 
 		booking.setBookingid(""+booking.hashCode());
 		booking.setBookingid(""+booking.hashCode());
@@ -133,7 +109,7 @@ public Map<Integer, Genre> getGenreMap() {
 	}
 	
 	public void addTicketType(TicketType ticketType) { 
-		ticketType.setType(""+ticketType.hashCode()); ////////////////////// no ticket type ID to set
+		ticketType.setType(""+ticketType.hashCode()); 
 		this.ticketTypeMap.put(ticketType.hashCode(),ticketType);
 	}
 	
@@ -151,6 +127,7 @@ public Map<Integer, Genre> getGenreMap() {
 		this.screenMap.put(screen.hashCode(),screen);
 	}
 
+
 	public void addShowing(Showing showing) { 
 		showing.setShowingID(""+showing.hashCode());
 		this.showingMap.put(showing.hashCode(),showing);
@@ -166,7 +143,21 @@ public Map<Integer, Genre> getGenreMap() {
 		this.actorMap.put(actor.hashCode(),actor);
 	}
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	public Map<Integer, Genre> getGenreMap() {
+		return genreMap;
+	}
+
+	public void setGenreMap(Map<Integer, Genre> genreMap) {
+		this.genreMap = genreMap;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
 	
 	public Map<Integer, Role> getRoleMap() {
 		return roleMap;

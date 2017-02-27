@@ -1,8 +1,19 @@
 package qacinema.data.viewentities;
 
 import javax.persistence.Column;
-
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+@Entity @Table(name="bookingsView")
+@NamedQueries({
+	@NamedQuery(query="SELECT b FROM bookingsView b", name="BookingView.FIND_ALL"),
+	@NamedQuery(query="SELECT b FROM bookingsView b WHERE b.userEmail = :user", name="BookingView.FIND_BY_NAME")
+})
 public class BookingView {
+	
+	public static final String FIND_ALL = "BookingView.findAllBookings";
+	public static final String FIND_BY_USER = "BookingView.findByUser";
 	
 	@Column
 	private String bookingID;

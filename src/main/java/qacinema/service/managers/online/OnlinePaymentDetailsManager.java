@@ -24,6 +24,7 @@ import qacinema.service.managers.PaymentDetailsManager;
 @Stateless
 @Loggable
 @Transactional(rollbackOn=Exception.class)
+
 public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 	
 	@PersistenceContext(unitName="onlinePayDetailManagerPU")
@@ -39,58 +40,50 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 		query.setParameter("name", name);
 		return query.getResultList();
 	}
-	
-	
+		
 	@Override
 	public Payment persistPaymentDetails(Payment paymentDetails) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(paymentDetails);
 		entityManager.getTransaction().commit();
 		return findByPaymentID(paymentDetails.getPaymentsid()).get(0);
-		
 	}
-	
-	
+
 	@Override
-	public Payment findUserPaymentDetailsByID(User user, String paymentId) {
-		// TODO Auto-generated method stub
+	public Payment findUserPaymentDetailsByPaymentID(User user, String paymentId) {
 		return null;
 	}
 
 	@Override
-	public Payment findUserpaymentDetailsViaBooking(User user) {
-		// TODO Auto-generated method stub
+	public Payment findUserpaymentDetailsViaBookingID(User user, String bookingID) {
 		return null;
 	}
 
 	@Override
 	public List<Payment> findAllUserPaymentDetails(User user) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Payment updatePaymentDetails(Payment paymentDetails) {
-		// TODO Auto-generated method stub
 		return null;
+		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public Payment updatePaymentMethod(Payment paymentDetails) {
-		// TODO Auto-generated method stub
+	public Payment updatePaymentMethod(Payment paymentMethod) {
 		return null;
+		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public Payment deletePaymentDetails(Payment paymentDetails) {
+	public void deletePaymentDetails(Payment paymentDetails) {
 		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
-	public Payment deleteCardDetails(String cardNumber) {
+	public void deleteCardDetails(String cardNumber) {
 		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

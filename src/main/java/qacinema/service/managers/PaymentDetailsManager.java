@@ -13,15 +13,15 @@ public interface PaymentDetailsManager {
 
 	public Payment persistPaymentDetails(Payment paymentDetails);
 	
-	public Payment findUserPaymentDetailsByID(User user, String paymentId);
-	public Payment findUserpaymentDetailsViaBooking(User user); 
+	public Payment findUserPaymentDetailsByPaymentID(User user, String paymentId);
+	public Payment findUserpaymentDetailsViaBookingID(User user, String bookingID); 
 	public List<Payment> findAllUserPaymentDetails(User user);
 
 	public Payment updatePaymentDetails(Payment paymentDetails); 																
-	public Payment updatePaymentMethod(Payment paymentDetails);
+	public Payment updatePaymentMethod(Payment paymentMethod);
 																
-	public Payment deletePaymentDetails(Payment paymentDetails);
-	public Payment deleteCardDetails(String cardNumber);
+	public void deletePaymentDetails(Payment paymentDetails);
+	public void deleteCardDetails(String cardNumber);
 	
 }
 

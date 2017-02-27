@@ -58,8 +58,7 @@ public class User {
 	@Column(name = "dob")
 	@NotNull
 	private String dob;
-	
-	
+		
 	@OneToMany(mappedBy = "reviewer")
 	private List<UserRating> ratings;
 
@@ -74,14 +73,12 @@ public class User {
 	
 	@OneToMany(mappedBy = "users")
 	private List<Booking> bookings;
-
 	
 	public User() {
 		super();
 	}
 
-	public User(String email, String password, String accountType, String firstName, String lastName, String telephone,
-			boolean mailingList) {
+	public User(String email, String password, String accountType, String firstName, String lastName, String telephone, boolean mailingList) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -92,34 +89,26 @@ public class User {
 		this.mailingList = mailingList;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 	public List<UserRating> getRatings() {
 		return ratings;
 	}
+	
 	public void setRatings(List<UserRating> ratings) {
 		this.ratings = ratings;
 	}
 
-	
-	
 	public List<UserHaveAddresses> getUserHasAddresses() {
 		return userHasAddresses;
 	}
+	
 	public void setUserHasAddresses(List<UserHaveAddresses> userHasAddresses) {
 		this.userHasAddresses = userHasAddresses;
 	}
-
 	
 	public List<Payment> getPayments() {
 		return payments;
 	}
+	
 	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
 	}
@@ -127,64 +116,63 @@ public class User {
 	public List<Booking> getBookings() {
 		return bookings;
 	}
+	
 	public void setBookings(List<Booking> bookings) {
 		this.bookings = bookings;
 	}
 
-
-	
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	
 	public String getPassword() {
 		return password;
 	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	
 	
 	public String getAccountType() {
 		return accountType;
 	}
+	
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
 	
-	
 	public String getFirstName() {
 		return firstName;
 	}
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	
+		
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	
+		
 	public String getTelephone() {
 		return telephone;
 	}
+	
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	
-	
+		
 	public boolean getMailingList() {
 		return mailingList;
 	}
+	
 	public void setMailingList(boolean mailingList) {
 		this.mailingList = mailingList;
 	}
@@ -204,9 +192,4 @@ public class User {
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	
-	
-	
-	
-
 }

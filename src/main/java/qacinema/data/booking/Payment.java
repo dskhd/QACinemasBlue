@@ -1,15 +1,22 @@
 /*Author: Alex Dawkes*/
 package qacinema.data.booking;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import qacinema.data.users.User;
 
 @Entity
 @Table(name = "payments")
@@ -42,6 +49,13 @@ public class Payment {
 	
 	@Column(name = "email_address", nullable = true)
 	private String email_address;
+	
+	
+	@ManyToMany
+	@JoinTable(name="user_has_payments",
+	      joinColumns=@JoinColumn(name="paymentIds", referencedColumnName="paymentsID"),
+	      inverseJoinColumns=@JoinColumn(name="userEmails", referencedColumnName="email"))
+	private List<User> users;
 
 	public Payment() {}
 
@@ -53,6 +67,14 @@ public class Payment {
 		this.email_address = email_address;
 	}
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
 	public String getPaymentsid() {
 		return paymentsid;
 	}

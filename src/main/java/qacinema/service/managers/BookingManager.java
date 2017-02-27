@@ -11,6 +11,7 @@ public interface BookingManager {
 
 	public Booking persistBooking(Booking booking);
 	public Booking findByBookingId(String bookingid);
+	public List<Booking> findAllBookings();
 	public List<Booking> findByUser(User user);
 	public List<Ticket> findAllTickets(Booking booking);
 	public List<Booking> findByPaymentID(String paymentid);
