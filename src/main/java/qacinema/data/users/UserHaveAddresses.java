@@ -35,7 +35,6 @@ public class UserHaveAddresses {
 		this.addressID = addressID;
 	}
 
-
 	public String getAddressType() {
 		return addressType;
 	}
@@ -59,6 +58,4 @@ public class UserHaveAddresses {
 	public void setAddressID(String addressID) {
 		this.addressID = addressID;
 	}
-	
-	
 }

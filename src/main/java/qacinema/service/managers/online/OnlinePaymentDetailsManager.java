@@ -50,7 +50,7 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public User findUserPaymentDetailsByPaymentID(Payment pay, String paymentId) {
+	public Payment findUserPaymentDetailsByPaymentID(User user, String paymentId) {
 		return null;
 	}
 
@@ -65,12 +65,14 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public void updatePaymentDetails(Payment paymentDetails) {
+	public Payment updatePaymentDetails(Payment paymentDetails) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public void updatePaymentMethod(Payment paymentMethod) {
+	public Payment updatePaymentMethod(Payment paymentMethod) {
+		return null;
 		// TODO Auto-generated method stub
 	}
 
@@ -83,4 +85,5 @@ public class OnlinePaymentDetailsManager implements PaymentDetailsManager {
 	public void deleteCardDetails(String cardNumber) {
 		// TODO Auto-generated method stub
 	}
+
 }
