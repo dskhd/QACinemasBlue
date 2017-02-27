@@ -89,7 +89,6 @@ public class User {
 		this.mailingList = mailingList;
 	}
 
-
 	public List<UserRating> getRatings() {
 		return ratings;
 	}
