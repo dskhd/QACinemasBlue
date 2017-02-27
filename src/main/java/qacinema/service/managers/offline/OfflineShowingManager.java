@@ -7,7 +7,11 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import qacinema.annotations.Loggable;
 import qacinema.data.cinema.Showing;
@@ -18,10 +22,13 @@ import qacinema.service.managers.ShowingManager;
  * Created by James Lamkin
  */
 
-@Stateless 
+@Stateless @Alternative @Loggable @Transactional(rollbackOn=Exception.class)
 public class OfflineShowingManager implements ShowingManager {
 	@Inject
 	TestData testdata; 
+	
+	@PersistenceContext(unitName="QACinema")
+	private EntityManager entityManager;
 	
 	Collection<Showing> showings = testdata.getShowingMap().values();
 	
@@ -31,7 +38,7 @@ public class OfflineShowingManager implements ShowingManager {
 		return showings;
 	}
 
-	@Override @Loggable
+	@Override
 	public List<Showing> findByHour(String hour) {
 
 		hour = hour.substring(0, 7);
@@ -44,7 +51,7 @@ public class OfflineShowingManager implements ShowingManager {
 		return byHour;
 	}
 
-	@Override @Loggable
+	@Override
 	public List<Showing> findByDay(String date) {
 
 		date = date.substring(0, 6);

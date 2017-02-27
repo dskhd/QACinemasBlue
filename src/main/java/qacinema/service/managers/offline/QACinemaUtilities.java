@@ -11,5 +11,4 @@ public class QACinemaUtilities {
 		String date = dateFormat.format(cal);
 		return date;
 	}
-	
 }

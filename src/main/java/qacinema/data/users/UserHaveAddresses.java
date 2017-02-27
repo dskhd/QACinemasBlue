@@ -18,15 +18,15 @@ public class UserHaveAddresses {
 	private String addressType;
 
 	@NotNull
-	@Column(name = "userEmails")
+	@Column(name = "userEmail")
 	private String userEmail;
 
 	@NotNull
-	@Column(name = "addressIDs")
+	@Column(name = "addressID")
 	private String addressID;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "userEmails")
+	@JoinColumn(name = "userEmail")
 	private User user;
 
 	public UserHaveAddresses(String addressType, String userEmail, String addressID) {
@@ -34,6 +34,8 @@ public class UserHaveAddresses {
 		this.userEmail = userEmail;
 		this.addressID = addressID;
 	}
+<<<<<<< HEAD
+=======
 
 	public String getAddressType() {
 		return addressType;
@@ -61,4 +63,5 @@ public class UserHaveAddresses {
 	
 	
 
+>>>>>>> c00eecfc10c0825ec7c474be7d69745276f0f8b3
 }

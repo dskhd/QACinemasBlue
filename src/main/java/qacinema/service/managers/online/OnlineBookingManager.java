@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import qacinema.annotations.Loggable;
@@ -33,32 +34,41 @@ public class OnlineBookingManager implements BookingManager {
 
 	@Override
 	public Booking findByBookingId(String bookingid) {
-		
-		return null;
+		return eM.find(Booking.class, bookingid);
+	}
+	
+	@Override
+	public List<Booking> findAllBookings() {
+		TypedQuery<Booking> query = eM.createNamedQuery(Booking.FIND_ALL,  Booking.class);
+		return query.getResultList();
 	}
 
 	@Override
 	public List<Booking> findByUser(User user) {
-		
-		return null;
+		TypedQuery<Booking> query = eM.createNamedQuery(Booking.FIND_BY_USER, Booking.class);
+		query.setParameter("userEmail", user); //"userEmail" or "user"?
+		return query.getResultList();
 	}
 
 	@Override
 	public List<Ticket> findAllTickets(Booking booking) {
-		
-		return null;
+		eM.find(Booking.class, booking.getBookingid());
+		List<Ticket> bookedTickets = booking.getTickets();
+		return bookedTickets;
 	}
 
 	@Override
 	public List<Booking> findByPaymentID(String paymentid) {
-		
-		return null;
+		TypedQuery<Booking> query = eM.createNamedQuery(Booking.FIND_BY_PAYMENTID, Booking.class);
+		query.setParameter("paymentsID", paymentid);
+		return query.getResultList();
 	}
 
 	@Override
 	public void updateBooking(Booking booking) {
-	
-		
+	eM.getTransaction().begin();
+	eM.merge(booking);
+	eM.getTransaction().commit();
 	}
 
 	@Override
