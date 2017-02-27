@@ -86,12 +86,9 @@ public class TestData {
 	public void addAddress(Address address) {
 		address.setAddressID(""+address.hashCode());
 		this.addressMap.put(address.hashCode(), address);
-<<<<<<< HEAD
-		user.addAddressToList(address); 
-=======
+
 		
 		//user.addAddressToList(address); 
->>>>>>> c00eecfc10c0825ec7c474be7d69745276f0f8b3
 	}
 	
 	public void addUser(User user) { 
@@ -127,10 +124,6 @@ public class TestData {
 	}
 	
 	public void addScreen(Screen screen) { 
-<<<<<<< HEAD
-		screen.getScreenID(""+screen.hashCode()); 
-=======
->>>>>>> c00eecfc10c0825ec7c474be7d69745276f0f8b3
 		this.screenMap.put(screen.hashCode(),screen);
 	}
 
