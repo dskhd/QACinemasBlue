@@ -89,10 +89,6 @@ public class User {
 		this.mailingList = mailingList;
 	}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a25fe23c5e67d778142c7dbebc5ea32b6db5c58b
 	public List<UserRating> getRatings() {
 		return ratings;
 	}
