@@ -1,0 +1,71 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: monaco, monospace;
+	background-size: cover;
+	background: #111;
+	color: #fff;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 30;
+	padding: 10px 10px 10px 10px;
+}
+
+#toplink {
+	font-weight: bold;
+	color: #601010;
+	padding: 0px 0px 0px 0px;
+	font-size: 40px
+}
+
+.Buttons {
+	background-color: #00004d;
+	color: #FFFFFF;
+	padding: 0px 0px 0px 0px;
+	width: 50%;
+	display: table;
+}
+
+.Buttons ol {
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+.Buttons li {
+	display: table-cell;
+	text-align: center;
+	vertical-align: top;
+	float: left;
+	width: 50%;
+}
+
+.Buttons li:hover {
+	background-color: #3333ff;
+}
+
+.Header {
+	
+}
+
+html {
+	background: #600010;
+	padding-top: 20
+}
+
+h1 {
+	font-size: 50px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+p {
+	padding: 0px 20px 0px 20px
+}
+
+a {
+	color: #fff
+}
