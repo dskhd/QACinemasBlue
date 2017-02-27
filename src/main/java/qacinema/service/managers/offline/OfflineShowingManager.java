@@ -91,13 +91,14 @@ public class OfflineShowingManager implements ShowingManager {
 		return byExperience;
 	}
 
-	@Override
-	public List<Showing> byAccessabillity(String accessability) {
 
+
+	@Override
+	public List<Showing> byAccessibility(String accessibility) {
 		List<Showing> byAccessability = new ArrayList<Showing>();
-	
+		
 		for (Showing show : showings) {
-			if (show.getAccessability() == accessability) {
+			if (show.getAccessability() == accessibility) {
 				byAccessability.add(show);
 			}
 		}

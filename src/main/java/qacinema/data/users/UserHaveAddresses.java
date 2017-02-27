@@ -59,6 +59,5 @@ public class UserHaveAddresses {
 	public void setAddressID(String addressID) {
 		this.addressID = addressID;
 	}
-	
-	
+
 }

@@ -28,7 +28,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public Payment findUserPaymentDetailsByID(User user, String paymentId) throws NoResultException {
+	public Payment findUserPaymentDetailsByPaymentID(User user, String paymentId) throws NoResultException {
 		for (Payment paymentDetails : user.getPayments()) {
 			if (paymentDetails.getPaymentsid().equals(paymentId)) {
 				return paymentDetails;
@@ -38,7 +38,7 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public Payment findUserpaymentDetailsViaBooking(User user) throws NoResultException {
+	public Payment findUserpaymentDetailsViaBookingID(User user, String bookingID) throws NoResultException {
 		for (Booking booking : testData.getBookingMap().values()) {
 			if (booking.getUser().getEmail().equals(user.getEmail())) {
 				return booking.getPayment();
@@ -65,15 +65,15 @@ public class OfflinePaymentDetailsManager implements PaymentDetailsManager {
 	}
 
 	@Override
-	public Payment deleteCardDetails(String cardNumber) {
+	public void deleteCardDetails(String cardNumber) {
 		// TODO Auto-generated method stub
-		return null;
+		return;
 	}
 
 	@Override
-	public Payment deletePaymentDetails(Payment paymentDetails) {
+	public void deletePaymentDetails(Payment paymentDetails) {
 		// TODO Auto-generated method stub
-		return null;
+		return;
 	}
 
 }
