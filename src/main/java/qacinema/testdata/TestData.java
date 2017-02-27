@@ -92,7 +92,6 @@ public class TestData {
 	}
 	
 	public void addUser(User user) { 
-		user.setAddressess(user.getAddressess());
 		this.userMap.put(user.hashCode(),user);
 	}
 	
