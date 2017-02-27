@@ -43,7 +43,7 @@ public class OfflineUserManager implements UserManager {
 	}
 
 	@Override
-	public List<User> findByFirstName(String firstName) {
+	public List<User> findUsersByFirstName(String firstName) {
 		List<User> userList = new ArrayList<>();
 		for (User user : testData.getUserMap().values()) {
 			if (user.getFirstName().equals(firstName)) {
@@ -56,7 +56,7 @@ public class OfflineUserManager implements UserManager {
 	}
 
 	@Override
-	public List<User> findByLastName(String lastName) {
+	public List<User> findUsersByLastName(String lastName) {
 		List<User> userList = new ArrayList<>();
 		for (User user : testData.getUserMap().values()) {
 			if (user.getLastName().equals(lastName)) {
