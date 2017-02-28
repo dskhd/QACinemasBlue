@@ -3,7 +3,7 @@
 body {
 	font-family: monaco, monospace;
 	background-size: cover;
-	background: #111;
+	background: #133C47;
 	color: #fff;
 	width: 90%;
 	margin-left: auto;
@@ -23,8 +23,8 @@ body {
 
 }
 .Buttons {
-	background-color: #00004d;
-	color: #FFFFFF;
+	background-color: #133C47;
+	color: #FAFAFA;
 	padding: 0px 0px 0px 0px;
 	width: 50%;
 	display: table;
