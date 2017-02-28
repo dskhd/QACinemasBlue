@@ -9,11 +9,7 @@
 	font-size: 200%;
 	color: #F6F6F6; 
 	border-right: 2px solid #F6F6F6;
-	
 }
-
-
-
 	
 /* Modify scrollover action of navbar buttons */
 .nav.navbar-nav li a:hover{ background: #1C1C1C; }
@@ -26,6 +22,27 @@
 
 /* Modify dropdown menu font */
 .nav.navbar-nav .open .dropdown-menu li a{ color:#1C1C1C; }
+
+/*---------------------------------------------------------------------------*/
+
+
+/* TRYING TO GET HOVER FOR BURGER MENU TO SHOW DIFFERENTLY */
+.nav.navbar-nav .navbar-toggle .icon-bar li a {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*---------------------------------------------------------------------------*/
 
@@ -52,6 +69,7 @@ body { background: #999999; }
 	color: white;
 	background: #1C1C1C;
 	width: 65%;
+	border-radius:20px;
 	border-top: 20px;
 	padding: 20px 20px 20px 20px;
 	margin-left: auto;
