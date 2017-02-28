@@ -261,7 +261,7 @@
                         </goals>
                         <configuration>
                         	<hostname>localhost</hostname>
-                            <port>8080</port>
+                            <port>9990</port>
                             <ignoreMissingDeployment>true</ignoreMissingDeployment>
                         </configuration>
                     </execution>
@@ -273,7 +273,7 @@
                         </goals>
                         <configuration>
                             <hostname>localhost</hostname>
-                            <port>8080</port>
+                            <port>9990</port>
                         </configuration>
                     </execution>
                     
