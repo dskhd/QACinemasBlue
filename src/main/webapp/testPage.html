@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="ISO-8859-1">
+<title>Book Store</title>
+</head>
+<body ng-init="book='Rats'">
+	<div ng-hide="isHiddenBookHidden">
+		Book:<input ng-model="book" type="text" /> {{book}}
+	</div>
+	<div>
+		Hide Book:<input type="checkbox" ng-model="isHiddenBookHidden" />
+	</div>
+	<button ng-click="book='Harry Potter'">Change Book</button>
+
+
+</body>
+
+<script src="js/angular.min.js"></script>
+
+</html>
