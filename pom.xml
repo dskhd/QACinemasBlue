@@ -262,6 +262,8 @@
                         <configuration>
                         	<hostname>localhost</hostname>
                             <port>9990</port>
+                            <username>mark</username>
+                            <password>Welcome1</password>
                             <ignoreMissingDeployment>true</ignoreMissingDeployment>
                         </configuration>
                     </execution>
@@ -274,6 +276,8 @@
                         <configuration>
                             <hostname>localhost</hostname>
                             <port>9990</port>
+                            <username>mark</username>
+                            <password>Welcome1</password>
                         </configuration>
                     </execution>
                     
