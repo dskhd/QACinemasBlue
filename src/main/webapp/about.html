@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>QA Cinemas: About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+<!-- I totally didnt steal this from a w3 template site... totally -->
+
+
+</head>
+
+<body>
+
+
+
+	<div id="header"></div>
+	<br />
+
+	<script src="jquery-1.10.2.js"></script>
+	<!-- Header with image -->
+
+
+
+
+	<!-- <div id="navbar" class="collapse navbar-collapse"> <div class="navbar-right"> <ulclass="nav navbar-nav"><li class="navbar-brand"><a href="about.html"> About</a></li> -->
+
+
+	<header class="topimg w3-display-container">
+		<div align="center"></div>
+		<div
+			class="w3-display-bottomleft w3-center w3-padding-xlarge w3-hide-small">
+			<span class="w3-tag">Open from 12pm to 12am</span>
+		</div>
+		<div class="w3-display-middle w3-center">
+			<span class="outlinetxt w3-text-white" style="font-size: 90px">About
+				<br>Us
+			</span>
+		</div>
+		<div class="w3-display-bottomright w3-center w3-padding-xlarge">
+			<span class="w3-tag">Salford UK</span>
+		</div>
+	</header>
+
+
+	<!-- Add a background color and large text to the whole page -->
+	<div class="mainbody">
+		<!-- About Container -->
+		<div class="w3-container" id="about">
+			<div class="w3-content" style="max-width: 700px">
+				<h5 class="shadow w3-center w3-padding-48">
+					<span class="w3-tag w3-wide w3-padding-left w3-padding-right">About
+						QA Cinemas</span>
+				</h5>
+				<p>We're the best cinema in the area and you know it, be nice to
+					us we're friendly people and deserve all your money. I would also
+					like to say that I love ice cream</p>
+				<p>We also have a load of really over priced food for you to
+					come in and buy. Do you like paying £2.10 for a single can of cola?
+					We're here for you.</p>
+				<div class="w3-panel w3-leftbar">
+					<p>
+						<i>"By your "powers" combined I am Captian Planet"</i>
+					</p>
+					<p>Scrumbag, Blue Hair owner: Martyn Green</p>
+				</div>
+				<img src="/w3images/coffeeshop.jpg"
+					style="width: 100%; max-width: 1000px" class="w3-margin-top">
+				<p>
+					<span class="shadow w3-tag"><strong>Opening hours:</strong></span>
+					Everyday from 12pm to 12am.
+				</p>
+				<p>
+					<span class="shadow w3-tag"><strong>Address:</strong></span>
+					Salford - Anchorage UK
+				</p>
+			</div>
+		</div>
+
+
+		<!-- Contact/Area Container -->
+		<div class="w3-container" id="where" style="padding-bottom: 32px;">
+			<div class="mapshadow w3-content" style="max-width: 700px">
+				<h5 class="shadow w3-center w3-padding-48">
+					<span class="w3-tag w3-wide w3-padding-left w3-padding-right">WHERE
+						TO FIND US</span>
+				</h5>
+				<p>Drop into street view</p>
+				<div id="googleMap" style="width: 100%; height: 400px;"></div>
+				<p>
+					<br>
+					<span class="shadow w3-tag">FYI!</span> We are overpriced as duck,
+					don't come here expectin to leave with any money.
+				</p>
+				<p>
+					<strong>Book </strong> a showing now to go see the latest movie:
+				</p>
+				<form action="/action_page.php" target="_blank">
+					<p>
+						<input class="w3-input w3-padding-16 w3-border" type="text"
+							placeholder="Name" required name="Name">
+					</p>
+					<p>
+						<input class="w3-input w3-padding-16 w3-border" type="number"
+							placeholder="How many people" required name="People">
+					</p>
+					<p>
+						<input class="w3-input w3-padding-16 w3-border"
+							type="datetime-local" placeholder="Date and time" required
+							name="date" value="2017-11-16T20:00">
+					</p>
+					<p>
+						<input class="w3-input w3-padding-16 w3-border" type="text"
+							placeholder="Message \ Special requirements" required
+							name="Which Movie">
+					</p>
+					<p>
+						<button class="shadow w3-button w3-black" type="submit">SEND
+							MESSAGE</button>
+					</p>
+				</form>
+			</div>
+		</div>
+
+		<!-- End page content -->
+	</div>
+
+
+
+	<!-- Add Google Maps -->
+	<script>
+		function myMap() {
+			myCenter = new google.maps.LatLng(53.474501, -2.286425);
+			var mapOptions = {
+				center : myCenter,
+				zoom : 12,
+				scrollwheel : false,
+				draggable : false,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById("googleMap"),
+					mapOptions);
+
+			var marker = new google.maps.Marker({
+				position : myCenter,
+			});
+			marker.setMap(map);
+		}
+
+		// Tabbed Menu
+		function openMenu(evt, menuName) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("menu");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(
+						" w3-dark-grey", "");
+			}
+			document.getElementById(menuName).style.display = "block";
+			evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+		}
+		document.getElementById("myLink").click();
+	</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGiTux30ekUyj7xjXiXr73LpZtB2IUk18&callback=myMap"></script>
+	<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+
+
+	<div id="footer"></div>
+	<script>
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	</script>
+</body>
+</html>
