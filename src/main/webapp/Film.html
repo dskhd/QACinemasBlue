@@ -5,44 +5,70 @@
 <title>QA Cinema</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="Film.css" media="screen">
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="Film.css" media="screen">
 
 </head>
 
 <body>
 
-	<!-- Navbar -->
-	<div class="navbar">
-		<div class="w3-bar w3-black w3-card-2">
-			<a
-				class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-opennav w3-right"
-				href="javascript:void(0)" onclick="myFunction()"
-				title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> <a
-				href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a> <a
-				href="#band"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">WHAT'S
-				ON</a> <a href="#tour"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-			<a href="#contact"
-				class="w3-bar-item w3-button w3-padding-large w3-hide-small">OUR
-				CINEMAS</a>
-			<div class="w3-hide-small w3-dropdown-hover">
-				<a href="javascript:void(0)" class="w3-padding-large w3-button"
-					title="More">BOOK NOW</a> <i class="fa fa-caret-down"></i></a>
-				<div class="w3-dropdown-content w3-white w3-card-4"></div>
+	<!-- NAVIGATION BAR -->
+	<div class="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">QA Cinema</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">What's On <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Now Showing</a></li>
+								<li><a href="#">Coming Soon</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">About Us <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Offers</a></li>
+								<li><a href="#">VIP</a></li>
+								<li><a href="#">Stuff</a></li>
+								<li><a href="#">Classifications</a></li>
+								<li><a href="#">Screens</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Facilities <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Screens</a></li>
+								<li><a href="#">Find Us</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Booking <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Payments</a></li>
+							</ul></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+								Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+								Login</a></li>
+					</ul>
+				</div>
 			</div>
-			<a href="#" class="w3-bar-item w3-button w3-padding-large ">Log
-				In</a> <a href="javascript:void(0)"
-				class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i
-				class="fa fa-search"></i></a>
-
-		</div>
+		</nav>
 	</div>
+
 
 	<div class="container">
 
@@ -75,34 +101,33 @@
 								LEGO Movie finally gets a film to himself with The LEGO Batman
 								Movie.</p>
 						</div>
-						<div class="container">
-							<div class="film">
+						<div class="film">
 
-								<p>
-									<img src="http://www.cinemas-online.co.uk/images/certs/u.png">
-								</p>
-								<p>
-									<b>Release Date:</b> <br> 10th Feb 2017
-								</p>
-								<p>
-									<b>Length:</b> <br> 90mins
-								</p>
-								<p>
-									<b>Director:</b> <br> Chris McKay
-								</p>
-								<p>
-									<b>Cast:</b> <br> Will Arnett
-								</p>
-								<p>
-									<b>Genre:</b> <br> Animated, Action, Family
-								</p>
+							<p>
+								<img src="http://www.cinemas-online.co.uk/images/certs/u.png">
+							</p>
+							<p>
+								<b>Release Date:</b> <br> 10th Feb 2017
+							</p>
+							<p>
+								<b>Length:</b> <br> 90mins
+							</p>
+							<p>
+								<b>Director:</b> <br> Chris McKay
+							</p>
+							<p>
+								<b>Cast:</b> <br> Will Arnett
+							</p>
+							<p>
+								<b>Genre:</b> <br> Animated, Action, Family
+							</p>
 
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 

@@ -3,6 +3,7 @@
 body {
 	font-family: "Lato", sans-serif;
 	text-align: center;
+	background-color: #D6D6DA;
 
 }
 
@@ -61,4 +62,6 @@ body {
 	clear: left;
 }
 
-
+.container{
+	background-color: #D6D6DA;
+}
