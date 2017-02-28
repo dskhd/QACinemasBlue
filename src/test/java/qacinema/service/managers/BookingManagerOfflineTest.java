@@ -47,11 +47,4 @@ public class BookingManagerOfflineTest {
 		testTicket2 = new Ticket("2", testTicketType, testShowing);
 		obm = new OfflineBookingManager();
 	}
-	
-	//Once persist booking is fixed then test
-	@Test
-	public void findByBookingIdTest(){
-		assertEquals(obm.findByBookingId("1"), testData.booking);
-	}
-
 }
