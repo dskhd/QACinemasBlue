@@ -4,8 +4,17 @@
 .nav.navbar-nav .dropdown-menu { background-color: #F6F6F6; }
 
 /*	Change QA Cinema word logo colour	*/
-.navbar-header .navbar-brand { color: #F6F6F6; }
+.navbar-header .navbar-brand { 
+	font-weight: bold;
+	font-size: 200%;
+	color: #F6F6F6; 
+	border-right: 2px solid #F6F6F6;
+	
+}
 
+
+
+	
 /* Modify scrollover action of navbar buttons */
 .nav.navbar-nav li a:hover{ background: #1C1C1C; }
 
