@@ -19,9 +19,21 @@ body {
 	font-size: 40px
 }
 
-.anchor { padding-top: 40px; }
-
+.verticalalign {
+	transform: translateY(25%);
 }
+
+.anchor {
+	padding-top: 40px;
+}
+
+table {
+	background-color: #0d2931;
+	padding: 0px 0px 0px 0px;
+	margin: 5px 5px 5px 5px;
+	border-radius: 6%;
+}
+
 .Buttons {
 	background-color: #133C47;
 	color: #FAFAFA;
@@ -48,9 +60,8 @@ body {
 }
 
 .img-rounded {
-  border-radius: 10%;
+	border-radius: 10%;
 }
-
 
 html {
 	padding-top: 20
