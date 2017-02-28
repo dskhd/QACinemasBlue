@@ -5,11 +5,11 @@ body {
 	background-size: cover;
 	background: #111;
 	color: #fff;
-	width: 80%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 30;
-	padding: 10px 10px 10px 10px;
+	padding: 70px 10px 10px 10px;
 }
 
 #toplink {
@@ -19,6 +19,9 @@ body {
 	font-size: 40px
 }
 
+.anchor { padding-top: 40px; }
+
+}
 .Buttons {
 	background-color: #00004d;
 	color: #FFFFFF;
@@ -44,12 +47,12 @@ body {
 	background-color: #3333ff;
 }
 
-.Header {
-	
+.img-rounded {
+  border-radius: 10%;
 }
 
+
 html {
-	background: #600010;
 	padding-top: 20
 }
 
