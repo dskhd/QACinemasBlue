@@ -67,6 +67,7 @@ public class BookingTest {
 	public void removeTicketsTest() {
 		testBooking.addTicket(testTicket);
 		testBooking.addTicket(testTicket2);
+		assertEquals(testBooking.getTickets().size(), 2);
 		testBooking.removeTicket(testTicket2);
 		assertEquals(testBooking.getTickets().size(), 1);
 	}

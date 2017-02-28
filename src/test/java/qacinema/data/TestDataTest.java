@@ -48,13 +48,13 @@ public class TestDataTest {
 	
 		
 	
-	@Test
+	/*@Test
 	public void testAddToTicketList() {
-		/* EXAMPLE THAT WORKS
+		 EXAMPLE THAT WORKS
 		 Map<String, Integer> map = new HashMap<>();
 		    map.put("key", 1);
 		    assertThat(map, mapWithSize(1));
-		  */ 
+		   
 		
 		
 		newData.addTicket(newData.ticket);
@@ -64,7 +64,7 @@ public class TestDataTest {
 		
 		
 		
-		/*
+		
 		System.out.println("before for1");
 		for (Integer key : newData.getTicketMap().keySet()) {
 		    System.out.println(key + " " + newData.getTicketMap().get(key));
@@ -76,12 +76,12 @@ public class TestDataTest {
 		    System.out.println("key, " + key + " value " + value);
 		}
 		System.out.println(newData.getTicketMap().toString());
-		*/
+		
 		
 		
 				
 	}
-	/*
+	
 	@Test
 	public void testAddToShowingList() {
 		System.out.println("Enter: testAddToShowingList");
@@ -110,6 +110,6 @@ public class TestDataTest {
 		newData.addUser(user);
 		assertEquals(1,newData.getUserMap().size());
 	}
-*/
 
+*/
 }

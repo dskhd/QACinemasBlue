@@ -19,7 +19,7 @@ import qacinema.data.booking.tickets.Ticket;
 import qacinema.testdata.TestData;
 
 @RunWith(MockitoJUnitRunner.class)
-public class OfflineTicketManagerTest2 {
+public class OfflineTicketManagerTest {
 	
 	@Mock TestData testData;
 	@InjectMocks OfflineTicketManager manager;
