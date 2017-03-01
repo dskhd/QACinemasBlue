@@ -3,6 +3,7 @@ package qacinema.service.managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
@@ -35,7 +36,7 @@ public class OfflineTicketManager implements TicketManager{
 
 	@Override
 	public Ticket findTicketByID(String id) throws NoResultException{
-		for(Ticket ticket : testData.getTicketMap().values()){
+		for(Ticket ticket : (testData.getTicketMap()).values()){
 			if(ticket.getTicketID().equals(id)){
 				return ticket;
 			}
@@ -66,6 +67,10 @@ public class OfflineTicketManager implements TicketManager{
 		}
 		
 		return tickets;
+	}
+	
+	public void setTestData(TestData testData){
+		this.testData = testData;
 	}
 	
 }

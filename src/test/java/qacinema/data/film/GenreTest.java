@@ -31,7 +31,7 @@ public class GenreTest {
 	@Test
 	public void testGetGenreId() {
 		gen.setGenre("Comedy");
-		assertNull(gen.getId());
+		assertEquals(0, gen.getId());
 	}
 	
 	
