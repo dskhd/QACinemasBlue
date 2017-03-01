@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="bookStore">
 <head>
-	<meta charset="UTF-8">
-	<title>Book Store</title>
-	
-</head>
-<body>
-	
-	<div ui-view></div>
-	<script src="js/angular.min.js"></script>
-	<script src="https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="app/app.js"></script>
-	<script src="app/app-state-manager.js"></script>
-	<script src="app/feature/book/bookcontroller.js"></script>
-	<script src="app/feature/other/othercontroller.js"></script>
 
-	
-	
-	
-	
+<meta charset="UTF-8">
+<title>Book Store</title>
+</head>
+
+	<h1>TEMPLATE</h1>
+	<a ui-sref="book"> Click me!!!</a>
+	<div ui-view>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/app-state-manager.js"></script>
+		<script src="app/feature/book/bookController.js"></script>
+		<script src="app/feature/other/OtherController.js"></script>
+	</div>
+
 </body>
 </html>
+
