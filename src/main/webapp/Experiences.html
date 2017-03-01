@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="ISO-8859-1">
-<title>welcome</title>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="Experiences.css" rel="stylesheet" type="text/css" />
+<title>QA Cinemas: Experiences</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/Experiences.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css"  type="text/css"/>
+<script src="jquery-1.10.2.js"></script>
 </head>
-
 <body>
+	<div id="header"></div>
+	<br />
+
 	<div class="container-fluid">
 		<nav class="navbar navbar-fixed-top navbar-inverse">
 			<div class="container">
@@ -38,12 +42,11 @@
 
 
 		<div class="row">
-			<div class="row">
-				<h1>3D</h1>
-			</div>
 			<section class="anchor" id="3D">
-
-				<div class="col-md-4 verticalalign">
+				<div class="row">
+					<h1>3D</h1>
+				</div>
+				<div class="col-md-4">
 
 
 					<p>
@@ -63,7 +66,7 @@
 					<img src="img/3D.jpg" class="img-responsive img-rounded"
 						alt="3D demostration" />
 				</div>
-				<div class="col-md-4 verticalalign">
+				<div class="col-md-4">
 					<table class="table">
 						<thead>
 							<tr>
@@ -74,15 +77,15 @@
 						<tbody>
 							<tr>
 								<td>Adult</td>
-								<td>£10</td>
+								<td>Â£10</td>
 							</tr>
 							<tr>
 								<td>Child</td>
-								<td>£8</td>
+								<td>Â£8</td>
 							</tr>
 							<tr>
 								<td>Concession</td>
-								<td>£9</td>
+								<td>Â£9</td>
 							</tr>
 						</tbody>
 					</table>
@@ -92,13 +95,13 @@
 		<hr>
 
 		<div class="row">
-			<div class="row">
-				<h1>IMAX</h1>
-			</div>
+
 			<section class="anchor" id="IMAX">
+				<div class="row">
+					<h1>IMAX</h1>
+				</div>
 
-
-				<div class="col-md-4 verticalalign">
+				<div class="col-md-4">
 					<p>IMAX screens are much larger than regular, with an image
 						which partially surrounds the seating. This allows incredible
 						depth and immersion. The IMAX screens are also equipped with
@@ -112,7 +115,7 @@
 						alt="IMAX" />
 				</div>
 
-				<div class="col-md-4 verticalalign">
+				<div class="col-md-4">
 					<table class="table">
 						<thead>
 							<tr>
@@ -123,15 +126,15 @@
 						<tbody>
 							<tr>
 								<td>Adult</td>
-								<td>£15</td>
+								<td>Â£15</td>
 							</tr>
 							<tr>
 								<td>Child</td>
-								<td>£12</td>
+								<td>Â£12</td>
 							</tr>
 							<tr>
 								<td>Concession</td>
-								<td>£13</td>
+								<td>Â£13</td>
 							</tr>
 						</tbody>
 					</table>
@@ -142,11 +145,11 @@
 
 
 	</div>
+	<div id="footer"></div>
+	<script>
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	</script>
 </body>
-<script
-	src="https://ajax.googleapis.
-com/ajax/libs/jquery/1.12.4/jquery.min
-.js"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 </html>
