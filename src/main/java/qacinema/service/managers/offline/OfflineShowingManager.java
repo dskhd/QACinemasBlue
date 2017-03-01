@@ -27,8 +27,6 @@ public class OfflineShowingManager implements ShowingManager {
 	@Inject
 	TestData testdata; 
 	
-	@PersistenceContext(unitName="QACinema")
-	private EntityManager entityManager;
 	
 	Collection<Showing> showings = testdata.getShowingMap().values();
 	

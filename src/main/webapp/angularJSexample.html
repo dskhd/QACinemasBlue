@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookStore">
+<head>
+<title>QA Cinemas: About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-1.10.2.js"></script>
+</head>
+<body ng-controller="BookController as
+ctrl">
+	<h2>Books</h2>
+	Filter Books
+	<input type="text" ng-model="bookFilter.Title">
+	<br />
+	<table>
+		<tr>
+			<th>Author</th>
+			<th ng-click="ctrl.doSort()">Title</th>
+			<th>Genre</th>
+			<th>Published</th>
+		</tr>
+		<tr
+			ng-repeat="book in ctrl.books | filter:bookFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+			<td>{{book.Author | uppercase}}</td>
+			<td>{{book.Title | lowercase}}</td>
+			<td>{{book.Genre}}</td>
+			<td>{{book.Published}}</td>
+		</tr>
+	</table>
+
+	<span>Total books: {{ctrl.books.length}}</span>
+	<div id="footer"></div>
+	<script> 
+		  $("#header").load("header.html"); 
+		  $("#footer").load("footer.html"); 
+	</script>
+	<script src="js/angular.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/bookController.js"></script>
+</body>
+
+</html>

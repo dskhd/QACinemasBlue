@@ -12,16 +12,10 @@ body {
 	padding: 70px 10px 10px 10px;
 }
 
-#toplink {
-	font-weight: bold;
-	color: #601010;
-	padding: 0px 0px 0px 0px;
-	font-size: 40px
+input {
+	color:#000000
 }
 
-.verticalalign {
-	transform: translateY(25%);
-}
 
 .anchor {
 	padding-top: 40px;
