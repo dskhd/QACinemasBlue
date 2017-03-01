@@ -248,10 +248,17 @@
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>${version.wildfly.maven.plugin}</version>
+				<configuration>
+					<hostname>localhost</hostname>
+                    <port>9990</port>
+                    <username>mark</username>
+                    <password>Welcome1</password>
+                    <name>QACinemasBlue.war</name>
+				</configuration>
+				
+				
+				
 				<executions>
-				
-				
-				
 				
 					<execution>
                         <id>undeploy</id>
@@ -260,8 +267,6 @@
                             <goal>undeploy</goal>
                         </goals>
                         <configuration>
-                        	<hostname>localhost</hostname>
-                            <port>8080</port>
                             <ignoreMissingDeployment>true</ignoreMissingDeployment>
                         </configuration>
                     </execution>
@@ -271,13 +276,7 @@
                         <goals>
                             <goal>deploy</goal>
                         </goals>
-                        <configuration>
-                            <hostname>localhost</hostname>
-                            <port>8080</port>
-                        </configuration>
                     </execution>
-                    
-                    
                     
                 </executions>
 			</plugin>
