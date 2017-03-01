@@ -1,11 +1,6 @@
 (function() {
-	var BookControl = function() {
-	};
-	angular.module('bookStore').controller('BookController', [ BookControl ]);
-}());
-
-(function() {
-	var BookControl = function() {
+	
+	var bookController = function() {
 		var vm = this;
 		vm.reverse = false;
 		vm.books = [ {
@@ -24,11 +19,11 @@
 			'Genre' : 'Horror',
 			'Published' : '1984'
 		} ];
-
 		vm.doSort = function() {
-			vm.sortby = 'Title';
+			vm.sortby = 'Title' | 'Author';
 			vm.reverse = !vm.reverse
 		};
+
 	};
-	angular.module('bookStore').controller('BookController', [ BookControl ]);
+	angular.module('bookStore').controller('bookController', [ bookController]);
 }());
