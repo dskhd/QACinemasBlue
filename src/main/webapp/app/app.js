@@ -1,1 +1,1 @@
-var demoApp = angular.module('bookStore', []);
+var demoApp = angular.module('bookStore', ['ui.router']);
