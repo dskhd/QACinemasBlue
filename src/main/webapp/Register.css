@@ -1,5 +1,7 @@
 @CHARSET "ISO-8859-1";
 
+
+
 /* Navbar dropdown menu background colour */
 .nav.navbar-nav .dropdown-menu { background-color: #F6F6F6; }
 
@@ -23,37 +25,43 @@
 /* Modify dropdown menu font */
 .nav.navbar-nav .open .dropdown-menu li a{ color:#1C1C1C; }
 
+/* Burger menu hover over selection colour */
+.nav.navbar-nav li:hover{ background: #1C1C1C; }
+
+
 /*---------------------------------------------------------------------------*/
 
 
-/* TRYING TO GET HOVER FOR BURGER MENU TO SHOW DIFFERENTLY */
-.nav.navbar-nav .navbar-toggle .icon-bar li a {
-    background-color: black;
+
+
+
+
+
+
+.panel-title{
+	font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*---------------------------------------------------------------------------*/
 
 /* Whole page background colour */
-body { background: #999999; }
+body { 
+	
+	background-image: url("background.jpg");
+	
+	/*background: #999999; */
+	
+	}
 /*---------------------------------------------------------------------------*/
 /* Modify location of submit button */
 .submit_button { text-align: center }
 /*---------------------------------------------------------------------------*/
 /* Change accordion panel body background colour */
-.panel-body { background: #1C1C1C; }
+.panel-body { 
+	background: #1C1C1C;
+	opacity: 1;
+}
+
 
 /*---------------------------------------------------------------------------*/
 
@@ -62,6 +70,7 @@ body { background: #999999; }
 	text-align: center;
 	font-weight: bold;
 	text-decoration:;
+	padding-bottom: 10px;
 }
 /*---------------------------------------------------------------------------*/
 /* Modify central area where info is displayed */
@@ -71,20 +80,21 @@ body { background: #999999; }
 	width: 65%;
 	border-radius:20px;
 	border-top: 20px;
-	padding: 20px 20px 20px 20px;
+	padding: 1px 20px 20px 20px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: auto;
 	margin-bottom: auto;
+	
+	/* opacity of whole box including text and accordion*/
+	opacity: 1;
 }
 
-
-
-#Fname, #Lname, #Email, #Bday, #Pay, #Cnum, #Exp, #CVV, #Uname, #Pw1, #Pw2 {
-	background-color:#F6F6F6;
+.form-control{
+	background: #F6F6F6;
 	color:#1C1C1C;
+	margin-top: 5px;
 }
-
 
 
 
