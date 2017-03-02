@@ -75,6 +75,7 @@ body {
 /*---------------------------------------------------------------------------*/
 /* Modify central area where info is displayed */
 .pageInfo {
+	min-width: 550px;
 	color: white;
 	background: #1C1C1C;
 	width: 65%;
