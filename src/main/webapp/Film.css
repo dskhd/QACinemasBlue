@@ -1,6 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 body {
+	width:100%;
 	font-family: "Lato", sans-serif;
 	text-align: center;
 	background-color: #D6D6DA;
@@ -56,6 +57,24 @@ body {
 	border: 3px solid white;
 }
 
+.oFTitle {
+	padding-top: 40px;
+	padding-bottom: 40px;	
+	
+}
+
+.floating-box2 {
+	float: center;
+	width: 450px;
+	height: 450px;
+	margin: 6px;
+	border: 3px solid white;
+}
+
+.otherFilms {
+	padding-bottom: 20px;	
+}
+
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
@@ -70,6 +89,6 @@ body {
 	clear: left;
 }
 
-.container{
-	background-color: #D6D6DA;
+#myCarousell {
+	
 }
