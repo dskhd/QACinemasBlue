@@ -13,6 +13,7 @@ body {
 	min-height: 75%;
 	margin-left: auto;
 	margin-right: auto;
+	margin: auto;
 	font-family: "Inconsolata", sans-serif;
 }
 
@@ -89,10 +90,27 @@ h4 {
 	text-align: center;
 }
 
+#myCarousel {
+	height: 100%;
+	background-color: #000;
+}
+
+.carousel-inner {
+	height: 100%;
+}
+
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 80%;
 	margin: auto;
-	height: 600px;
+	width: 100%;
+}
+
+.myWindow {
+	height: 80%;
+}
+
+.myCarouselCaption{
+	background-color:#000;
+	opacity:1.0;
 }
 
 @media ( max-width : 1200px) {
