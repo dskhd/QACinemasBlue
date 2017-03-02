@@ -3,4 +3,26 @@
 	<h2>Books</h2>
 	<span>Total books: {{ctrl.books.length}}</span> <a ui-sref="other">
 		Activate Other State </a>
+		
+	<table ng-controller="bookController as ctrl">
+		<tr>
+			<th>Author</th>
+			<th ng-click="ctrl.doSort()">Title</th>
+			<th>Genre</th>
+			<th>Published</th>
+		</tr>
+		<tr ng-repeat="book in ctrl.books | filter:bookFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+			<td>{{book.Author | uppercase}}</td>
+			<td>{{book.Title | lowercase}}</td>
+			<td>{{book.Genre}}</td>
+			<td>{{book.Published}}</td>
+		</tr>
+	</table>
+
+	<span>Total books: {{ctrl.books.length}}</span>
+	<div id="footer"></div>
+		
+		
+		
+		
 </div>
