@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>QA Cinemas: About</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/Experiences.css" type="text/css" />
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<script src="jquery-1.10.2.js"></script>
-</head>
-<body>
-	<div id="header"></div>
-	<br />
 
+<head>
+<title>QA Cinema</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="Film.css" media="screen">
+
+</head>
+
+<body>
+
+	<!-- NAVIGATION BAR -->
+	<div class="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">QA Cinema</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">What's On <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Now Showing</a></li>
+								<li><a href="#">Coming Soon</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">About Us <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Offers</a></li>
+								<li><a href="#">VIP</a></li>
+								<li><a href="#">Stuff</a></li>
+								<li><a href="#">Classifications</a></li>
+								<li><a href="#">Screens</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Facilities <span
+								class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Screens</a></li>
+								<li><a href="#">Find Us</a></li>
+							</ul></li>
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="#">Booking <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Payments</a></li>
+							</ul></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+								Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+								Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 
 	<h1>Classification</h1>
 
 	<hr class="col-md-11">
 
 	<div class="container">
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 
 			<img src="img/bbfc/BBFC_U.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>U Universal – Suitable for all</p>
+				<h3>U Universal – Suitable for all</h3>
 				<p align="justify">A U film should be suitable for audiences
 					aged four years and over, although it is impossible to predict what
 					might upset any particular child.</p>
@@ -34,10 +93,10 @@
 			</div>
 		</div>
 
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 			<img src="img/bbfc/BBFC_PG.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>PG Parental Guidance</p>
+				<h3>PG Parental Guidance</h3>
 				<p align="justify">General viewing, but some scenes may be
 					unsuitable for young children A PG film should not unsettle a child
 					aged around eight or older. Unaccompanied children of any age may
@@ -45,10 +104,10 @@
 					upset younger, or more sensitive, children.</p>
 			</div>
 		</div>
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 			<img src="img/bbfc/BBFC_12A.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>12A/12 – Suitable for 12 years and over</p>
+				<h3>12A/12 – Suitable for 12 years and over</h3>
 				<p align="justify">Films classified 12A and video works
 					classified 12 contain material that is not generally suitable for
 					children aged under 12. No one younger than 12 may see a 12A film
@@ -59,30 +118,30 @@
 					younger than 12 may rent or buy a 12 rated video work.</p>
 			</div>
 		</div>
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 			<img src="img/bbfc/BBFC_15.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>15 – Suitable only for 15 years and over</p>
+				<h3>15 – Suitable only for 15 years and over</h3>
 				<p align="justify">No one younger than 15 may see a 15 film in a
 					cinema. No one younger than 15 may rent or buy a 15 rated video
 					work.</p>
 			</div>
 		</div>
 
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 			<img src="img/bbfc/BBFC_18.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>18 – Suitable only for adults</p>
+				<h3>18 – Suitable only for adults</h3>
 				<p align="justify">No one younger than 18 may see an 18 film in
 					a cinema. No one younger than 18 may rent or buy an 18 rated video
 					work. Adults should be free to choose their own entertainment..</p>
 			</div>
 		</div>
-		<div class="panel-body">
+		<div class="panel-body" align="left">
 			<img src="img/bbfc/BBFC_R18.png" width="120" align="left" />
 			<div class="col-md-10">
-				<p>R18 - To be shown only in specially licensed cinemas, or
-					supplied only in licensed sex shops, and to adults only</p>
+				<h3>R18 - To be shown only in specially licensed cinemas, or
+					supplied only in licensed sex shops, and to adults only</h3>
 				<p align="justify">The R18 category is a special and
 					legally-restricted classification primarily for explicit works of
 					consenting sex or strong fetish material involving adults. Films
@@ -96,12 +155,11 @@
 	</div>
 
 
-
-	<div id="footer"></div>
-	<script> 
-  $("#header").load("header.html"); 
-  $("#footer").load("footer.html"); 
-</script>
 </body>
 
+<script
+	src="https://ajax.googleapis.come/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script stc="js/bootstrap.min.js" type="text/javascript"></script>
+
 </html>
+
