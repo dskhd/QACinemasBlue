@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html ng-app>
-<head>
-<title>QA Cinemas</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<link rel="stylesheet" href="css/header.css" type="text/css" />
-<script src="jquery-1.10.2.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</head>
-
-
-<body>
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="about.html"> <img
-					class="img-responsive" src="images/logo.png" alt="QA Cinema Logo"></a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">What's On</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Facilities</a></li>
-					<li><a href="#">Booking</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-							Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-							Login</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+<div>
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -55,16 +10,19 @@
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
-			<div class="item">
-				<img src="images/posters/gravity-poster.jpg" alt="Gravity">
-			</div>
-
 			<div class="item active">
-				<img src="images/posters/looper-poster.jpg" alt="Looper">
+				<img class="img-responsive" src="images/posters/gravity-poster.jpg"
+					alt="Gravity">
 			</div>
 
 			<div class="item">
-				<img src="images/posters/oblivion-poster.jpg" alt="Flower">
+				<img class="img-responsive" src="images/posters/looper-poster.jpg"
+					alt="Looper">
+			</div>
+
+			<div class="item">
+				<img class="img-responsive" src="images/posters/oblivion-poster.jpg"
+					alt="Oblivion">
 			</div>
 
 		</div>
@@ -79,7 +37,5 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-</body>
-<script src="js/angular.min.js"></script>
-
-</html>
+	<script src="js/angular.min.js"></script>
+</div>

@@ -1,20 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="bookStore">
+<html lang="en" ng-app="QACinema">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
 
 <meta charset="UTF-8">
-<title>Book Store</title>
+<title>QACinema</title>
 </head>
 
+<body>
+
 	<h1>TEMPLATE</h1>
-	<a ui-sref="book"> Click me!!!</a>
-	<div ui-view>
+	<a ui-sref="frontpage"> Click me!!!</a>
+	<div ui-view class="myWindow">
+
 		<script src="js/angular.js"></script>
 		<script src="js/angular-ui-router.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/app-state-manager.js"></script>
-		<script src="app/feature/book/bookController.js"></script>
-		<script src="app/feature/other/OtherController.js"></script>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="app/feature/frontpage/frontpagecontroller.js"></script>
+
 	</div>
 
 </body>
