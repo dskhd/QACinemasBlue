@@ -2,13 +2,18 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Immutable;
 
 
 
 @Entity @Table(name="ticketView")
+@Immutable
 public class TicketView {
 	
+	@Id
 	@Column 	
 	private String ticketID;
 	

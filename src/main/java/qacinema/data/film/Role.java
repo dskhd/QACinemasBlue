@@ -1,4 +1,4 @@
-/*Author Sam Jackson
+/**Author Sam Jackson
  * 
  */
 
@@ -16,8 +16,8 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "roles")
-@NamedQueries({ @NamedQuery(query = "SELECT r FROM roleview r WHERE r.name = :name", name = "Role.FIND_BY_NAME"),
-	@NamedQuery(name = "Role.FIND_ALL", query = "SELECT r FROM roles r"), })
+//@NamedQueries({ @NamedQuery(query = "SELECT r FROM RolesView r WHERE r.name = :name", name = "Role.FIND_BY_NAME"),
+//	@NamedQuery(name = "Role.FIND_ALL", query = "SELECT r FROM Role r"), })
 public class Role {
 
 	@Id
@@ -25,16 +25,16 @@ public class Role {
 	@Column(name = "role", length = 225, nullable = false)
 	private String role;
 	
-	@Id
+	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "actors_ActorsID", nullable = false)
+	@JoinColumn(name = "actorsID", nullable = false)
 	private Actor actor;
 	
-	@Id
+	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "film_FilmID", nullable = false)
+	@JoinColumn(name = "filmID", nullable = false)
 	private Film FilmId;
 
 	public Role() {}

@@ -2,11 +2,20 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Immutable;
 
 
 @Entity @Table(name="ratingsView")
+@Immutable
 public class RatingsView {
+	
+	
+	@Id
+	@Column 
+	private String ratingID;
 	
 	@Column 
 	private String userAlias;
@@ -26,8 +35,7 @@ public class RatingsView {
 	@Column 
 	private String email;
 	
-	@Column 
-	private String ratingID;
+	
 
 	public String getUserAlias() {
 		return userAlias;

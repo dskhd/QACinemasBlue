@@ -1,8 +1,9 @@
 package qacinema.testdata;
 
-import java.util.ArrayList;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -45,7 +46,49 @@ public class TestData {
 	private Map<Integer,Address> addressMap;
 	private Map<Integer,Role> roleMap;
 	private Map<Integer,Genre> genreMap;
+	
+	private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	private Date ShowningDate;
 
+	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
+	public Payment payment = new Payment("1", "Credit Card", "12345678910", "johndoe@gmail.com");
+	public Seat seat = new Seat("A1","Fluffy");
+	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
+	public Screen screen = new Screen("1", 'n',30,"2D");
+	public Showing showing = new Showing("1", film, screen, ShowningDate, "2D", "Audio Described");
+	public Ticket ticket = new Ticket("1", ticketType, showing);
+	public Actor actor = new Actor("Tom", "Hanks");
+	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
+	public Booking booking = new Booking("1",user,payment);
+	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
+	public Role role = new Role("Forrest Gump");
+	public Genre genre = new Genre("Fantasy");
+	
+	
+	public TestData(){
+		ticketMap = new HashMap<>();
+		showingMap = new HashMap<>();
+		filmMap = new HashMap<>();
+		actorMap = new HashMap<>();
+		userMap = new HashMap<>();
+		bookingMap = new HashMap<>();
+		ticketTypeMap = new HashMap<>();
+		paymentMap = new HashMap<>();
+		seatMap = new HashMap<>();
+		screenMap = new HashMap<>();
+		addressMap = new HashMap<>();
+		roleMap = new HashMap<>();
+		genreMap = new HashMap<>();
+		try {
+			ShowningDate = formatter.parse("07/06/2013");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 	@PostConstruct
 	private void setupTestData() { 
 		ticketMap = new HashMap<>();
@@ -61,21 +104,17 @@ public class TestData {
 		addressMap = new HashMap<>();
 		roleMap = new HashMap<>();
 		genreMap = new HashMap<>();
+		try {
+			ShowningDate = formatter.parse("07/06/2013");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public TicketType ticketType = new TicketType("child", 6.99f, CustomerType.CHILD, DaysOfWeek.ALL, TimesOfDay.ALL_DAY);
-	public Payment payment = new Payment("1", "Credit Card", "12345678910", "johndoe@gmail.com");
-	public Seat seat = new Seat("A1","Fluffy");
-	public Film film = new Film("The Human Centipede", 108, "We all know the movie. We all love it. Feeeeeeed him", "2014");
-	public Screen screen = new Screen("1", 'n',30,"2D");
-	public Showing showing = new Showing("1", film, screen, "22022017160000", "2D", "Audio Described");
-	public Ticket ticket = new Ticket("1", ticketType, showing);
-	public Actor actor = new Actor("Tom", "Hanks");
-	public User user = new User("johndoe@gmail.com","iamjohndoe","Standard","John","Doe","0123456",true);
-	public Booking booking = new Booking("1",user,payment);
-	public Address address = new Address("1","123 Fake Street","Fake Area","Fake Town","Fake County", "AB1 2CD");
-	public Role role = new Role("Forrest Gump");
-	public Genre genre = new Genre("Fantasy");
+	
+	
+	
 										
 	/**
 	 * Have a check of the "setID" method within your class to make sure that its either the same as used here, or change to

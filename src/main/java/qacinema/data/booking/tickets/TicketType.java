@@ -35,6 +35,11 @@ public class TicketType{
 	private TimesOfDay availableTimes;
 	
 	
+	public TicketType(){
+		
+	}
+	
+	
 	public TicketType(String name, float price, CustomerType availableTo, DaysOfWeek availableDays, TimesOfDay availableTimes){
 		this.type = name;
 		this.availableTo = availableTo;

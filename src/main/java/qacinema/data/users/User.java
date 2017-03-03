@@ -62,7 +62,7 @@ public class User {
 	@OneToMany(mappedBy = "reviewer")
 	private List<UserRating> ratings;
 
-	@OneToMany(mappedBy = "users")
+	@OneToMany(mappedBy = "user")
 	private List<UserHaveAddresses> userHasAddresses;
 	
 	@ManyToMany
@@ -71,7 +71,7 @@ public class User {
 	      inverseJoinColumns=@JoinColumn(name="paymentIds", referencedColumnName="paymentsID"))
 	private List<Payment> payments;
 	
-	@OneToMany(mappedBy = "users")
+	@OneToMany(mappedBy = "user")
 	private List<Booking> bookings;
 	
 	public User() {

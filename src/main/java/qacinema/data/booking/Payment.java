@@ -22,8 +22,8 @@ import qacinema.data.users.User;
 @Table(name = "payments")
 
 @NamedQueries({
-	@NamedQuery(query = "SELECT p FROM payment p WHERE p.name = :name", name="Stock.FIND_BY_NAME"),
-	@NamedQuery(name = "Payment.FIND_ALL", query = "SELECT p FROM payment p"),
+	@NamedQuery(query = "SELECT p FROM Payment p WHERE p.paymentsid = :name", name="Stock.FIND_BY_NAME"),
+	@NamedQuery(name = "Payment.FIND_ALL", query = "SELECT p FROM Payment p"),
 })
 
 public class Payment {
@@ -57,7 +57,9 @@ public class Payment {
 	      inverseJoinColumns=@JoinColumn(name="userEmails", referencedColumnName="email"))
 	private List<User> users;
 
-	public Payment() {}
+	public Payment() {
+		
+	}
 
 	public Payment(String paymentsid, String method, String cardnumber, String email_address) {
 		super();

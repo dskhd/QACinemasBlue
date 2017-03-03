@@ -24,9 +24,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="bookings")
 @NamedQueries({
-	@NamedQuery(query="SELECT b FROM bookings b", name="Booking.FIND_ALL"),
-	@NamedQuery(query="SELECT b FROM bookings b WHERE b.userEmail = :user", name="Booking.FIND_BY_NAME"),
-	@NamedQuery(query="SELECT b FROM bookings b WHERE b.paymentsID = :paymentid", name="Booking.FIND_BY_PAYMENTID")
+	@NamedQuery(query="SELECT b FROM Booking b", name="Booking.FIND_ALL"),
+	@NamedQuery(query="SELECT b FROM Booking b WHERE b.user = :user", name="Booking.FIND_BY_NAME"),
+	@NamedQuery(query="SELECT b FROM Booking b WHERE b.payment = :paymentid", name="Booking.FIND_BY_PAYMENTID")
 })
 public class Booking {
 

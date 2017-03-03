@@ -2,17 +2,28 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.IdClass;
 
-@Entity
+import org.hibernate.annotations.Immutable;
+
+@Entity 
+@IdClass(value=UserViewId.class)
+@Immutable
 @Table(name = "userView")
 public class UserView {
+
+	
+	
+	@Id
+	private String email;
+	
+	@Id
+	private String addressType;
 	
 	@Column
 	private String userName;
-	
-	@Column
-	private String email;
 	
 	@Column
 	private String dob;
@@ -32,8 +43,7 @@ public class UserView {
 	@Column 
 	private String county;
 	
-	@Column 
-	private String addressType;
+	
 
 	
 	
@@ -73,5 +83,10 @@ public class UserView {
 	public String getAddressType() {
 		return addressType;
 	}
+	
+	
+	
+	
+	
 
 }

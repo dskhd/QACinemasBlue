@@ -22,8 +22,8 @@ import qacinema.data.cinema.Showing;
 @Table(name = "ticket")
 @NamedQueries({
 	@NamedQuery(query="SELECT t FROM TicketView t WHERE t.ticketID = :id", name="Ticket.FIND_BY_ID"),
-	@NamedQuery(query="SELECT tickets FROM Booking WHERE booking.userEmail = :userEmail ", name = "Ticket.FIND_ALL_BY_USER"),
-	@NamedQuery(query="SELECT t from Ticket where ticket.showing.film.flimdID=:filmID", name="Ticket.FIND_ALL_BY_FILM")
+	//@NamedQuery(query="SELECT tickets FROM Booking b WHERE b.user = :userEmail ", name = "Ticket.FIND_ALL_BY_USER"),
+	//@NamedQuery(query="SELECT t from Ticket t where t.showing.film.flimdID=:filmID", name="Ticket.FIND_ALL_BY_FILM")
 })
 public class Ticket {
 	
@@ -37,7 +37,6 @@ public class Ticket {
 	private String ticketID;
 
 	@NotNull
-	@ManyToOne
 	private String ticketType;
 
 	

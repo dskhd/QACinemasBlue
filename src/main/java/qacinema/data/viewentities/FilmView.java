@@ -2,13 +2,21 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Immutable;
 
 import qacinema.data.film.Classification;
 
 @Entity @Table(name="filmView")
+@Immutable
 public class FilmView {
 
+	@Id
+	@Column 
+	private String filmID;
+	
 	@Column
 	private String title;
 	
@@ -18,8 +26,6 @@ public class FilmView {
 	@Column
 	private int length;
 	
-	@Column 
-	private String filmID;
 
 	@Column 
 	private String classificationID;

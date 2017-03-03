@@ -1,6 +1,8 @@
 
 package qacinema.data.cinema;
 
+import java.util.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -14,15 +16,15 @@ import qacinema.data.film.Film;;
 @Table(name = "showing")
 @NamedQueries({
 	@NamedQuery(name="Showing.FIND_BY_DATE_TIME",
-				query ="SELECT s FROM showings s WHERE s.showTime = :showTime"),
+				query ="SELECT s FROM Showing s WHERE s.dateTime = :showTime"),
 	@NamedQuery(name = "Showing.FIND_ALL",
-				query = "SELECT s FROM showing s"),
+				query = "SELECT s FROM Showing s"),
 	@NamedQuery(name = "Showing.FIND_BY_EXPERIENCE",
-				query = "SELECT s FROM showing s WHERE s.experience = :experience"),
+				query = "SELECT s FROM Showing s WHERE s.experience = :experience"),
 	@NamedQuery(name = "Showing.FIND_BY_FILMID",
-				query = "SELECT s FROM showing s WHERE s.filmID = :filmID"),
+				query = "SELECT s FROM Showing s WHERE s.film = :filmID"),
 	@NamedQuery(name = "Showing.findAccessability",
-				query = "SELECT s FROM showing s WHERE s.accessability = :accessability")			
+				query = "SELECT s FROM Showing s WHERE s.accessability = :accessability")			
 })
 public class Showing {
 	@NotNull
@@ -41,7 +43,7 @@ public class Showing {
 	@NotNull
 	@Column(name = "Time")
 	@Temporal(TemporalType.DATE)
-	private String dateTime;
+	private Date dateTime;
 	@NotNull
 	@Column(name = "Experience", length = 45)
 	private String experience;
@@ -56,15 +58,14 @@ public class Showing {
 	public static final String FIND_BY_ACCESSABILITY = "Showing.findAccessability";
 	
 	public Showing() {
-		// No-argument constructor for injection
 	}
 
 	// Overloading
-	public Showing(String showingID, Film film, Screen screen, String dateTime, String experience, String accessability) {
+	public Showing(String showingID, Film film, Screen screen, Date date, String experience, String accessability) {
 		this.showingID = showingID;
 		this.film = film;
 		this.screen = screen;
-		this.dateTime = dateTime;
+		this.dateTime = date;
 		this.experience = experience;
 		this.accessability = accessability;
 	}
@@ -85,11 +86,11 @@ public class Showing {
 		this.film = film;
 	}
 
-	public String getDateTime() {
+	public Date getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(String dateTime) {
+	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
 
