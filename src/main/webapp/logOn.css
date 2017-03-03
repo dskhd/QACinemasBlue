@@ -6,10 +6,12 @@
 #logOnTitleDiv{
 	position: relative;
 	right: -5%;
-	top: -5%
+	top: -5%;
+	
 }
 
 #logOnTextBoxesDiv{
+	
 	position:relative;
 	right: -45%;
 	position:relative;
@@ -28,9 +30,11 @@
 	color:white	
 }
 .logOnTextBox{
+
 }
 
 .anchor{
+	
 	color:white;
 	position: relative;
 	top: 35px
@@ -43,6 +47,7 @@ body{
 }
 
 .logOnTitle{
+		
 	
 }
 		

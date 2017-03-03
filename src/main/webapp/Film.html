@@ -6,27 +6,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+<script src="jquery-1.10.2.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="Film.css" media="screen">
+<link rel="stylesheet" href="css/style.css" media="screen">
 
 </head>
 
 <body>
 
 	<!-- NAVIGATION BAR -->
+<!-- NAVIGATION BAR -->
 	<div class="navigation">
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
+					<a class="navbar-brand" href="#">QA Cinema</a>
+
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#myNavbar">
+
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">QA Cinema</a>
+
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
@@ -54,11 +63,16 @@
 							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Booking <span class="caret"></span></a>
+
 							<ul class="dropdown-menu">
 								<li><a href="#">Payments</a></li>
 							</ul></li>
+
+
 					</ul>
+
 					<ul class="nav navbar-nav navbar-right">
+
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
 								Sign Up</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
@@ -68,6 +82,9 @@
 			</div>
 		</nav>
 	</div>
+
+
+
 
 
 	<div class="container">
@@ -128,39 +145,162 @@
 			</div>
 		</div>
 	</div>
-	</div>
-
-
 
 	<div class="media">
+		<div class="mediaTitle">
+			<h2>EXCLUSIVES, FEATURES AND VIDEOS</h2>
+		</div>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
 
-		<h2>EXCLUSIVES, FEATURES AND VIDEOS</h2>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="inset">
+						<div class="floating-box">
+							<img class="img-responsive" src="http://i.imgur.com/hDaXHcD.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img class="img-responsive" src="http://i.imgur.com/SEkTab2.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img class="img-responsive" src="http://i.imgur.com/DNrNqri.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img class="img-responsive" src="http://i.imgur.com/7d0zWi0.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/QcsfOg9.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img class="img-responsive" src="http://i.imgur.com/JfhJWjQ.jpg?2" width=100%></img>
+						</div>
+					</div>
 
-		<div class="inset">
-			<div class="floating-box">
-				<img src="http://i.imgur.com/hDaXHcD.jpg?1" width=100%>
+					<div class="after-box"></div>
+				</div>
+
+				<div class="item">
+					<div class="inset">
+
+						<iframe width="900" height="506"
+
+							src="https://www.youtube.com/embed/rGQUKzSDhrg" frameborder="0"
+							allowfullscreen></iframe>
+					</div>
+
+					<div class="after-box"></div>
+				</div>
+
+				<div class="item">
+					<div class="inset">
+						<div class="floating-box">
+							<img src="http://i.imgur.com/hDaXHcD.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/SEkTab2.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/DNrNqri.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/7d0zWi0.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/QcsfOg9.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/JfhJWjQ.jpg?2" width=100%></img>
+						</div>
+					</div>
+
+					<div class="after-box"></div>
+				</div>
+
+				<div class="item">
+					<div class="inset">
+						<div class="floating-box">
+							<img src="http://i.imgur.com/hDaXHcD.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/SEkTab2.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/DNrNqri.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/7d0zWi0.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/QcsfOg9.jpg?1" width=100%></img>
+						</div>
+						<div class="floating-box">
+							<img src="http://i.imgur.com/JfhJWjQ.jpg?2" width=100%></img>
+						</div>
+					</div>
+
+					<div class="after-box"></div>
+				</div>
+
 			</div>
-			<div class="floating-box">
-				<img src="http://i.imgur.com/SEkTab2.jpg?1" width=100%>
-			</div>
-			<div class="floating-box">
-				<img src="http://i.imgur.com/DNrNqri.jpg?1" width=100%>
-			</div>
-			<div class="floating-box">
-				<img src="http://i.imgur.com/7d0zWi0.jpg?1" width=100%>
-			</div>
-			<div class="floating-box">
-				<img src="http://i.imgur.com/QcsfOg9.jpg?1" width=100%>
-			</div>
-			<div class="floating-box">
-				<img src="http://i.imgur.com/JfhJWjQ.jpg?2" width=100%>
-			</div>
+
+			<!-- Left and right controls -->
+			<a class="left carousel-control" href="#myCarousel" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+
 		</div>
 
-		<div class="after-box"></div>
 
 	</div>
 
+
+	<div class="container">
+
+		<div class="oFTitle">
+			<h2>OTHER FILMS</h2>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="floating-box2">
+					<img src="http://i.imgur.com/hDaXHcD.jpg?1" width=100%></img>
+				</div>
+				<div class="after-box"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="floating-box2">
+					<img src="http://i.imgur.com/SEkTab2.jpg?1" width=100%></img>
+				</div>
+				<div class="after-box"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="floating-box2">
+					<img src="http://i.imgur.com/DNrNqri.jpg?1" width=100%></img>
+				</div>
+				<div class="after-box"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="after-box"></div>
+
+
+
+	<!--  	<div id="footer"></div> -->
 
 
 </body>
@@ -168,6 +308,8 @@
 <script
 	src="https://ajax.googleapis.come/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script stc="js/bootstrap.min.js" type="text/javascript"></script>
+
+
 
 </html>
 
