@@ -3,5 +3,5 @@
 		var vm = this;
 	};
 	angular.module('QACinema').controller('frontpagecontroller',
-			[ FrontPageController ]);
+		[ FrontPageController ]);
 }());

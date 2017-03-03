@@ -7,6 +7,9 @@
 			$stateProvider.state("frontpage", {
 				url : "/frontpage",
 				templateUrl : "app/feature/frontpage/frontpage.html"
+			}).state("screens", {
+				url : "/screens",
+				templateUrl : "app/feature/ourscreens/ourScreens.html"
 			}).state("film", {
 				url : "/film",
 				templateUrl : "app/feature/film/film.html"
@@ -18,4 +21,5 @@
 				templateUrl : "app/feature/classification/classification.html"
 			})
 		});
+
 }());
