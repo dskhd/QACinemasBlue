@@ -1,10 +1,10 @@
 
 <div ng-controller="bookController as ctrl">
 	<h2>Books</h2>
-	<span>Total books: {{ctrl.books.length}}</span> <a ui-sref="other">
-		Activate Other State </a>
+	
+	Filter Books <input type="text" ng-model="bookFilter.Title">
 		
-	<table ng-controller="bookController as ctrl">
+	<table>
 		<tr>
 			<th>Author</th>
 			<th ng-click="ctrl.doSort()">Title</th>
@@ -18,7 +18,10 @@
 			<td>{{book.Published}}</td>
 		</tr>
 	</table>
-
+	
+	<span>Total books: {{ctrl.books.length}}</span> 
+	<a ui-sref="other">Activate Other State </a>
+		
 	<span>Total books: {{ctrl.books.length}}</span>
 	<div id="footer"></div>
 		

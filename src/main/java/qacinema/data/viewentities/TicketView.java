@@ -1,7 +1,12 @@
 package qacinema.data.viewentities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+
+
+@Entity @Table(name="ticketView")
 public class TicketView {
 	
 	@Column 	

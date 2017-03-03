@@ -23,6 +23,9 @@ public class RolesView {
 	public static final String	FIND_BY_ACTOR =	"rolesView.findActorsByFilmTitle";
 	public static final String FIND_BY_FILM =	"rolesView.findFilmsByActor";
 
+	public RolesView() {
+		
+	}
 
 	public RolesView(String title, String filmID, String actorName, String role) {
 		super();

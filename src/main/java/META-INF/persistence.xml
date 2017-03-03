@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="QACinemasBlue">
+		<provider>
+			org.hibernate.jpa.HibernatePersistenceProvider
+		</provider>
+		<class>qacinema.data.viewentities.RolesView</class>
+		<class>qacinema.data.viewentities.BookingView</class>
+		<class>qacinema.data.viewentities.FilmView</class>
+		<class>qacinema.data.viewentities.PaymentView</class>
+		<class>qacinema.data.viewentities.RatingsView</class>
+		<class>qacinema.data.viewentities.ShowingView</class>
+		<class>qacinema.data.viewentities.TicketView</class>
+		<class>qacinema.data.viewentities.UserView</class>
+		
+		<class>qacinema.data.users.User</class>
+		<class>qacinema.data.users.UserRating</class>
+		<class>qacinema.data.users.UserHaveAddresses</class>
+		<class>qacinema.data.users.Address</class>
+		
+		<class>qacinema.data.film.Actor</class>
+		<class>qacinema.data.film.Film</class>
+		<class>qacinema.data.film.Genre</class>
+		<class>qacinema.data.film.Media</class>
+		<class>qacinema.data.film.Role</class>
+		
+		<class>qacinema.data.cinema.Screen</class>
+		<class>qacinema.data.cinema.Seat</class>
+		<class>qacinema.data.cinema.Showing</class>
+		
+		<class>qacinema.data.booking.Booking</class>
+		<class>qacinema.data.booking.Payment</class>
+		
+		<class>qacinema.data.booking.tickets.Ticket</class>
+		<class>qacinema.data.booking.tickets.TicketType</class>
+		
+		
+		<properties>
+			<property value="com.mysql.jdbc.Driver" name="javax.persistence.jdbc.driver" />
+			<property value="jdbc:mysql://192.168.1.120" name="javax.persistence.jdbc.url" />
+			<property value="samjar" name="javax.persistence.jdbc.user" />
+			<property value="samjar" name="javax.persistence.jdbc.password" />
+			<property value="Update" name="hibernate.hbm2ddl.auto" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+		</properties>
+	
+	</persistence-unit>
+</persistence>
