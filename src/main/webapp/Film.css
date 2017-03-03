@@ -1,6 +1,35 @@
 @CHARSET "ISO-8859-1";
 
+
+/* Navbar dropdown menu background colour */
+.nav.navbar-nav .dropdown-menu { background-color: #F6F6F6; }
+
+/*	Change QA Cinema word logo colour	*/
+.navbar-header .navbar-brand { 
+	font-weight: bold;
+	font-size: 200%;
+	color: #F6F6F6; 
+	border-right: 2px solid #F6F6F6;
+}
+	
+/* Modify scrollover action of navbar buttons */
+.nav.navbar-nav li a:hover{ background: #1C1C1C; }
+
+/* Modify text on dropdown menu when rollover */
+.nav.navbar-nav .open .dropdown-menu li a:hover{ color: #F6F6F6; }
+
+/* Modify navbar font */
+.nav.navbar-nav li a{ color: #F6F6F6; }
+
+/* Modify dropdown menu font */
+.nav.navbar-nav .open .dropdown-menu li a{ color:#1C1C1C; }
+
+/* Burger menu hover over selection colour */
+.nav.navbar-nav li:hover{ background: #1C1C1C; }
+
+
 body {
+	width:100%;
 	font-family: "Lato", sans-serif;
 	text-align: center;
 	background-color: #D6D6DA;
@@ -35,13 +64,9 @@ body {
 	padding-top: 20px;
 }
 
-.media {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #2e3030;
-	color: white;
-	margin-left: auto;
-	margin-right: auto;
+
+.mediaTitle{
+	padding-bottom: 20px;
 }
 
 .floating-box {
@@ -50,6 +75,28 @@ body {
 	height: 250px;
 	margin: 3px;
 	border: 3px solid white;
+}
+
+.oFTitle {
+	padding-top: 40px;
+	padding-bottom: 40px;	
+	
+}
+
+.floating-box2 {
+	float: center;
+	width: 450px;
+	height: 450px;
+	margin: 6px;
+	border: 3px solid white;
+}
+
+.otherFilms {
+	padding-bottom: 20px;	
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
 }
 
 .inset {
@@ -62,6 +109,6 @@ body {
 	clear: left;
 }
 
-.container{
-	background-color: #D6D6DA;
+#myCarousell {
+	
 }

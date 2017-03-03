@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 
+
+<!-- 
+THINGS TO SORT OUT:
+--------------------
+> DATA FIELDS NOT BEING RESPONSIVE
+
+
+ -->
+
+
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="ISO-8859-1">
@@ -16,18 +26,19 @@
 		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
+					<a class="navbar-brand" href="#">QA Cinema</a>
+
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#myNavbar">
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span> 
-						<span class="icon-bar"></span>
+
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">QA Cinema</a>
+
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
-						<li class="dropdown">
-						<a class="dropdown-toggle"
+						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">What's On <span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Now Showing</a></li>
@@ -51,11 +62,16 @@
 							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle"
 							data-toggle="dropdown" href="#">Booking <span class="caret"></span></a>
+
 							<ul class="dropdown-menu">
 								<li><a href="#">Payments</a></li>
 							</ul></li>
+
+
 					</ul>
+
 					<ul class="nav navbar-nav navbar-right">
+
 						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
 								Sign Up</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
@@ -66,8 +82,9 @@
 		</nav>
 	</div>
 
-
+	<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<div class="pageInfo">
+
 		<!-- HEADER TEXT ON PAGE -->
 		<div class="header">
 			<h1>Register for a new QA Cinema account</h1>
@@ -89,20 +106,24 @@
 						</div>
 						<div id="collapse1" class="panel-collapse collapse in">
 							<div class="panel-body">
-								First name:<br> <input type="text" name="firstname"
-									id="Fname" pattern="[A-Za-z'-]" placeholder="First name"
-									required><br> <br> Last name:<br> <input
-									type="text" name="lastname" id="Lname" pattern="[A-Za-z'-]"
-									placeholder="Last name" required><br> <br>
-								Email address:<br> <input type="email" id="Email"
-									name="email" placeholder="example@domain.com" required><br>
-								<br> Birth date:<br> <input type="text" name="bday"
-									id="Bday" pattern="[0-9/]" placeholder="dd/mm/yyyy" required><br>
-								<br> Phone number:<br> <input type="tel" name="phone"
-									id="Phone"><br> <br> Select your gender:<br>
-								<input type="radio" name="gender" value="male"> Male<br>
-								<input type="radio" name="gender" value="female"> Female<br>
-								<br>
+								First name:<br> <input type="text" class="form-control"
+									name="firstname" id="Fname" pattern="[A-Za-z'-]"
+									placeholder="First name" required><br>
+								Last name:<br> <input type="text" class="form-control"
+									name="lastname" id="Lname" pattern="[A-Za-z'-]"
+									placeholder="Last name" required><br>
+								Email address:<br> <input type="email" class="form-control"
+									id="Email" name="email" placeholder="example@domain.com"
+									required><br>
+								Birth date:<br> <input type="text"
+									class="form-control" name="bday" id="Bday" pattern="[0-9/]"
+									placeholder="dd/mm/yyyy" required><br>
+								Phone number:<br> <input type="tel"
+									class="form-control" name="phone" placeholder="Include dialing code" 
+									id="Phone"><br>
+								Select your gender:<br> 
+									<input type="radio" name="gender" value="male"> Male<br> 
+									<input type="radio"	name="gender" value="female"> Female<br>
 							</div>
 						</div>
 					</div>
@@ -116,17 +137,19 @@
 						</div>
 						<div id="collapse2" class="panel-collapse collapse">
 							<div class="panel-body">
-								Payment type:<br> <select name="cars" id="Pay">
-									<option value="">Select One</option>
-									<option value="volvo">PayPal</option>
-									<option value="saab">Visa</option>
-									<option value="fiat">Mastercard</option>
-								</select><br> <br> Card number:<br> <input type="text"
-									id="Cnum" placeholder="Card number"><br> <br>
-								Expiry date:<br> <input type="text" pattern="[0-9/]"
-									placeholder="mm/yyyy" id="Exp"><br> <br>
-								CVV(if applicable):<br> <input type="text" id="CVV"
-									maxlength="3" pattern="[0-9]{3}"><br> <br>
+								Payment type:<br> <select name="cars" class="form-control" id="Pay">
+										<option value="">Select One</option>
+										<option value="volvo">PayPal</option>
+										<option value="saab">Visa</option>
+										<option value="fiat">Mastercard</option>
+									</select><br> 
+								Card number:<br> <input type="text"
+									class="form-control" id="Cnum" placeholder="Card number"><br>
+								Expiry date:<br> <input type="text"
+									class="form-control" pattern="[0-9/]" placeholder="mm/yyyy"
+									id="Exp"><br> 
+								CVV(if applicable):<br>	<input type="text" class="form-control" 
+									id="CVV" maxlength="3" pattern="[0-9]{3}"><br>
 							</div>
 						</div>
 					</div>
@@ -140,13 +163,14 @@
 						</div>
 						<div id="collapse3" class="panel-collapse collapse">
 							<div class="panel-body">
-								Username:<br> <input type="text" name="username" id="Uname"
-									placeholder="Username" required><br> <br>
-								Password:<br> <input type="password" name="psw" id="Pw1"
-									placeholder="Password" required><br> <br>
-								Confirm password:<br> <input type="password" name="psw"
-									id="Pw2" placeholder="Password" required><br> <br>
-								<input type="checkbox" name="newsletter" value="yes">
+								Username:<br> <input type="text" class="form-control"
+									name="username" id="Uname" placeholder="Username" required><br> 
+								Password:<br> <input type="password"
+									class="form-control" name="psw" id="Pw1" placeholder="Password"
+									required><br> 
+								Confirm password:<br> <input type="password" class="form-control" 
+									name="psw" id="Pw2" placeholder="Password" required><br> 
+									<input type="checkbox" name="newsletter" value="yes"> 
 								Please tick if you would not like to receive lots of spammy shit
 								<div class="submit_button">
 									<br>
@@ -160,12 +184,13 @@
 			</div>
 
 		</div>
-	</div>
+	 </div>
 
 </body>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+
 
 </html>

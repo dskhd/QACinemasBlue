@@ -7,13 +7,46 @@ html {
 }
 
 body {
-	background-color: #133c47;
-	height: 100%;
-	width: 80%;
+	/* background-color: #133c47; */
+	min-height: 800px;
+	width: 100%;
 	min-height: 75%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: "Inconsolata", sans-serif;
+	margin: auto;
+/* 	font-family: "Inconsolata", sans-serif; */
+	
+	
+/* 	width:100%; */
+	
+	/* text-align: center; */
+	
+	background-color: #D6D6DA;
+		font-family: "Lato", sans-serif;
+}
+
+
+/*---------------------------------------------------------------------------*/
+footer{
+
+
+color:#FAFAFA;
+
+}
+
+footer ul {
+	list-style: none;
+	display: block;
+	float: left;
+}
+
+footer h3 {
+	font-weight: 100;
+	margin-bottom: 0;
+}
+
+.white {
+	color: #FFFFFF;
 }
 
 .content {
@@ -89,10 +122,59 @@ h4 {
 	text-align: center;
 }
 
+#myCarousel {
+	height: 60%;
+	background-color: #000;
+}
+
+.carousel-inner {
+	height: 60%;
+}
+
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 80%;
 	margin: auto;
-	height: 600px;
+	width: 60%;
+}
+
+.myWindow {
+	height: 80%;
+}
+
+
+
+.myCarouselCaption {
+	background-color: #000;
+	opacity: 1.0;
+}
+
+.floating-box2 {
+	float: center;
+	width: 450px;
+	height: 450px;
+	margin: 6px;
+	border: 3px solid white;
+}
+
+.floating-box {
+	float: left;
+	width: 250px;
+	height: 250px;
+	margin: 3px;
+	border: 3px solid white;
+}
+
+.inset {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.media {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #2e3030;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media ( max-width : 1200px) {
@@ -105,7 +187,7 @@ h4 {
 	}
 	.navbar-brand {
 		max-height: 40px;
-		max-width: 15%;
+		max-width: 200px;
 		overflow: visible;
 		padding-top: 0;
 		padding-bottom: 0;
@@ -144,3 +226,42 @@ h4 {
 		display: block !important;
 	}
 }
+
+/* Navbar dropdown menu background colour */
+.nav.navbar-nav .dropdown-menu {
+	background-color: #F6F6F6;
+}
+
+/*	Change QA Cinema word logo colour	*/
+.navbar-header .navbar-brand {
+	font-weight: bold;
+	font-size: 200%;
+	color: #F6F6F6;
+	border-right: 2px solid #F6F6F6;
+}
+
+/* Modify scrollover action of navbar buttons */
+.nav.navbar-nav li a:hover {
+	background: #1C1C1C;
+}
+
+/* Modify text on dropdown menu when rollover */
+.nav.navbar-nav .open .dropdown-menu li a:hover {
+	color: #F6F6F6;
+}
+
+/* Modify navbar font */
+.nav.navbar-nav li a {
+	color: #F6F6F6;
+}
+
+/* Modify dropdown menu font */
+.nav.navbar-nav .open .dropdown-menu li a {
+	color: #1C1C1C;
+}
+
+/* Burger menu hover over selection colour */
+.nav.navbar-nav li:hover {
+	background: #1C1C1C;
+}
+

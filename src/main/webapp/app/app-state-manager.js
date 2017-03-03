@@ -1,15 +1,18 @@
 
 "use strict";
 (function() {
-	angular.module('bookStore').config(
-			function($stateProvider, $urlRouterProvider) {
-				$urlRouterProvider.otherwise("/book");
-				$stateProvider.state("book", {
-					url : "/book",
-					templateUrl : "app/feature/book/books.html"
-				}).state("other", {
-					url : "/other",
-					templateUrl : "app/feature/other/other.html"
-				})
-			});
+	angular.module('QACinema').config(
+		function($stateProvider, $urlRouterProvider) {
+			$urlRouterProvider.otherwise("/frontpage");
+			$stateProvider.state("/", {
+				url : "/frontpage",
+				templateUrl : "app/feature/frontpage/frontpage.html"
+			}).state("film", {
+				url : "/film",
+				templateUrl : "app/feature/film/film.html"
+			}).state("aboutus", {
+				url : "/aboutus",
+				templateUrl : "app/feature/aboutus/aboutus.html"
+			})
+		});
 }());
