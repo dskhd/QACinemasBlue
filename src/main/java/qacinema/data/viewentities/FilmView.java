@@ -1,9 +1,12 @@
 package qacinema.data.viewentities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import qacinema.data.film.Classification;
 
+@Entity @Table(name="filmView")
 public class FilmView {
 
 	@Column
