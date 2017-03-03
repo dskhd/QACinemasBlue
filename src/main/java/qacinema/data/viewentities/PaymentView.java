@@ -2,11 +2,16 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 @Entity @Table(name="paymentView")
+@Immutable
 public class PaymentView {
 	
+	@Id
 	@Column 
 	private String paymentsID;
 	
@@ -28,6 +33,10 @@ public class PaymentView {
 	@Column 
 	private String fullName;
 
+	
+	
+	
+	
 	public String getPaymentsID() {
 		return paymentsID;
 	}

@@ -15,8 +15,8 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "media")
 @NamedQueries({
-		@NamedQuery(query = "SELECT m FROM film f JOIN film.media m WHERE f.filmID=:filmID", name ="Media.FIND_MEDIA_BY_FILM_ID"),
-		@NamedQuery(query = "SELECT m FROM film f JOIN film.media m WHERE f.Title=:name", name ="Media.FIND_MEDIA_BY_FILM_NAME")
+		@NamedQuery(query = "SELECT m FROM Film f JOIN f.media m WHERE f.filmId=:filmId", name ="Media.FIND_MEDIA_BY_FILM_ID"),
+		@NamedQuery(query = "SELECT m FROM Film f JOIN f.media m WHERE f.title=:name", name ="Media.FIND_MEDIA_BY_FILM_NAME")
 	})
 public class Media {
 	

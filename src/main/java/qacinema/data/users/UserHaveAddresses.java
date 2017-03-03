@@ -29,6 +29,12 @@ public class UserHaveAddresses {
 	@JoinColumn(name = "userEmail")
 	private User user;
 
+	
+	
+	public UserHaveAddresses() {
+		
+	}
+	
 	public UserHaveAddresses(String addressType, String userEmail, String addressID) {
 		this.addressType = addressType;
 		this.userEmail = userEmail;

@@ -19,11 +19,7 @@ public class ShowingTest {
 	
 	@Test
 	public void timeTest(){
-		Showing show = new Showing();
-		
-		show.setDateTime("10022017164500");
-		String time = show.getDateTime();
-		assertEquals("10022017164500", time);
+		//TO-DO
 	}
 	
 	@Test

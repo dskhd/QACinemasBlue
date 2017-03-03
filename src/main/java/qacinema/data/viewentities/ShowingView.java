@@ -7,23 +7,28 @@ package qacinema.data.viewentities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 
 @Entity @Table(name = "showingView")
+@Immutable
 @NamedQueries({
 	@NamedQuery(name="ShowingView.FIND_BY_DATE_TIME",
-			query ="SELECT s FROM showingView s WHERE s.showTime = :dateTime"),
+			query ="SELECT s FROM ShowingView s WHERE s.showTime = :dateTime"),
+	
 	@NamedQuery(name = "ShowingView.FIND_ALL",
-			query = "SELECT s FROM showingView s"),
+			query = "SELECT s FROM ShowingView s"),
+	
 	@NamedQuery(name = "ShowingView.FIND_BY_CLASSIFICATION",
-			query = "SELECT s FROM shoiwngView s WHERE s.classification = :classification"
-				),
-	@NamedQuery(name = "ShowingView.FIND_BY_ACCESSIBILITY",
-			query = "SELECT s FROM showingView s WHERE s.accessibility = :accessibility"
-			)
+			query = "SELECT s FROM ShowingView s WHERE s.classification = :classification"),
+	
+	//@NamedQuery(name = "ShowingView.FIND_BY_ACCESSIBILITY",
+	//		query = "SELECT s FROM ShowingView s WHERE s.accessibility = :accessibility")
 })
 
 public class ShowingView {
@@ -33,7 +38,7 @@ public class ShowingView {
 	public static final String FIND_BY_CLASSIFICATION = "ShowingView.findByClassification";
 	public static final String FIND_BY_ACCESSIBILITY = "ShowingView.findByAccessibility";
 	
-	
+	@Id
 	@Column 
 	private String showingID;
 	
@@ -50,7 +55,7 @@ public class ShowingView {
 	private int length;
 	
 	@Column 
-	private String classificationType; //String.
+	private String classification; //String.
 	
 	@Column 
 	private String classificationDescription;
@@ -75,8 +80,8 @@ public class ShowingView {
 		return length;
 	}
 
-	public String getClassificationType() {
-		return classificationType;
+	public String getClassification() {
+		return classification;
 	}
 
 	public String getClassificationDescription() {

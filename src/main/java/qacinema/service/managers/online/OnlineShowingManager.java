@@ -1,5 +1,7 @@
 package qacinema.service.managers.online;
 
+import java.util.Date;
+
 /*
  * Created by James Lamkin
  */
@@ -38,14 +40,14 @@ public class OnlineShowingManager implements ShowingManager {
 	}
 
 	@Override
-	public List<Showing> findByHour(String hour) {
+	public List<Showing> findByHour(Date hour) {
 		TypedQuery<Showing>	query = entityManager.createNamedQuery(Showing.FIND_BY_DATE_TIME, Showing.class);
 		query.setParameter("showingTime", hour);
 		return query.getResultList();
 	}
 
 	@Override
-	public List<Showing> findByDay(String date) {
+	public List<Showing> findByDay(Date date) {
 		TypedQuery<Showing> query = entityManager.createNamedQuery(Showing.FIND_BY_DATE_TIME, Showing.class);
 		query.setParameter("showingTime", date);
 		return query.getResultList();

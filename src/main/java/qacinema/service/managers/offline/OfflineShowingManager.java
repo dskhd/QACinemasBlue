@@ -2,15 +2,15 @@ package qacinema.service.managers.offline;
 
 import qacinema.testdata.TestData;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import qacinema.annotations.Loggable;
@@ -37,27 +37,19 @@ public class OfflineShowingManager implements ShowingManager {
 	}
 
 	@Override
-	public List<Showing> findByHour(String hour) {
-
-		hour = hour.substring(0, 7);
+	public List<Showing> findByHour(Date hour) {
 		List<Showing> byHour = new ArrayList<Showing>();
 		for (Showing show : showings) {
-			if (show.getDateTime().substring(0, 7) == hour) {
-				byHour.add(show);
-			}
+			
 		}
 		return byHour;
 	}
 
 	@Override
-	public List<Showing> findByDay(String date) {
-
-		date = date.substring(0, 6);
+	public List<Showing> findByDay(Date date) {
 		List<Showing> byDate = new ArrayList<Showing>();
 		for (Showing show : showings) {
-			if (show.getDateTime().substring(0, 6) == date) {
-				byDate.add(show);
-			}
+			
 		}
 		return byDate;
 	}
@@ -102,5 +94,8 @@ public class OfflineShowingManager implements ShowingManager {
 		}
 		return byAccessability;
 	}
+
+
+	
 
 }

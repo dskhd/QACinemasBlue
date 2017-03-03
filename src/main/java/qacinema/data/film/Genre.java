@@ -7,7 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-@Entity @Table
+@Entity 
+@Table
 public class Genre {
 
 	@Id
@@ -17,6 +18,17 @@ public class Genre {
 	
 	@NotNull
 	private String genreName;
+	
+	public Genre() {
+		
+	}
+	
+	public Genre(int id, String genreName) {
+		super();
+		this.id = id;
+		this.genreName = genreName;
+	}
+	
 	
 	
 	public Genre(String genre){
