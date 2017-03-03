@@ -8,6 +8,7 @@ html {
 
 body {
 	background-color: #133c47;
+	color:#ddd;
 	height: 100%;
 	width: 80%;
 	min-height: 75%;
@@ -15,6 +16,35 @@ body {
 	margin-right: auto;
 	margin: auto;
 	font-family: "Inconsolata", sans-serif;
+}
+
+#myFront {
+	margin-top: 70px;
+}
+
+#subnavbar{
+	width:82%;
+	border-bottom-left-radius:20px;
+	border-bottom-right-radius:20px;	
+	background-color:#444;
+	border:0px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 51px;
+	min-height:30px;
+}
+
+#subnavbar li a{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#ourScreens{
+	background: #111;
+}
+
+#ourScreens h1{
+	text-align: center;
 }
 
 .content {
@@ -108,9 +138,20 @@ h4 {
 	height: 80%;
 }
 
-.myCarouselCaption{
-	background-color:#000;
-	opacity:1.0;
+.anchor{
+	padding-top:100px;
+}
+
+.myCarouselCaption {
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 30px;
+	-moz-box-shadow: 0px 0px 7px #000000;
+	-webkit-box-shadow: 0px 0px 7px #000000;
+	box-shadow: 0px 0px 7px #000000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+
 }
 
 @media ( max-width : 1200px) {
