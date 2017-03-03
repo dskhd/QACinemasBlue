@@ -9,7 +9,7 @@
 				templateUrl : "app/feature/frontpage/frontpage.html"
 			}).state("film", {
 				url : "/film",
-				templateUrl : "app/feature/book/film/film.html"
+				templateUrl : "app/feature/film/film.html"
 			}).state("aboutus", {
 				url : "/about",
 				templateUrl : "app/feature/about/about.html"
