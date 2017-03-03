@@ -1,0 +1,109 @@
+<html>
+
+<div ng-controller="filmcontroller as abtctrl">
+
+  
+
+
+
+
+<!-- <div id="navbar" class="collapse navbar-collapse"> <div class="navbar-right"> <ulclass="nav navbar-nav"><li class="navbar-brand"><a href="about.html"> About</a></li> -->
+<header class="topimg img-rounded" >
+  <div class="align-bottom-right">
+    <span class="align-bottom badge">Open from 12pm to 12am</span>
+  </div>
+  <div class="align-bottom">
+    <span class="badge">Salford UK</span>
+  </div>
+</header>
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="mainbody img-rounded container-fluid">
+<!-- About Container -->
+<div class="container-fluid" id="about">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="shadow w3-center w3-padding-48"><span class="badge w3-wide w3-padding-left w3-padding-right">About QA Cinemas</span></h5>
+    <p>We're the best cinema in the area and you know it, be nice to us we're friendly people and deserve all your money. I would also like to say that I love ice cream</p>
+    <p>We also have a load of really over priced food for you to come in and buy. Do you like paying £2.10 for a single can of cola? We're here for you.</p>
+    <div class="panel-heading text-center ">
+      <p><i>"This cinema is sorta okay"</i></p>
+      <div class = "panel align-right blockquote-reverse">
+      <em>- People</em>
+    </div>
+    </div>
+    <img src="/w3images/coffeeshop.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+    <p><span class="shadow badge"><strong>Opening hours:</strong></span> Everyday from 12pm to 12am.</p>
+    <p><span class="shadow badge"><strong>Address:</strong></span> Salford - Anchorage UK</p>
+  </div>
+</div>
+
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="mapshadow w3-content" style="max-width:700px">
+    <h5 class="shadow w3-center w3-padding-48"><span class="badge w3-wide w3-padding-left w3-padding-right">WHERE TO FIND US</span></h5>
+    <p>Drop into street view</p>
+    <div  id="googleMap"  style="width:100%;height:400px;"></div>
+    <p><br><a><span class="badge">FYI!</span> We are overpriced as duck, don't come here expectin to leave with any money.</a></p>
+
+    
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(53.474501, -2.286425);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGiTux30ekUyj7xjXiXr73LpZtB2IUk18&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+
+
+
+<script>
+  src="js/angular.min.js"
+</script>  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</div>
+
+</html>
