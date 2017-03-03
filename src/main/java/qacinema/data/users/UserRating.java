@@ -7,15 +7,19 @@ package qacinema.data.users;
 
 
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import qacinema.data.film.Film;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
+
+@Entity @Table(name="film")
 public class UserRating {
 
 	@Id
