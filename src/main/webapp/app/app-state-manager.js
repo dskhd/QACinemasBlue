@@ -16,7 +16,11 @@
 			}).state("aboutus", {
 				url : "/about",
 				templateUrl : "app/feature/about/about.html"
+			}).state("classification", {
+				url : "/classification",
+				templateUrl : "app/feature/classification/classification.html"
 			})
 		});
-	
+
 }());
+
